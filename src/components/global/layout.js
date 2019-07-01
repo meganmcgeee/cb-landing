@@ -1,12 +1,17 @@
 import React from 'react';
+import { StaticQuery } from 'gatsby';
 import {
   BaseCSS,
+  Col,
   Container,
   GridThemeProvider,
   Row,
 } from 'styled-bootstrap-grid';
 import { Normalize } from 'styled-normalize';
 import GlobalStyles from './globalStyles';
+import Helmet from 'react-helmet';
+
+import Header from './header';
 
 const gridTheme = {
   breakpoints: {
@@ -24,13 +29,13 @@ const gridTheme = {
     // smaller: 575,
   },
   row: {
-    padding: 10, // default 15
+    padding: 20, // default 15
   },
   col: {
-    padding: 5, // default 15
+    padding: 20, // default 15
   },
   container: {
-    padding: 0, // default 15
+    padding: 60, // default 15
     maxWidth: {
       // defaults below
       xl: 1140,
@@ -48,11 +53,49 @@ const gridTheme = {
   },
 };
 
-export default ({ children }) => (
-  <GridThemeProvider gridTheme={gridTheme}>
-    <Container fluid>
-      <Normalize />
-      <Row>{children}</Row>
-    </Container>
-  </GridThemeProvider>
+const Layout = ({ children }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            menuLinks {
+              name
+              link
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <GridThemeProvider gridTheme={gridTheme}>
+        <Container fluid>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            // meta={[
+            //   { name: 'description', content: 'Sample' },
+            //   { name: 'keywords', content: 'sample, something' },
+            // ]}
+          ></Helmet>
+          <BaseCSS />
+          <Normalize />
+          <GlobalStyles />
+          <Row>
+            <Col col={12}>
+              <Header
+                menuLinks={data.site.siteMetadata.menuLinks}
+                siteTitle={data.site.siteMetadata.title}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col col={12}>{children}</Col>
+          </Row>
+        </Container>
+      </GridThemeProvider>
+    )}
+  />
 );
+
+export default Layout;
