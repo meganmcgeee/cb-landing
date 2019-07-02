@@ -14,6 +14,8 @@ const HeaderComponent = styled.header`
 const Logo = styled.h1`
   font-size: 30px;
   text-transform: uppercase;
+
+  font-family: 'History 01';
 `;
 
 const Navigation = styled.nav`
@@ -50,7 +52,7 @@ const Header = ({ menuLinks }) => {
             <li key={link.name}>
               <Link
                 to={link.link}
-                activeStyle={{ borderBottom: '2px solid #404040' }}
+                activeStyle={{ borderBottom: '1px solid #404040' }}
               >
                 {link.name}
               </Link>
