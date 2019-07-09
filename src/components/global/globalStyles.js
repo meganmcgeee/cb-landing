@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,  Arial, sans-serif;
-  font-weight: 300;
 
   font-size: 16px;
   line-height: 1.5;
@@ -29,7 +28,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 300;
+  font-weight: normal;
   margin: 0;
 }
 

@@ -5,17 +5,16 @@ import { linkResolver } from '../utils/linkResolver';
 import styled from 'styled-components';
 
 const LandscapeProject = styled.div`
-  width: 24%;
-  margin: 0 8px 8px 0;
+  width: 40%;
+  // margin: 0 8px 8px 0;
 `;
 
 const PortraitProject = styled.div`
-  width: 18.888%;
-  margin: 0 8px 8px 0;
+  width: 20%;
+  // margin: 0 8px 8px 0;
 `;
 
 const SingleProject = ({ data }) => {
-  console.log(data._meta.uid);
   if (
     data.gallery[0].image.dimensions.height >
     data.gallery[0].image.dimensions.width

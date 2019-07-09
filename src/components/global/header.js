@@ -8,7 +8,8 @@ const HeaderComponent = styled.header`
   justify-content: space-between;
   align-items: baseline;
 
-  padding-top: 20px;
+  padding-top: 40px;
+  margin-bottom: 40px;
 `;
 
 const Logo = styled.h1`
@@ -30,7 +31,7 @@ const Navigation = styled.nav`
     & li {
       list-style: none;
 
-      padding: 0 80px 0 0;
+      padding: 0 40px 0 0;
       margin: 0;
     }
 

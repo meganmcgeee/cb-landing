@@ -9,19 +9,19 @@ module.exports = {
     title: 'Caroline Boseley',
     menuLinks: [
       {
-        name: 'Home',
+        name: 'home',
         link: '/',
       },
       {
-        name: 'Projects',
+        name: 'projects',
         link: '/projects',
       },
       {
-        name: 'About',
+        name: 'about',
         link: '/about',
       },
       {
-        name: 'Contact',
+        name: 'contact',
         link: '/contact',
       },
     ],
@@ -30,22 +30,11 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-prismic-graphql',
+      resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: 'carolineboseley', // (REQUIRED, replace with your own)
-        accessToken:
-          'MC5YUnM0c0JBQUFDUUF3TUlB.B3Dvv71u77-9Se-_vSEDCe-_vTfvv70XSu-_ve-_vRN7G--_ve-_ve-_vUAp77-977-9ee-_vXNX77-9', // (optional API access token)
-        path: '/preview', // (optional preview path. Default: /preview)
-        previews: true, // (optional, activated Previews. Default: false)
-        pages: [
-          {
-            // (optional, builds pages dynamically)
-            type: 'Projects', // TypeName from prismic
-            match: '/projects/:uid', // Pages will be generated under this pattern
-            path: '/projects', // Placeholder page for unpublished documents
-            component: require.resolve('./src/components/templates/project.js'),
-          },
-        ],
+        repositoryName: `carolineboseley`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
   ],
