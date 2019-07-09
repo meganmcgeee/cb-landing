@@ -1,21 +1,82 @@
 import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
-import { Row } from 'styled-bootstrap-grid';
+import Img from 'gatsby-image';
+
+import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
+import TextBox from '../components/text/textbox';
+
+const Links = styled.div`
+  a:first-of-type {
+    padding-right: 10px;
+  }
+`;
+
 const Index = ({ data }) => {
-  // const allProjects = data.prismic.allProjectss.edges.map((project, index) => {
-  //   return <SingleProject key={index} data={project.node} />;
-  // });
+  const socialLinks = data.prismicHome.data.links.map((link, index) => {
+    return (
+      <a
+        href={link.link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={index}
+      >
+        {link.link_title}
+      </a>
+    );
+  });
 
   return (
     <Layout>
-      <p>Hello</p>
+      <Row>
+        <Col col={12} sm={6} md={4}>
+          <Img
+            fluid={data.prismicHome.data.image.localFile.childImageSharp.fluid}
+          />
+        </Col>
+      </Row>
+
+      <Row>
+        <Col col={12} sm={8} lg={6}>
+          <TextBox text={data.prismicHome.data.text} />
+          <TextBox text={data.prismicHome.data.contact_text} />
+          <Links>{socialLinks}</Links>
+        </Col>
+      </Row>
     </Layout>
   );
 };
 
-// export const query = graphql``;
+export const query = graphql`
+  {
+    prismicHome {
+      data {
+        image {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 800, maxHeight: 533, quality: 90) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+        text {
+          html
+        }
+        contact_text {
+          html
+        }
+        links {
+          link_title
+          link {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Index;

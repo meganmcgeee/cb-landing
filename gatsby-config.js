@@ -1,8 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
   siteMetadata: {
@@ -13,12 +11,12 @@ module.exports = {
         link: '/',
       },
       {
-        name: 'projects',
-        link: '/projects',
-      },
-      {
         name: 'about',
         link: '/about',
+      },
+      {
+        name: 'projects',
+        link: '/projects',
       },
       {
         name: 'contact',
@@ -29,6 +27,8 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
