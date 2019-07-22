@@ -11,10 +11,14 @@ const Links = styled.ul`
   list-style: none;
 
   padding: 0;
-  margin: 0;
+  margin: 40px 0 0 0;
 
   & li {
     padding-bottom: 40px;
+  }
+
+  @media (max-width: 576px) {
+    margin: 1em 0;
   }
 `;
 
@@ -22,9 +26,9 @@ const Excerpt = styled.span`
   padding-left: 20px;
 `;
 
-const TopPadding = {
-  marginTop: '40px',
-};
+// const TopPadding = {
+//   marginTop: '40px',
+// };
 
 const Projects = ({ data }) => {
   const allProjects = data.allPrismicProjects.edges.map((project, index) => {
@@ -40,7 +44,7 @@ const Projects = ({ data }) => {
 
   return (
     <Layout>
-      <Row css={TopPadding}>
+      <Row>
         <Col col={12} sm={12} xl={8}>
           <Links>{allProjects}</Links>
         </Col>

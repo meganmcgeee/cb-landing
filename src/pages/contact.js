@@ -34,7 +34,7 @@ const Contact = ({ data }) => {
   return (
     <Layout>
       <Row css={FullHeight} alignItems="end">
-        <Col col={12} sm={8} lg={6}>
+        <Col col={12} sm={10} md={8} lg={6}>
           <TextBox
             text={data.prismicHome.data.contact_text}
             margin={'1em 0 '}

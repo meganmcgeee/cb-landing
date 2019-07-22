@@ -10,6 +10,13 @@ const HeaderComponent = styled.header`
 
   padding-top: 40px;
   margin-bottom: 40px;
+
+  @media (max-width: 767px) {
+    padding-top: 20px;
+    margin-bottom: 20px;
+
+    flex-direction: column;
+  }
 `;
 
 const Logo = styled.h1`
@@ -40,33 +47,80 @@ const Navigation = styled.nav`
       padding: 0;
     }
   }
+
+  @media (max-width: 767px) {
+    display: ${props => (props.open ? 'block' : 'none')};
+
+    width: 100%;
+    padding: 20px 0 0;
+    line-height: 2;
+
+    & ul {
+      flex-direction: column;
+    }
+  }
 `;
 
-const Header = ({ menuLinks }) => {
-  return (
-    <HeaderComponent>
-      <Logo>
-        <Link to={'/'}>Caroline Boseley</Link>
-      </Logo>
-      <Navigation>
-        <ul>
-          {menuLinks.map(link => {
-            return (
-              <li key={link.name}>
-                <Link
-                  to={link.link}
-                  activeClassName="active-link"
-                  partiallyActive={link.name === 'projects' && true}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </Navigation>
-    </HeaderComponent>
-  );
-};
+const OpenNavigation = styled.button`
+  position: absolute;
+  top: 31px;
+  right: 14px;
+
+  border: 0;
+  padding: 10px 0 10px 10px;
+  margin: 0;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+`;
+
+class Header extends React.Component {
+  constructor() {
+    super();
+    this.state = { showMenu: false };
+
+    this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  toggleMenu = () => {
+    this.setState(prevState => ({ showMenu: !prevState.showMenu }));
+  };
+
+  render() {
+    return (
+      <HeaderComponent>
+        <Logo>
+          <Link to={'/'}>Caroline Boseley</Link>
+        </Logo>
+        <Navigation open={this.state.showMenu}>
+          <ul>
+            {this.props.menuLinks.map(link => {
+              return (
+                <li key={link.name}>
+                  <Link
+                    to={link.link}
+                    activeClassName="active-link"
+                    partiallyActive={link.name === 'projects' && true}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </Navigation>
+        <OpenNavigation onClick={() => this.toggleMenu()}>Menu</OpenNavigation>
+      </HeaderComponent>
+    );
+  }
+}
 
 export default Header;

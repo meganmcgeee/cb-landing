@@ -30,10 +30,10 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Row>
-        <Col col={12} sm={8} lg={6}>
+        <Col col={12} sm={10} md={8} lg={6}>
           <TextBox
             text={data.prismicHome.data.contact_text}
-            margin={'80px 0 1em 0 '}
+            margin={'40px 0 1em 0'}
           />
           <Links>{socialLinks}</Links>
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />

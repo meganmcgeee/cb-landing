@@ -14,6 +14,14 @@ const Links = styled.div`
   }
 `;
 
+const ImageWrapper = styled.div`
+  margin-top: 40px;
+
+  @media (max-width: 576px) {
+    margin: ${props => (props.margin ? props.margin : '1em 0')};
+  }
+`;
+
 const Index = ({ data }) => {
   const socialLinks = data.prismicHome.data.links.map((link, index) => {
     return (
@@ -31,15 +39,19 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <Row>
-        <Col col={12} sm={6} md={4}>
-          <Img
-            fluid={data.prismicHome.data.image.localFile.childImageSharp.fluid}
-          />
+        <Col col={12} sm={8} md={6} ld={4}>
+          <ImageWrapper>
+            <Img
+              fluid={
+                data.prismicHome.data.image.localFile.childImageSharp.fluid
+              }
+            />
+          </ImageWrapper>
         </Col>
       </Row>
 
       <Row>
-        <Col col={12} sm={8} lg={6}>
+        <Col col={12} sm={10} md={8} lg={6}>
           <TextBox text={data.prismicHome.data.text} margin={'40px 0 1em 0'} />
           <TextBox
             text={data.prismicHome.data.contact_text}
