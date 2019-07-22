@@ -7,9 +7,18 @@ import styled from 'styled-components';
 
 import TextBox from '../components/text/textbox';
 
-const FullHeight = {
-  minHeight: 'calc(100vh - 165px)',
-};
+const FlexContainer = styled.div`
+  min-height: calc(100vh - 156px);
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+
+  @media (max-width: 767px) {
+    // min-height: calc(100vh - 101px);
+    min-height: 100%;
+  }
+`;
 
 const Links = styled.div`
   a:first-of-type {
@@ -33,14 +42,16 @@ const Contact = ({ data }) => {
 
   return (
     <Layout>
-      <Row css={FullHeight} alignItems="end">
-        <Col col={12} sm={10} md={8} lg={6}>
-          <TextBox
-            text={data.prismicHome.data.contact_text}
-            margin={'1em 0 '}
-          />
-          <Links>{socialLinks}</Links>
-        </Col>
+      <Row>
+        <FlexContainer>
+          <Col col={12} sm={10} md={8} lg={6}>
+            <TextBox
+              text={data.prismicHome.data.contact_text}
+              margin={'1em 0 '}
+            />
+            <Links>{socialLinks}</Links>
+          </Col>
+        </FlexContainer>
       </Row>
     </Layout>
   );

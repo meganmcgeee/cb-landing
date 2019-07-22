@@ -109,7 +109,7 @@ const Layout = ({ children }) => (
                     />
                   </Col>
                 </Row>
-                <Row>
+                <Row css={{ paddingBottom: '30px' }}>
                   <Col col={12}>{children}</Col>
                 </Row>
               </Container>

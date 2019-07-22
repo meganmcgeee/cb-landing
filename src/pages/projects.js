@@ -15,6 +15,10 @@ const Links = styled.ul`
 
   & li {
     padding-bottom: 40px;
+
+    &:last-of-type {
+      padding: 0;
+    }
   }
 
   @media (max-width: 576px) {
@@ -24,6 +28,11 @@ const Links = styled.ul`
 
 const Excerpt = styled.span`
   padding-left: 20px;
+
+  @media (max-width: 576px) {
+    display: block;
+    padding: 0;
+  }
 `;
 
 // const TopPadding = {

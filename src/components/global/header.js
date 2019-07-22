@@ -24,7 +24,11 @@ const Logo = styled.h1`
   text-transform: uppercase;
 
   font-family: 'History 01';
-  font-weight: 600;
+  // font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
 `;
 
 const Navigation = styled.nav`
@@ -63,7 +67,7 @@ const Navigation = styled.nav`
 
 const OpenNavigation = styled.button`
   position: absolute;
-  top: 31px;
+  top: 19px;
   right: 14px;
 
   border: 0;
