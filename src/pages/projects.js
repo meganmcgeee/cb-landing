@@ -16,21 +16,21 @@ const Links = styled.ul`
   & li {
     padding-bottom: 40px;
   }
-
-  & a:hover {
-    border-bottom: 1px solid #404040;
-  }
 `;
 
 const Excerpt = styled.span`
   padding-left: 20px;
 `;
 
+const TopPadding = {
+  marginTop: '40px',
+};
+
 const Projects = ({ data }) => {
   const allProjects = data.allPrismicProjects.edges.map((project, index) => {
     return (
       <li key={project.node.prismicId}>
-        <Link to={'/project/' + project.node.uid}>
+        <Link to={'/projects/' + project.node.uid}>
           {project.node.data.title.text}
         </Link>
         <Excerpt>{project.node.data.text_excerpt}</Excerpt>
@@ -40,8 +40,8 @@ const Projects = ({ data }) => {
 
   return (
     <Layout>
-      <Row>
-        <Col col={12} sm={8} lg={6}>
+      <Row css={TopPadding}>
+        <Col col={12} sm={12} xl={8}>
           <Links>{allProjects}</Links>
         </Col>
       </Row>

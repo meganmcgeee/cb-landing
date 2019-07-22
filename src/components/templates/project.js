@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Row, Col } from 'styled-bootstrap-grid';
 import Img from 'gatsby-image';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock';
 
 import '../styles/carousel.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -21,33 +25,43 @@ const BodyText = styled.div`
 `;
 
 const InformationText = styled.div`
+  margin: 2em 0;
+
   & h1 {
     font-size: 16px;
   }
 
   & p {
     margin: 0;
-    // display: inline;
+  }
+
+  @media (max-width: 576px) {
+    margin: 1em 0 0;
   }
 `;
 
-const GalleryTrigger = styled.div``;
+const GalleryTrigger = styled.div`
+  &:hover {
+    cursor: pointer;
+    box-shadow: 20px 20px 0px 0px rgba(106, 130, 147, 1);
+  }
+`;
 
 const customStyles = {
   overlay: {
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
   },
   content: {
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    width: 'calc(100vw - 100px)',
+    width: '100%',
     border: '0',
     padding: '0',
     transform: 'translate(-50%, -50%)',
-    maxWidth: 'calc(100vw - 100px)',
-    maxHeight: 'calc(100vh - 100px)',
+    maxWidth: '100%',
+    maxHeight: '100%',
     width: '100%',
     height: '100%',
     backgroundColor: 'transparent',
@@ -72,6 +86,16 @@ const styledInnerImage = {
   transition: 'none',
 };
 
+const CloseModal = styled.div`
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 10000;
+  cursor: pointer;
+  font-size: 40px;
+  line-height: 0;
+`;
+
 class Project extends React.Component {
   constructor() {
     super();
@@ -86,10 +110,16 @@ class Project extends React.Component {
 
   openModal() {
     this.setState({ modalIsOpen: true });
+    disableBodyScroll();
   }
 
   closeModal() {
     this.setState({ modalIsOpen: false });
+    enableBodyScroll();
+  }
+
+  componentWillUnmount() {
+    clearAllBodyScrollLocks();
   }
 
   render(props) {
@@ -107,7 +137,7 @@ class Project extends React.Component {
     return (
       <Layout>
         <Row>
-          <Col col={12} md={4}>
+          <Col col={12} sm={4}>
             <GalleryTrigger onClick={this.openModal}>
               <Img
                 fluid={
@@ -122,8 +152,11 @@ class Project extends React.Component {
             </InformationText>
           </Col>
 
-          <Col col={12} md={8} lg={7} xl={6}>
-            <TextBox text={this.props.data.prismicProjects.data.text} />
+          <Col col={12} sm={8} lg={7} xl={6}>
+            <TextBox
+              text={this.props.data.prismicProjects.data.text}
+              padding={'0 0 0 20px'}
+            />
           </Col>
         </Row>
 
@@ -133,11 +166,14 @@ class Project extends React.Component {
           style={customStyles}
           contentLabel="Image Gallery"
         >
+          <CloseModal onClick={this.closeModal}>×</CloseModal>
+
           <Carousel
             showThumbs={false}
             showStatus={false}
             showIndicators={false}
             infiniteLoop={true}
+            css={{ height: '100%' }}
           >
             {gallery}
           </Carousel>

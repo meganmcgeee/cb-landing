@@ -43,6 +43,16 @@ img {
 a {
   color: #404040;
   text-decoration: none;
+
+  position: relative;
+  display: inline-block;
+
+  &::after{
+    content: "";
+    border-bottom: 1px solid transparent;
+    display: block;
+    width: 100%;
+  }
 }
 
 a:visited {
@@ -59,6 +69,23 @@ a:hover,
 a:active,
 a:focus {
   outline: 0;
+
+
+    &::after{
+    content: "";
+    border-bottom: 1px solid #404040;
+    display: block;
+    width: 100%;
+  }
+}
+
+.active-link{
+  &::after{
+    content: "";
+    border-bottom: 1px solid #404040;
+    display: block;
+    width: 100%;
+  }
 }
 
 

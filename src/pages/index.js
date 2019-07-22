@@ -40,8 +40,11 @@ const Index = ({ data }) => {
 
       <Row>
         <Col col={12} sm={8} lg={6}>
-          <TextBox text={data.prismicHome.data.text} />
-          <TextBox text={data.prismicHome.data.contact_text} />
+          <TextBox text={data.prismicHome.data.text} margin={'40px 0 1em 0'} />
+          <TextBox
+            text={data.prismicHome.data.contact_text}
+            margin={'1em 0 '}
+          />
           <Links>{socialLinks}</Links>
         </Col>
       </Row>

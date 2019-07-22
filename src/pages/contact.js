@@ -7,6 +7,10 @@ import styled from 'styled-components';
 
 import TextBox from '../components/text/textbox';
 
+const FullHeight = {
+  minHeight: 'calc(100vh - 165px)',
+};
+
 const Links = styled.div`
   a:first-of-type {
     padding-right: 10px;
@@ -29,9 +33,12 @@ const Contact = ({ data }) => {
 
   return (
     <Layout>
-      <Row>
+      <Row css={FullHeight} alignItems="end">
         <Col col={12} sm={8} lg={6}>
-          <TextBox text={data.prismicHome.data.contact_text} />
+          <TextBox
+            text={data.prismicHome.data.contact_text}
+            margin={'1em 0 '}
+          />
           <Links>{socialLinks}</Links>
         </Col>
       </Row>

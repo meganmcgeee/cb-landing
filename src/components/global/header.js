@@ -17,6 +17,7 @@ const Logo = styled.h1`
   text-transform: uppercase;
 
   font-family: 'History 01';
+  font-weight: 600;
 `;
 
 const Navigation = styled.nav`
@@ -49,16 +50,19 @@ const Header = ({ menuLinks }) => {
       </Logo>
       <Navigation>
         <ul>
-          {menuLinks.map(link => (
-            <li key={link.name}>
-              <Link
-                to={link.link}
-                activeStyle={{ borderBottom: '1px solid #404040' }}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {menuLinks.map(link => {
+            return (
+              <li key={link.name}>
+                <Link
+                  to={link.link}
+                  activeClassName="active-link"
+                  partiallyActive={link.name === 'projects' && true}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </Navigation>
     </HeaderComponent>
