@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Helmet from 'react-helmet';
 
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
@@ -38,6 +39,24 @@ const Index = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{'Caroline Boseley'}</title>
+        <meta name="title" content={'Caroline Boseley'} />
+        <meta name="description" content={data.prismicHome.data.text.text} />
+        <meta property="og:url" content={'https://www.carolineboseley.com'} />
+        <meta
+          property="og:description"
+          content={data.prismicHome.data.text.text}
+        />
+        <meta property="og:locale" content="en" />
+        <meta name="twitter:title" content={'Caroline Boseley'} />
+        <meta
+          name="twitter:description"
+          content={data.prismicHome.data.text.text}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+
       <Row>
         <Col col={12} sm={8} md={6} ld={4}>
           <ImageWrapper>

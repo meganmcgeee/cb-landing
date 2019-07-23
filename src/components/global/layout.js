@@ -11,6 +11,8 @@ import { Normalize } from 'styled-normalize';
 import GlobalStyles from './globalStyles';
 import Helmet from 'react-helmet';
 import Media from 'react-media';
+import { Location } from '@reach/router';
+import SentenceCase from 'sentence-case';
 
 import Header from './header';
 
@@ -81,6 +83,13 @@ const Layout = ({ children }) => (
             }
           }
         }
+        prismicHome {
+          data {
+            text {
+              text
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -91,13 +100,54 @@ const Layout = ({ children }) => (
           return (
             <GridThemeProvider gridTheme={currentTheme}>
               <Container fluid>
-                <Helmet
-                  title={data.site.siteMetadata.title}
-                  // meta={[
-                  //   { name: 'description', content: 'Sample' },
-                  //   { name: 'keywords', content: 'sample, something' },
-                  // ]}
-                ></Helmet>
+                <Location>
+                  {({ location }) => (
+                    <Helmet>
+                      <title>
+                        {data.site.siteMetadata.title +
+                          ' – ' +
+                          SentenceCase(location.pathname.replace('/', ''))}
+                      </title>
+                      <meta
+                        name="title"
+                        content={
+                          data.site.siteMetadata.title +
+                          ' – ' +
+                          SentenceCase(location.pathname.replace('/', ''))
+                        }
+                      />
+                      <meta
+                        name="description"
+                        content={data.prismicHome.data.text.text}
+                      />
+                      <meta
+                        property="og:url"
+                        content={
+                          'https://www.carolineboseley.com' + location.pathname
+                        }
+                      />
+                      <meta
+                        property="og:description"
+                        content={data.prismicHome.data.text.text}
+                      />
+                      <meta property="og:locale" content="en" />
+                      <meta
+                        name="twitter:title"
+                        content={
+                          data.site.siteMetadata.title +
+                          ' – ' +
+                          SentenceCase(location.pathname.replace('/', ''))
+                        }
+                      />
+                      <meta
+                        name="twitter:description"
+                        content={data.prismicHome.data.text.text}
+                      />
+                      <meta name="twitter:card" content="summary_large_image" />
+                    </Helmet>
+                  )}
+                </Location>
+
                 <link
                   rel="stylesheet"
                   href="https://use.typekit.net/epj1ibd.css"
