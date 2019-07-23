@@ -290,3 +290,21 @@
   opacity: 1;
   transition-delay: 0.17s;
 }
+
+/*--------------------------------------------------------------
+  ## Media Queries
+  --------------------------------------------------------------*/
+
+@media (max-width: 576px) {
+
+  .carousel .control-prev.control-arrow,
+  .carousel .control-next.control-arrow {
+    display: none;
+  }
+
+
+  .carousel .slide img {
+    max-height: 70% !important;
+    max-width: 90% !important;
+  }
+}

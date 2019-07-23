@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import TextBox from '../components/text/textbox';
 
 const FlexContainer = styled.div`
-  min-height: calc(100vh - 156px);
+  min-height: calc(100vh - 170px);
   width: 100%;
 
   display: flex;

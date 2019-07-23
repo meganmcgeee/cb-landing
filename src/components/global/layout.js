@@ -98,6 +98,10 @@ const Layout = ({ children }) => (
                   //   { name: 'keywords', content: 'sample, something' },
                   // ]}
                 ></Helmet>
+                <link
+                  rel="stylesheet"
+                  href="https://use.typekit.net/epj1ibd.css"
+                />
                 <BaseCSS />
                 <Normalize />
                 <GlobalStyles />

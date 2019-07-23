@@ -19,16 +19,14 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  font-family: 'AktivGrotesk', -apple-system, system-ui, "Segoe UI", Arial, sans-serif;
+  font-family: akzidenz-grotesk-pro, -apple-system, system-ui, sans-serif;
+  font-weight: 300;
+  font-style: normal;
 
-
-
-
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.6px;
 
-  font-weight: normal;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;

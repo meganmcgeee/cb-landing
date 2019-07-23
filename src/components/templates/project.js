@@ -25,6 +25,12 @@ const BodyText = styled.div`
 `;
 
 const InformationText = styled.div`
+  font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+
   margin: 2em 0;
 
   & h1 {
@@ -44,6 +50,12 @@ const GalleryTrigger = styled.div`
   &:hover {
     cursor: pointer;
     box-shadow: 20px 20px 0px 0px rgba(106, 130, 147, 1);
+  }
+
+  @media (max-width: 767px) {
+    &:hover {
+      box-shadow: none;
+    }
   }
 `;
 
@@ -96,6 +108,14 @@ const CloseModal = styled.div`
   line-height: 0;
 `;
 
+const Title = styled.div`
+  & h1 {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
+  }
+`;
+
 class Project extends React.Component {
   constructor() {
     super();
@@ -134,25 +154,42 @@ class Project extends React.Component {
       )
     );
 
+    const projectInformation = this.props.data.prismicProjects.data.project_information.map(
+      (text, index) => <p key={index}>{text.project_text}</p>
+    );
+
     return (
       <Layout>
         <Row>
           <Col col={12} sm={4}>
-            <GalleryTrigger onClick={this.openModal}>
-              <Img
-                fluid={
-                  this.props.data.prismicProjects.data.gallery[0].image
-                    .localFile.childImageSharp.fluid
-                }
-              />
-            </GalleryTrigger>
+            <Row justifyContent="center">
+              <Col col={8} sm={12}>
+                <GalleryTrigger onClick={this.openModal}>
+                  <Img
+                    fluid={
+                      this.props.data.prismicProjects.data.gallery[0].image
+                        .localFile.childImageSharp.fluid
+                    }
+                  />
+                </GalleryTrigger>
+              </Col>
+            </Row>
+            <Row>
+              <Col col={12}>
+                <InformationText>
+                  <Title
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.data.prismicProjects.data.title.html,
+                    }}
+                  />
 
-            <InformationText>
-              <TextBox text={this.props.data.prismicProjects.data.title} />
-            </InformationText>
+                  {projectInformation}
+                </InformationText>
+              </Col>
+            </Row>
           </Col>
 
-          <Col col={12} sm={8} lg={7} xl={6}>
+          <Col col={12} sm={8} lg={8} xl={6}>
             <TextBox
               text={this.props.data.prismicProjects.data.text}
               padding={'0 0 0 20px'}
@@ -174,6 +211,7 @@ class Project extends React.Component {
             showIndicators={false}
             infiniteLoop={true}
             css={{ height: '100%' }}
+            useKeyboardArrows={true}
           >
             {gallery}
           </Carousel>
@@ -192,6 +230,9 @@ export const query = graphql`
         }
         text {
           html
+        }
+        project_information {
+          project_text
         }
         gallery {
           image {

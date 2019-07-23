@@ -20,11 +20,15 @@ const HeaderComponent = styled.header`
 `;
 
 const Logo = styled.h1`
-  font-size: 30px;
+  font-size: 40px;
   text-transform: uppercase;
 
   font-family: 'History 01';
   // font-weight: 600;
+
+  @media (max-width: 850px) {
+    font-size: 30px;
+  }
 
   @media (max-width: 576px) {
     font-size: 20px;
