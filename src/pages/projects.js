@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql, Link } from 'gatsby';
+import chooseRandomColor from '../components/utils/chooseRandomColor';
 
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
@@ -35,26 +36,33 @@ const Excerpt = styled.span`
   }
 `;
 
-// const TopPadding = {
-//   marginTop: '40px',
-// };
+const SingleListLink = styled.li`
+  & a:hover {
+    color: ${props => props.color};
+  }
+`;
 
 const Projects = ({ data }) => {
+  let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+
   const allProjects = data.allPrismicProjects.edges.map((project, index) => {
     return (
-      <li key={project.node.prismicId}>
+      <SingleListLink
+        key={project.node.prismicId}
+        color={chooseRandomColor(allColors)}
+      >
         <Link to={'/projects/' + project.node.uid}>
           {project.node.data.title.text}
         </Link>
         <Excerpt>{project.node.data.text_excerpt}</Excerpt>
-      </li>
+      </SingleListLink>
     );
   });
 
   return (
     <Layout>
       <Row>
-        <Col col={12} sm={12} xl={8}>
+        <Col col={12} sm={12}>
           <Links>{allProjects}</Links>
         </Col>
       </Row>

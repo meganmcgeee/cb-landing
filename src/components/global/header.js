@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import chooseRandomColor from '../utils/chooseRandomColor';
 
 const HeaderComponent = styled.header`
   display: flex;
@@ -24,7 +25,14 @@ const Logo = styled.h1`
   text-transform: uppercase;
 
   font-family: 'History 01';
-  // font-weight: 600;
+
+  &:hover > a {
+    color: ${props => props.color};
+  }
+
+  & a::after {
+    display: none;
+  }
 
   @media (max-width: 850px) {
     font-size: 30px;
@@ -49,6 +57,14 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
+
+      & a:hover ::after {
+        border-color: ${props => props.color};
+      }
+
+      & a.active-link ::after {
+        border-color: ${props => props.color};
+      }
     }
 
     & li:last-of-type {
@@ -103,12 +119,17 @@ class Header extends React.Component {
   };
 
   render() {
+    let colors = ['#8a432e', '#B1B2B5'];
+    let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
     return (
       <HeaderComponent>
-        <Logo>
+        <Logo color={chooseRandomColor(colors)}>
           <Link to={'/'}>Caroline Boseley</Link>
         </Logo>
-        <Navigation open={this.state.showMenu}>
+        <Navigation
+          open={this.state.showMenu}
+          color={chooseRandomColor(allColors)}
+        >
           <ul>
             {this.props.menuLinks.map(link => {
               return (

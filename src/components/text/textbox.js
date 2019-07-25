@@ -1,11 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import chooseRandomColor from '../utils/chooseRandomColor';
 
 const Text = styled.div`
   padding: ${props => (props.padding ? props.padding : 'initial')};
 
   @media (max-width: 576px) {
     padding: ${props => (props.mobilePadding ? props.mobilePadding : '0')};
+  }
+
+  & a:hover {
+    color: ${props => props.color};
+  }
+
+  & a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: ${props =>
+      props.underlineLink === true && `1px solid ${props.color}`};
   }
 
   & p {
@@ -21,9 +34,12 @@ const Text = styled.div`
   }
 `;
 
-const TextBox = ({ text, padding, margin, mobilePadding }) => {
+const TextBox = ({ text, padding, margin, mobilePadding, underlineLink }) => {
+  let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
   return (
     <Text
+      color={chooseRandomColor(allColors)}
+      underlineLink={underlineLink}
       padding={padding}
       margin={margin}
       mobilePadding={mobilePadding}

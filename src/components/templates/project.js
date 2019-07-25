@@ -24,17 +24,25 @@ const BodyText = styled.div`
   }
 `;
 
+const Title = styled.div`
+  & h1 {
+    font-size: 15px;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
+  }
+`;
+
 const InformationText = styled.div`
   font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
     sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.5;
   letter-spacing: 0.6px;
 
   margin: 2em 0;
 
   & h1 {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   & p {
@@ -106,14 +114,6 @@ const CloseModal = styled.div`
   cursor: pointer;
   font-size: 40px;
   line-height: 0;
-`;
-
-const Title = styled.div`
-  & h1 {
-    font-size: 15px;
-    line-height: 1.5;
-    letter-spacing: 0.6px;
-  }
 `;
 
 class Project extends React.Component {
@@ -193,6 +193,7 @@ class Project extends React.Component {
             <TextBox
               text={this.props.data.prismicProjects.data.text}
               padding={'0 0 0 20px'}
+              underlineLink={true}
             />
           </Col>
         </Row>

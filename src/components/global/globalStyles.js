@@ -82,18 +82,18 @@ a:focus {
   outline: 0;
 
 
-    &::after{
-    content: "";
-    border-bottom: 1px solid #404040;
-    display: block;
-    width: 100%;
-  }
+  //   &::after{
+    // content: "";
+    // border-bottom: 1px solid inherit;
+    // display: block;
+    // width: 100%;
+  // }
 }
 
 .active-link{
   &::after{
     content: "";
-    border-bottom: 1px solid #404040;
+    border-bottom: 1px solid inherit;
     display: block;
     width: 100%;
   }
