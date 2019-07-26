@@ -100,6 +100,7 @@ const Layout = ({ children }) => (
         <GlobalStyles />
         <Media query="(max-width: 767px)">
           {matches => {
+            console.log(matches);
             currentTheme = matches ? mobileGridTheme : gridTheme;
 
             return (
