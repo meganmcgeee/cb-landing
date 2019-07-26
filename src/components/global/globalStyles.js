@@ -23,7 +23,7 @@ body {
   font-weight: 300;
   font-style: normal;
 
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.6px;
 
@@ -80,14 +80,6 @@ a:hover,
 a:active,
 a:focus {
   outline: 0;
-
-
-  //   &::after{
-    // content: "";
-    // border-bottom: 1px solid inherit;
-    // display: block;
-    // width: 100%;
-  // }
 }
 
 .active-link{

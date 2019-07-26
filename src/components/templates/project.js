@@ -7,6 +7,7 @@ import {
   enableBodyScroll,
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
+import chooseRandomColor from '../utils/chooseRandomColor';
 
 import '../styles/carousel.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -35,14 +36,14 @@ const Title = styled.div`
 const InformationText = styled.div`
   font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
     sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   letter-spacing: 0.6px;
 
   margin: 2em 0;
 
   & h1 {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   & p {
@@ -57,7 +58,7 @@ const InformationText = styled.div`
 const GalleryTrigger = styled.div`
   &:hover {
     cursor: pointer;
-    box-shadow: 20px 20px 0px 0px rgba(106, 130, 147, 1);
+    box-shadow: 20px 20px 0px 0px ${props => props.color};
   }
 
   @media (max-width: 767px) {
@@ -143,6 +144,8 @@ class Project extends React.Component {
   }
 
   render(props) {
+    let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+
     const gallery = this.props.data.prismicProjects.data.gallery.map(
       (image, index) => (
         <Img
@@ -164,7 +167,10 @@ class Project extends React.Component {
           <Col col={12} sm={4}>
             <Row justifyContent="center">
               <Col col={8} sm={12}>
-                <GalleryTrigger onClick={this.openModal}>
+                <GalleryTrigger
+                  onClick={this.openModal}
+                  color={chooseRandomColor(allColors)}
+                >
                   <Img
                     fluid={
                       this.props.data.prismicProjects.data.gallery[0].image

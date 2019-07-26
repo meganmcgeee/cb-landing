@@ -1,8 +1,6 @@
 import React from 'react';
 import Layout from '../components/global/layout';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Helmet from 'react-helmet';
+import { graphql, Link } from 'gatsby';
 import chooseRandomColor from '../components/utils/chooseRandomColor';
 
 import { Row, Col } from 'styled-bootstrap-grid';
@@ -10,83 +8,106 @@ import styled from 'styled-components';
 
 import TextBox from '../components/text/textbox';
 
-const Links = styled.div`
-  a:first-of-type {
-    padding-right: 10px;
+const CustomRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+
+  & > div:nth-child(1n) {
+    padding-top: 25px;
+  }
+
+  & > div:nth-child(2n) {
+    padding-top: 200px;
+  }
+
+  & > div:nth-child(3n) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: 575px) {
+    & > div:nth-child(1n),
+    & > div:nth-child(2n),
+    & > div:nth-child(3n) {
+      padding-top: 0;
+      padding-bottom: 15px;
+    }
   }
 `;
 
-const SingleLink = styled.a`
-  &:hover {
+const SingleListLink = styled.div`
+  & a {
+    width: 100%;
+  }
+
+  & a:hover {
     color: ${props => props.color};
   }
-`;
 
-const ImageWrapper = styled.div`
-  margin-top: 40px;
-
-  @media (max-width: 576px) {
-    margin: ${props => (props.margin ? props.margin : '1em 0')};
+  @media (max-width: 575px) {
+    &:hover img {
+      box-shadow: none;
+    }
   }
 `;
 
-const Index = ({ data }) => {
+const ProjectImage = styled.img`
+  &:hover {
+    cursor: pointer;
+    box-shadow: 20px 20px 0px 0px ${props => props.color};
+  }
+`;
+
+const Projects = ({ data }) => {
   let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
 
-  const socialLinks = data.prismicHome.data.links.map((link, index) => {
-    return (
-      <SingleLink
-        color={chooseRandomColor(allColors)}
-        href={link.link.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        key={index}
-      >
-        {link.link_title}
-      </SingleLink>
-    );
+  const allProjects = data.allPrismicProjects.edges.map((project, index) => {
+    if (
+      project.node.data.gallery[0].image.dimensions.width >
+      project.node.data.gallery[0].image.dimensions.height
+    ) {
+      // landscape image
+      return (
+        <Col col={12} sm={4} key={project.node.prismicId}>
+          <SingleListLink>
+            <Link to={'/projects/' + project.node.uid}>
+              <ProjectImage
+                src={project.node.data.gallery[0].image.url}
+                alt={project.node.data.gallery[0].image.alt}
+                color={chooseRandomColor(allColors)}
+              />
+            </Link>
+          </SingleListLink>
+        </Col>
+      );
+    } else {
+      // portrait image
+      return (
+        <Col col={12} sm={4} key={project.node.prismicId}>
+          <Row justifyContent="center">
+            <Col col={8} sm={10} md={9} lg={8}>
+              <SingleListLink>
+                <Link to={'/projects/' + project.node.uid}>
+                  <ProjectImage
+                    src={project.node.data.gallery[0].image.url}
+                    alt={project.node.data.gallery[0].image.alt}
+                    color={chooseRandomColor(allColors)}
+                  />
+                </Link>
+              </SingleListLink>
+            </Col>
+          </Row>
+        </Col>
+      );
+    }
   });
 
   return (
     <Layout>
-      <Helmet>
-        <title>{'Caroline Boseley'}</title>
-        <meta name="title" content={'Caroline Boseley'} />
-        <meta name="description" content={data.prismicHome.data.text.text} />
-        <meta property="og:url" content={'https://www.carolineboseley.com'} />
-        <meta
-          property="og:description"
-          content={data.prismicHome.data.text.text}
-        />
-        <meta property="og:locale" content="en" />
-        <meta name="twitter:title" content={'Caroline Boseley'} />
-        <meta
-          name="twitter:description"
-          content={data.prismicHome.data.text.text}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Helmet>
-
       <Row>
-        <Col col={12} sm={8} md={6} ld={4}>
-          <ImageWrapper>
-            <Img
-              fluid={
-                data.prismicHome.data.image.localFile.childImageSharp.fluid
-              }
-            />
-          </ImageWrapper>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col col={12} sm={10} md={8} lg={6}>
-          <TextBox text={data.prismicHome.data.text} margin={'40px 0 1em 0'} />
-          <TextBox
-            text={data.prismicHome.data.contact_text}
-            margin={'1em 0 '}
-          />
-          <Links>{socialLinks}</Links>
+        <Col col={12}>
+          <CustomRow>{allProjects}</CustomRow>
         </Col>
       </Row>
     </Layout>
@@ -95,27 +116,22 @@ const Index = ({ data }) => {
 
 export const query = graphql`
   {
-    prismicHome {
-      data {
-        image {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 800, maxHeight: 533, quality: 90) {
-                ...GatsbyImageSharpFluid_withWebp
+    allPrismicProjects {
+      edges {
+        node {
+          uid
+          prismicId
+          data {
+            gallery {
+              image {
+                alt
+                url
+                dimensions {
+                  width
+                  height
+                }
               }
             }
-          }
-        }
-        text {
-          html
-        }
-        contact_text {
-          html
-        }
-        links {
-          link_title
-          link {
-            url
           }
         }
       }
@@ -123,4 +139,4 @@ export const query = graphql`
   }
 `;
 
-export default Index;
+export default Projects;

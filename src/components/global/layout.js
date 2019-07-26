@@ -101,51 +101,50 @@ const Layout = ({ children }) => (
             <GridThemeProvider gridTheme={currentTheme}>
               <Container fluid>
                 <Location>
-                  {({ location }) => (
-                    <Helmet>
-                      <title>
-                        {data.site.siteMetadata.title +
-                          ' – ' +
-                          SentenceCase(location.pathname.replace('/', ''))}
-                      </title>
-                      <meta
-                        name="title"
-                        content={
-                          data.site.siteMetadata.title +
-                          ' – ' +
-                          SentenceCase(location.pathname.replace('/', ''))
-                        }
-                      />
-                      <meta
-                        name="description"
-                        content={data.prismicHome.data.text.text}
-                      />
-                      <meta
-                        property="og:url"
-                        content={
-                          'https://www.carolineboseley.com' + location.pathname
-                        }
-                      />
-                      <meta
-                        property="og:description"
-                        content={data.prismicHome.data.text.text}
-                      />
-                      <meta property="og:locale" content="en" />
-                      <meta
-                        name="twitter:title"
-                        content={
-                          data.site.siteMetadata.title +
-                          ' – ' +
-                          SentenceCase(location.pathname.replace('/', ''))
-                        }
-                      />
-                      <meta
-                        name="twitter:description"
-                        content={data.prismicHome.data.text.text}
-                      />
-                      <meta name="twitter:card" content="summary_large_image" />
-                    </Helmet>
-                  )}
+                  {({ location }) => {
+                    let title;
+
+                    if (location.pathname === '/') {
+                      title = `${data.site.siteMetadata.title} – Projects`;
+                    } else {
+                      title =
+                        data.site.siteMetadata.title +
+                        ' – ' +
+                        SentenceCase(location.pathname.replace('/', ''));
+                    }
+
+                    return (
+                      <Helmet>
+                        <title>{title}</title>
+                        <meta name="title" content={title} />
+                        <meta
+                          name="description"
+                          content={data.prismicHome.data.text.text}
+                        />
+                        <meta
+                          property="og:url"
+                          content={
+                            'https://www.carolineboseley.com' +
+                            location.pathname
+                          }
+                        />
+                        <meta
+                          property="og:description"
+                          content={data.prismicHome.data.text.text}
+                        />
+                        <meta property="og:locale" content="en" />
+                        <meta name="twitter:title" content={title} />
+                        <meta
+                          name="twitter:description"
+                          content={data.prismicHome.data.text.text}
+                        />
+                        <meta
+                          name="twitter:card"
+                          content="summary_large_image"
+                        />
+                      </Helmet>
+                    );
+                  }}
                 </Location>
 
                 <link

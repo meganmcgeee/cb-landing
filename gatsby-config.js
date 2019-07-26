@@ -7,16 +7,12 @@ module.exports = {
     title: 'Caroline Boseley',
     menuLinks: [
       {
-        name: 'home',
+        name: 'projects',
         link: '/',
       },
       {
         name: 'about',
         link: '/about',
-      },
-      {
-        name: 'projects',
-        link: '/projects',
       },
       {
         name: 'contact',

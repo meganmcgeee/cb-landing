@@ -137,7 +137,7 @@ class Header extends React.Component {
                   <Link
                     to={link.link}
                     activeClassName="active-link"
-                    partiallyActive={link.name === 'projects' && true}
+                    // partiallyActive={link.name === 'projects' && true}
                   >
                     {link.name}
                   </Link>
