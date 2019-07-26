@@ -93,83 +93,82 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <Media query="(max-width: 767px)">
-        {matches => {
-          currentTheme = matches ? mobileGridTheme : gridTheme;
+      <React.Fragment>
+        <link rel="stylesheet" href="https://use.typekit.net/epj1ibd.css" />
+        <BaseCSS />
+        <Normalize />
+        <GlobalStyles />
+        <Media query="(max-width: 767px)">
+          {matches => {
+            currentTheme = matches ? mobileGridTheme : gridTheme;
 
-          return (
-            <GridThemeProvider gridTheme={currentTheme}>
-              <Container fluid>
-                <Location>
-                  {({ location }) => {
-                    let title;
+            return (
+              <GridThemeProvider gridTheme={currentTheme}>
+                <Container fluid>
+                  <Location>
+                    {({ location }) => {
+                      let title;
 
-                    if (location.pathname === '/') {
-                      title = `${data.site.siteMetadata.title} – Projects`;
-                    } else {
-                      title =
-                        data.site.siteMetadata.title +
-                        ' – ' +
-                        SentenceCase(location.pathname.replace('/', ''));
-                    }
+                      if (location.pathname === '/') {
+                        title = `${data.site.siteMetadata.title} – Projects`;
+                      } else {
+                        title =
+                          data.site.siteMetadata.title +
+                          ' – ' +
+                          SentenceCase(location.pathname.replace('/', ''));
+                      }
 
-                    return (
-                      <Helmet>
-                        <title>{title}</title>
-                        <meta name="title" content={title} />
-                        <meta
-                          name="description"
-                          content={data.prismicHome.data.text.text}
-                        />
-                        <meta
-                          property="og:url"
-                          content={
-                            'https://www.carolineboseley.com' +
-                            location.pathname
-                          }
-                        />
-                        <meta
-                          property="og:description"
-                          content={data.prismicHome.data.text.text}
-                        />
-                        <meta property="og:locale" content="en" />
-                        <meta name="twitter:title" content={title} />
-                        <meta
-                          name="twitter:description"
-                          content={data.prismicHome.data.text.text}
-                        />
-                        <meta
-                          name="twitter:card"
-                          content="summary_large_image"
-                        />
-                      </Helmet>
-                    );
-                  }}
-                </Location>
+                      return (
+                        <Helmet>
+                          <title>{title}</title>
+                          <meta name="title" content={title} />
+                          <meta
+                            name="description"
+                            content={data.prismicHome.data.text.text}
+                          />
+                          <meta
+                            property="og:url"
+                            content={
+                              'https://www.carolineboseley.com' +
+                              location.pathname
+                            }
+                          />
+                          <meta
+                            property="og:description"
+                            content={data.prismicHome.data.text.text}
+                          />
+                          <meta property="og:locale" content="en" />
+                          <meta name="twitter:title" content={title} />
+                          <meta
+                            name="twitter:description"
+                            content={data.prismicHome.data.text.text}
+                          />
+                          <meta
+                            name="twitter:card"
+                            content="summary_large_image"
+                          />
+                        </Helmet>
+                      );
+                    }}
+                  </Location>
 
-                <link
-                  rel="stylesheet"
-                  href="https://use.typekit.net/epj1ibd.css"
-                />
-                <BaseCSS />
-                <Normalize />
-                <GlobalStyles />
-                <Row>
-                  <Col col={12}>
-                    <Header
-                      menuLinks={data.site.siteMetadata.menuLinks}
-                      siteTitle={data.site.siteMetadata.title}
-                    />
-                  </Col>
-                </Row>
-                <Row css={{ paddingBottom: '30px' }}>
-                  <Col col={12}>{children}</Col>
-                </Row>
-              </Container>
-            </GridThemeProvider>
-          );
-        }}
-      </Media>
+                  <Row>
+                    <Col col={12}>
+                      <Header
+                        menuLinks={data.site.siteMetadata.menuLinks}
+                        siteTitle={data.site.siteMetadata.title}
+                      />
+                    </Col>
+                  </Row>
+                  <Row css={{ paddingBottom: '30px' }}>
+                    <Col col={12}>{children}</Col>
+                  </Row>
+                </Container>
+              </GridThemeProvider>
+            );
+          }}
+        </Media>
+      </React.Fragment>
     )}
   />
 );
