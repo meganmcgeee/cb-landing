@@ -40,10 +40,15 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Row>
+        <Col col={12} sm={2}>
+          <img src={data.prismicAbout.data.image.url} />
+        </Col>
+      </Row>
+      <Row>
         <Col col={12} sm={10} md={8} lg={6}>
           <TextBox
             text={data.prismicHome.data.contact_text}
-            margin={'40px 0 1em 0'}
+            margin={'20px 0 1em 0'}
           />
           <Links>{socialLinks}</Links>
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />
@@ -72,6 +77,9 @@ export const query = graphql`
       data {
         text {
           html
+        }
+        image {
+          url
         }
       }
     }
