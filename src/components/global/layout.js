@@ -100,9 +100,9 @@ const Layout = ({ children }) => (
         <GlobalStyles />
         <Media query="(max-width: 767px)">
           {matches => {
-            console.log(matches);
             currentTheme = matches ? mobileGridTheme : gridTheme;
 
+            console.log(currentTheme);
             return (
               <GridThemeProvider gridTheme={currentTheme}>
                 <Container fluid>
