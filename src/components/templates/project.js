@@ -183,11 +183,13 @@ class Project extends React.Component {
             <Row>
               <Col col={12}>
                 <InformationText>
-                  <Title
-                    dangerouslySetInnerHTML={{
-                      __html: this.props.data.prismicProjects.data.title.html,
-                    }}
-                  />
+                  <em>
+                    <Title
+                      dangerouslySetInnerHTML={{
+                        __html: this.props.data.prismicProjects.data.title.html,
+                      }}
+                    />
+                  </em>
 
                   {projectInformation}
                 </InformationText>
