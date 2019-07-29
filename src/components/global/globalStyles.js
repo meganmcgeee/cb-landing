@@ -27,7 +27,7 @@ body {
   line-height: 1.5;
   letter-spacing: 0.6px;
 
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+  // text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   -webkit-tap-highlight-color: transparent;

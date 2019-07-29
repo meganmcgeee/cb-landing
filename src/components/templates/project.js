@@ -8,6 +8,8 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 import chooseRandomColor from '../utils/chooseRandomColor';
+import Helmet from 'react-helmet';
+import { Location } from '@reach/router';
 
 import '../styles/carousel.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -27,9 +29,19 @@ const BodyText = styled.div`
 
 const Title = styled.div`
   & h1 {
-    font-size: 15px;
+    font-family: 'History 01';
+    text-transform: uppercase;
+
+    font-size: 40px;
     line-height: 1.5;
-    letter-spacing: 0.6px;
+    letter-spacing: 1px;
+
+    padding: 0 20px 20px;
+
+    @media (max-width: 576px) {
+      font-size: 30px;
+      padding: 15px 0 0 0;
+    }
   }
 `;
 
@@ -163,6 +175,44 @@ class Project extends React.Component {
 
     return (
       <Layout>
+        <Location>
+          {({ location }) => {
+            return (
+              <Helmet>
+                <title>{`Caroline Boseley – ${this.props.data.prismicProjects.data.title.text}`}</title>
+                <meta
+                  name="title"
+                  content={`Caroline Boseley – ${this.props.data.prismicProjects.data.title.text}`}
+                />
+                <meta
+                  name="description"
+                  content={this.props.data.prismicProjects.data.title.text}
+                />
+                <meta
+                  property="og:url"
+                  content={
+                    'https://www.carolineboseley.com' + location.pathname
+                  }
+                />
+                <meta
+                  property="og:description"
+                  content={this.props.data.prismicProjects.data.title.text}
+                />
+                <meta property="og:locale" content="en" />
+                <meta
+                  name="twitter:title"
+                  content={`Caroline Boseley – ${this.props.data.prismicProjects.data.title.text}`}
+                />
+                <meta
+                  name="twitter:description"
+                  content={this.props.data.prismicProjects.data.title.text}
+                />
+                <meta name="twitter:card" content="summary_large_image" />
+              </Helmet>
+            );
+          }}
+        </Location>
+
         <Row>
           <Col col={12} sm={4}>
             <Row justifyContent="center">
@@ -182,22 +232,19 @@ class Project extends React.Component {
             </Row>
             <Row>
               <Col col={12}>
-                <InformationText>
-                  <em>
-                    <Title
-                      dangerouslySetInnerHTML={{
-                        __html: this.props.data.prismicProjects.data.title.html,
-                      }}
-                    />
-                  </em>
-
-                  {projectInformation}
-                </InformationText>
+                <InformationText>{projectInformation}</InformationText>
               </Col>
             </Row>
           </Col>
 
           <Col col={12} sm={8} lg={8} xl={6}>
+            {/* <em> */}
+            <Title
+              dangerouslySetInnerHTML={{
+                __html: this.props.data.prismicProjects.data.title.html,
+              }}
+            />
+            {/* </em> */}
             <TextBox
               text={this.props.data.prismicProjects.data.text}
               padding={'0 0 0 20px'}
@@ -236,6 +283,7 @@ export const query = graphql`
       data {
         title {
           html
+          text
         }
         text {
           html

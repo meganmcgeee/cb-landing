@@ -39,10 +39,33 @@ const CustomRow = styled.div`
 const SingleListLink = styled.div`
   & a {
     width: 100%;
+    display: flex;
   }
 
   & a:hover {
     color: ${props => props.color};
+  }
+
+  & a:hover > img {
+    cursor: pointer;
+    box-shadow: 20px 20px 0px 0px ${props => props.color};
+  }
+
+  & a > div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #404040;
+    //${props => props.color}
+    opacity: 0;
+
+    transition: 250ms opacity ease;
+  }
+
+  & a:hover > div {
+    opacity: 0.75;
   }
 
   @media (max-width: 575px) {
@@ -50,13 +73,31 @@ const SingleListLink = styled.div`
       box-shadow: none;
     }
   }
+
+  & h2 {
+    top: 50%;
+    transform: translateY(-50%);
+
+    position: absolute;
+
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+
+    font-family: 'History 01';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+
+    color: #fff;
+  }
 `;
 
 const ProjectImage = styled.img`
-  &:hover {
-    cursor: pointer;
-    box-shadow: 20px 20px 0px 0px ${props => props.color};
-  }
+//   &:hover {
+//     cursor: pointer;
+//     box-shadow: 20px 20px 0px 0px ${props => props.color};
+//   }
 `;
 
 const Projects = ({ data }) => {
@@ -70,13 +111,15 @@ const Projects = ({ data }) => {
       // landscape image
       return (
         <Col col={12} sm={4} key={project.node.prismicId}>
-          <SingleListLink>
+          <SingleListLink color={chooseRandomColor(allColors)}>
             <Link to={'/projects/' + project.node.uid}>
               <ProjectImage
                 src={project.node.data.gallery[0].image.url}
                 alt={project.node.data.gallery[0].image.alt}
-                color={chooseRandomColor(allColors)}
               />
+              <div>
+                <h2>{project.node.data.title.text}</h2>
+              </div>
             </Link>
           </SingleListLink>
         </Col>
@@ -87,13 +130,15 @@ const Projects = ({ data }) => {
         <Col col={12} sm={4} key={project.node.prismicId}>
           <Row justifyContent="center">
             <Col col={8} sm={10} md={9} lg={8}>
-              <SingleListLink>
+              <SingleListLink color={chooseRandomColor(allColors)}>
                 <Link to={'/projects/' + project.node.uid}>
                   <ProjectImage
                     src={project.node.data.gallery[0].image.url}
                     alt={project.node.data.gallery[0].image.alt}
-                    color={chooseRandomColor(allColors)}
                   />
+                  <div>
+                    <h2>{project.node.data.title.text}</h2>
+                  </div>
                 </Link>
               </SingleListLink>
             </Col>
@@ -122,6 +167,9 @@ export const query = graphql`
           uid
           prismicId
           data {
+            title {
+              text
+            }
             gallery {
               image {
                 alt
