@@ -32,15 +32,18 @@ const Title = styled.div`
     font-family: 'History 01';
     text-transform: uppercase;
 
-    font-size: 40px;
+    font-size: 35px;
     line-height: 1.5;
     letter-spacing: 1px;
+
+    margin-top: -14px;
 
     padding: 0 20px 20px;
 
     @media (max-width: 576px) {
       font-size: 30px;
       padding: 15px 0 0 0;
+      margin-top: 0;
     }
   }
 `;
@@ -216,7 +219,7 @@ class Project extends React.Component {
         <Row>
           <Col col={12} sm={4}>
             <Row justifyContent="center">
-              <Col col={8} sm={12}>
+              <Col col={12} sm={12}>
                 <GalleryTrigger
                   onClick={this.openModal}
                   color={chooseRandomColor(allColors)}
