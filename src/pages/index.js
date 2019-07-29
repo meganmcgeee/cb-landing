@@ -39,7 +39,7 @@ const CustomRow = styled.div`
 const SingleListLink = styled.div`
   & a {
     width: 100%;
-    display: flex;
+    // display: flex;
   }
 
   & a:hover {
