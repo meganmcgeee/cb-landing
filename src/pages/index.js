@@ -60,7 +60,7 @@ const ProjectImage = styled.img`
 `;
 
 const Projects = ({ data }) => {
-  let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+  let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 
   const allProjects = data.allPrismicProjects.edges.map((project, index) => {
     if (
