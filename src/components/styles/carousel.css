@@ -20,16 +20,14 @@
 
 .carousel .control-prev.control-arrow {
   left: 0;
-  cursor: w-resize;
-  /* cursor: url(/Icons/slideshow-prev@1x.png) 0 0, pointer; */
-  /* cursor: -webkit-image-set(url(/Icons/slideshow-prev@1x.png) 1x, url(/Icons/slideshow-prev@2x.png) 2x) 0 0, pointer; */
+  cursor: url(/Arrows/arrow-prev@1x.png) 0 0, pointer;
+  cursor: -webkit-image-set(url(/Arrows/arrow-prev@1x.png) 1x, url(/Arrows/arrow-prev@2x.png) 2x) 0 0, pointer;
 }
 
 .carousel .control-next.control-arrow {
   right: 0;
-  cursor: e-resize;
-  /* cursor: url(/Icons/slideshow-next@1x.png) 0 0, pointer; */
-  /* cursor: -webkit-image-set(url(/Icons/slideshow-next@1x.png) 1x, url(/Icons/slideshow-next@2x.png) 2x) 0 0, pointer; */
+  cursor: url(/Arrows/arrow-next@1x.png) 0 0, pointer;
+  cursor: -webkit-image-set(url(/Arrows/arrow-next@1x.png) 1x, url(/Arrows/arrow-next@2x.png) 2x) 0 0, pointer;
 }
 
 .carousel {
