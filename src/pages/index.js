@@ -57,7 +57,6 @@ const SingleListLink = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #404040;
     //${props => props.color}
     opacity: 0;
 
@@ -65,7 +64,7 @@ const SingleListLink = styled.div`
   }
 
   & a:hover > div {
-    opacity: 0.75;
+    opacity: 1;
   }
 
   @media (max-width: 575px) {
@@ -90,6 +89,9 @@ const SingleListLink = styled.div`
     font-size: 30px;
 
     color: #fff;
+    font-weight: 900;
+    -webkit-font-smoothing: auto !important;
+    // text-shadow: 1px 1px 1px rgba(255,255,255, 0.05);
   }
 `;
 

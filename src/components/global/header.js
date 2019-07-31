@@ -57,13 +57,14 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
+      color: ${props => props.color};
 
-      & a:hover ::after {
-        border-color: ${props => props.color};
+      & a.active-link {
+        color: ${props => props.color};
       }
 
-      & a.active-link ::after {
-        border-color: ${props => props.color};
+      & a:hover {
+        color: ${props => props.color};
       }
     }
 

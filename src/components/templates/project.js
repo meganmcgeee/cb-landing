@@ -163,12 +163,14 @@ class Project extends React.Component {
 
     const gallery = this.props.data.prismicProjects.data.gallery.map(
       (image, index) => (
-        <Img
-          fluid={image.image.localFile.childImageSharp.fluid}
-          key={index}
-          style={styledImage}
-          imgStyle={styledInnerImage}
-        />
+        <div key={index}>
+          <Img
+            fluid={image.image.localFile.childImageSharp.fluid}
+            style={styledImage}
+            imgStyle={styledInnerImage}
+          />
+          <p>{image.image.alt}</p>
+        </div>
       )
     );
 
@@ -296,6 +298,7 @@ export const query = graphql`
         }
         gallery {
           image {
+            alt
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1200, quality: 90) {
