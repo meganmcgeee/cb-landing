@@ -61,10 +61,12 @@ const Navigation = styled.nav`
 
       & a.active-link {
         color: ${props => props.color};
+        border-bottom: 1px solid #404040;
       }
 
       & a:hover {
         color: ${props => props.color};
+        border-bottom: 1px solid #404040;
       }
     }
 
