@@ -163,7 +163,7 @@ const Projects = ({ data }) => {
 
 export const query = graphql`
   {
-    allPrismicProjects {
+    allPrismicProjects(sort: { order: DESC, fields: first_publication_date }) {
       edges {
         node {
           uid
