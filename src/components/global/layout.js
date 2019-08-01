@@ -63,13 +63,6 @@ const Layout = ({ children }) => (
             }
           }
         }
-        prismicHome {
-          data {
-            text {
-              text
-            }
-          }
-        }
       }
     `}
     render={data => (
@@ -99,7 +92,7 @@ const Layout = ({ children }) => (
                     <meta name="title" content={title} />
                     <meta
                       name="description"
-                      content={data.prismicHome.data.text.text}
+                      content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta
                       property="og:url"
@@ -109,13 +102,13 @@ const Layout = ({ children }) => (
                     />
                     <meta
                       property="og:description"
-                      content={data.prismicHome.data.text.text}
+                      content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta property="og:locale" content="en" />
                     <meta name="twitter:title" content={title} />
                     <meta
                       name="twitter:description"
-                      content={data.prismicHome.data.text.text}
+                      content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta name="twitter:card" content="summary_large_image" />
                   </Helmet>
