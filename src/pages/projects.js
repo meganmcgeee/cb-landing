@@ -39,6 +39,7 @@ const Excerpt = styled.span`
 const SingleListLink = styled.li`
   & a:hover {
     color: ${props => props.color};
+    border-bottom: none;
   }
 `;
 
