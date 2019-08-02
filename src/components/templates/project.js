@@ -189,7 +189,9 @@ class Project extends React.Component {
             style={styledImage}
             imgStyle={styledInnerImage}
           />
-          <p>{image.image.alt}</p>
+          <p>
+            <em>{image.image.alt}</em>
+          </p>
         </div>
       )
     );
