@@ -57,6 +57,7 @@ a {
 
   position: relative;
   display: inline-block;
+  border-bottom: 1px solid transparent;
 
   &::after{
     content: "";
@@ -64,7 +65,14 @@ a {
     display: block;
     width: 100%;
   }
+
+
+  &:hover{
+    border-bottom: 1px solid #404040;
+  }
 }
+
+
 
 a:visited {
   color: #404040;

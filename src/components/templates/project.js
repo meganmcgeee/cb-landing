@@ -132,6 +132,26 @@ const CloseModal = styled.div`
   line-height: 0;
 `;
 
+const Iframe = styled.div`
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-left: 20px;
+
+  @media (max-width: 576px) {
+    margin-left: 0;
+  }
+
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+`;
+
 class Project extends React.Component {
   constructor() {
     super();
@@ -177,6 +197,8 @@ class Project extends React.Component {
     const projectInformation = this.props.data.prismicProjects.data.project_information.map(
       (text, index) => <p key={index}>{text.project_text}</p>
     );
+
+    console.log(this.props.data.prismicProjects.data.text);
 
     return (
       <Layout>
@@ -255,6 +277,14 @@ class Project extends React.Component {
               padding={'0 0 0 20px'}
               underlineLink={true}
             />
+
+            {this.props.data.prismicProjects.data.video && (
+              <Iframe
+                dangerouslySetInnerHTML={{
+                  __html: this.props.data.prismicProjects.data.video.html,
+                }}
+              />
+            )}
           </Col>
         </Row>
 
@@ -295,6 +325,9 @@ export const query = graphql`
         }
         project_information {
           project_text
+        }
+        video {
+          html
         }
         gallery {
           image {
