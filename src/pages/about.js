@@ -16,7 +16,8 @@ const Links = styled.div`
 
 const SingleLink = styled.a`
   &:hover {
-    color: ${props => props.color};
+    // color: ${props => props.color};
+    color: #404040;
   }
 `;
 
@@ -26,7 +27,7 @@ const About = ({ data }) => {
   const socialLinks = data.prismicHome.data.links.map((link, index) => {
     return (
       <SingleLink
-        color={chooseRandomColor(allColors)}
+        // color={chooseRandomColor(allColors)}
         href={link.link.url}
         target="_blank"
         rel="noopener noreferrer"

@@ -26,8 +26,13 @@ const Logo = styled.h1`
 
   font-family: 'History 01';
 
+  & a {
+    border-bottom: none;
+  }
+
   &:hover > a {
     color: ${props => props.color};
+    border-bottom: none;
   }
 
   & a::after {
@@ -57,15 +62,19 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
-      color: ${props => props.color};
+      // color: ${props => props.color};
+      color: #404040;
+
 
       & a.active-link {
-        color: ${props => props.color};
+        color: #404040;
+        // color: ${props => props.color};
         border-bottom: 1px solid #404040;
       }
 
       & a:hover {
-        color: ${props => props.color};
+        color: #404040;
+        // color: ${props => props.color};
         border-bottom: 1px solid #404040;
       }
     }

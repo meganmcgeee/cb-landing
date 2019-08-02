@@ -10,7 +10,8 @@ const Text = styled.div`
   }
 
   & a:hover {
-    color: ${props => props.color};
+    // color: ${props => props.color};
+    color: #404040;
   }
 
   & a::after {
@@ -18,7 +19,7 @@ const Text = styled.div`
     display: block;
     width: 100%;
     border-bottom: ${props =>
-      props.underlineLink === true && `1px solid ${props.color}`};
+      props.underlineLink === true && `1px solid #404040`};
   }
 
   & p {
@@ -38,7 +39,7 @@ const TextBox = ({ text, padding, margin, mobilePadding, underlineLink }) => {
   let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
   return (
     <Text
-      color={chooseRandomColor(allColors)}
+      // color={chooseRandomColor(allColors)}
       underlineLink={underlineLink}
       padding={padding}
       margin={margin}
