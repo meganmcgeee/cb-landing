@@ -241,7 +241,7 @@ class Project extends React.Component {
         </Location>
 
         <Row>
-          <Col col={12} sm={4}>
+          <Col col={12} sm={3}>
             <Row justifyContent="center">
               <Col col={12} sm={12}>
                 <GalleryTrigger
@@ -264,27 +264,32 @@ class Project extends React.Component {
             </Row>
           </Col>
 
-          <Col col={12} sm={8} lg={8} xl={6}>
-            {/* <em> */}
-            <Title
-              dangerouslySetInnerHTML={{
-                __html: this.props.data.prismicResearch.data.title.html,
-              }}
-            />
-            {/* </em> */}
-            <TextBox
-              text={this.props.data.prismicResearch.data.text}
-              padding={'0 0 0 20px'}
-              underlineLink={true}
-            />
+          <Col col={12} sm={9}>
+            <Row>
+              <Col col={12} md={12} lg={5}>
+                <Title
+                  dangerouslySetInnerHTML={{
+                    __html: this.props.data.prismicResearch.data.title.html,
+                  }}
+                />
+              </Col>
 
-            {this.props.data.prismicResearch.data.video && (
-              <Iframe
-                dangerouslySetInnerHTML={{
-                  __html: this.props.data.prismicResearch.data.video.html,
-                }}
-              />
-            )}
+              <Col col={12} md={12} lg={7}>
+                <TextBox
+                  text={this.props.data.prismicResearch.data.text}
+                  padding={'0 0 0 20px'}
+                  underlineLink={true}
+                />
+
+                {this.props.data.prismicResearch.data.video && (
+                  <Iframe
+                    dangerouslySetInnerHTML={{
+                      __html: this.props.data.prismicResearch.data.video.html,
+                    }}
+                  />
+                )}
+              </Col>
+            </Row>
           </Col>
         </Row>
 
