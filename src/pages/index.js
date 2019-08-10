@@ -40,10 +40,12 @@ const SingleListLink = styled.div`
   & a {
     width: 100%;
     // display: flex;
+    border: none;
   }
 
   & a:hover {
     color: ${props => props.color};
+    border: none;
   }
 
   & a:hover > img {

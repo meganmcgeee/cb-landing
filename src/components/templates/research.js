@@ -189,7 +189,7 @@ class Project extends React.Component {
             style={styledImage}
             imgStyle={styledInnerImage}
           />
-          <p>
+          <p style={{ padding: '0 20px' }}>
             <em>{image.image.alt}</em>
           </p>
         </div>
@@ -199,8 +199,6 @@ class Project extends React.Component {
     const projectInformation = this.props.data.prismicResearch.data.project_information.map(
       (text, index) => <p key={index}>{text.project_text}</p>
     );
-
-    console.log(this.props.data.prismicResearch.data.text);
 
     return (
       <Layout>
@@ -305,6 +303,7 @@ class Project extends React.Component {
             infiniteLoop={true}
             css={{ height: '100%' }}
             useKeyboardArrows={true}
+            swipeable={true}
           >
             {gallery}
           </Carousel>
