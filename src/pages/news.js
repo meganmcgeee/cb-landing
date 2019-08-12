@@ -32,14 +32,14 @@ const Title = styled.div`
     font-family: 'History 01';
     text-transform: uppercase;
 
-    font-size: 35px;
+    font-size: 30px;
     line-height: 1.5;
     letter-spacing: 1px;
 
     margin-top: -14px;
 
     @media (max-width: 576px) {
-      font-size: 30px;
+      font-size: 25px;
       padding: 15px 0 0 0;
       margin-top: 0;
     }
@@ -101,15 +101,14 @@ const Projects = ({ data }) => {
       <Row>
         <Col col={12} sm={12}>
           <Title>
-            <h1>Research</h1>
-          </Title>
-
-          <Links>{allResearch}</Links>
-
-          <Title>
-            <h1>Events</h1>
+            <h1>Upcoming</h1>
           </Title>
           <Links>{allEvents}</Links>
+
+          <Title>
+            <h1>Research</h1>
+          </Title>
+          <Links>{allResearch}</Links>
         </Col>
       </Row>
     </Layout>

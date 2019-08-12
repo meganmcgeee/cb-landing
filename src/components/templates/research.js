@@ -196,10 +196,6 @@ class Project extends React.Component {
       )
     );
 
-    const projectInformation = this.props.data.prismicResearch.data.project_information.map(
-      (text, index) => <p key={index}>{text.project_text}</p>
-    );
-
     return (
       <Layout>
         <Location>
@@ -257,11 +253,6 @@ class Project extends React.Component {
                 </GalleryTrigger>
               </Col>
             </Row>
-            <Row>
-              <Col col={12}>
-                <InformationText>{projectInformation}</InformationText>
-              </Col>
-            </Row>
           </Col>
 
           <Col col={12} sm={9}>
@@ -280,14 +271,6 @@ class Project extends React.Component {
                   padding={'0 0 0 20px'}
                   underlineLink={true}
                 />
-
-                {this.props.data.prismicResearch.data.video && (
-                  <Iframe
-                    dangerouslySetInnerHTML={{
-                      __html: this.props.data.prismicResearch.data.video.html,
-                    }}
-                  />
-                )}
               </Col>
             </Row>
           </Col>
@@ -328,9 +311,6 @@ export const query = graphql`
         }
         text {
           html
-        }
-        project_information {
-          project_text
         }
         gallery {
           image {
