@@ -35,6 +35,13 @@ module.exports = {
         repositoryName: `carolineboseley`,
         accessToken: `${process.env.API_KEY}`,
         linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        schemas: {
+          about: require('./src/schemas/about.json'),
+          event: require('./src/schemas/event.json'),
+          index: require('./src/schemas/home.json'),
+          projects: require('./src/schemas/projects.json'),
+          research: require('./src/schemas/research.json'),
+        },
       },
     },
   ],

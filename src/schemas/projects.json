@@ -1,0 +1,67 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "text_excerpt": {
+      "type": "Text",
+      "config": {
+        "label": "Text Excerpt"
+      }
+    },
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading2, em, hyperlink, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Text"
+      }
+    },
+    "gallery": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Image"
+            }
+          }
+        },
+        "label": "Gallery"
+      }
+    },
+    "project_information": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "project_text": {
+            "type": "Text",
+            "config": {
+              "label": "Project Text"
+            }
+          }
+        },
+        "label": "Project Information"
+      }
+    },
+    "video": {
+      "type": "Embed",
+      "config": {
+        "label": "Video"
+      }
+    }
+  }
+}
