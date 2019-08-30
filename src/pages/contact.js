@@ -8,18 +8,7 @@ import styled from 'styled-components';
 
 import TextBox from '../components/text/textbox';
 
-const FlexContainer = styled.div`
-  min-height: calc(100vh - 170px);
-  width: 100%;
-
-  display: flex;
-  align-items: flex-end;
-
-  @media (max-width: 767px) {
-    // min-height: calc(100vh - 101px);
-    min-height: 100%;
-  }
-`;
+const FlexContainer = styled.div``;
 
 const Links = styled.div`
   a:first-of-type {
