@@ -189,6 +189,7 @@ const Iframe = styled.div`
     border: 0;
   }
 `;
+let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 
 class Project extends React.Component {
   constructor() {
@@ -196,11 +197,19 @@ class Project extends React.Component {
 
     this.state = {
       modalIsOpen: false,
+      hoverColor: '#6a8493',
     };
 
+    this.generateColor = this.generateColor.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
+
+  generateColor = () => {
+    this.setState({
+      hoverColor: chooseRandomColor(allColors),
+    });
+  };
 
   openModal() {
     this.setState({ modalIsOpen: true });
@@ -217,8 +226,6 @@ class Project extends React.Component {
   }
 
   render(props) {
-    let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
-
     const gallery = this.props.data.prismicProjects.data.gallery.map(
       (image, index) => (
         <div key={index}>
@@ -284,7 +291,8 @@ class Project extends React.Component {
               <Col col={12} sm={12}>
                 <GalleryTrigger
                   onClick={this.openModal}
-                  color={chooseRandomColor(allColors)}
+                  onMouseEnter={() => this.generateColor()}
+                  color={this.state.hoverColor}
                 >
                   <Img
                     fluid={
