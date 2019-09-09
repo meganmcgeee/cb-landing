@@ -41,7 +41,7 @@ const About = ({ data }) => {
   return (
     <Layout>
       <Row>
-        <Col col={12} sm={2}>
+        <Col col={12} sm={6} md={5} lg={4} xl={3}>
           <img src={data.prismicAbout.data.image.url} />
         </Col>
       </Row>

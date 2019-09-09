@@ -9,23 +9,29 @@
   filter: alpha(opacity=40);
   position: absolute;
   z-index: 2;
-  top: 0;
+
+  top: 50%;
+  transform: translateY(-50%);
+
   bottom: 0;
   background: none;
   border: 0;
   font-size: 0;
   cursor: pointer;
-  width: 50%;
+  width: calc(50% - 80px);
+
+
+  height: 60vh;
 }
 
 .carousel .control-prev.control-arrow {
-  left: 0;
+  left: 80px;
   cursor: url(/Arrows/arrow-prev@1x.png) 0 0, pointer;
   cursor: -webkit-image-set(url(/Arrows/arrow-prev@1x.png) 1x, url(/Arrows/arrow-prev@2x.png) 2x) 0 0, pointer;
 }
 
 .carousel .control-next.control-arrow {
-  right: 0;
+  right: 80px;
   cursor: url(/Arrows/arrow-next@1x.png) 0 0, pointer;
   cursor: -webkit-image-set(url(/Arrows/arrow-next@1x.png) 1x, url(/Arrows/arrow-next@2x.png) 2x) 0 0, pointer;
 }

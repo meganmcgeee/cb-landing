@@ -11,6 +11,8 @@ import TextBox from '../components/text/textbox';
 const CustomRow = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+
   margin-right: -20px;
   margin-left: -20px;
 
@@ -132,21 +134,17 @@ const Projects = ({ data }) => {
       // portrait image
       return (
         <Col col={12} sm={4} key={project.node.prismicId}>
-          <Row justifyContent="center">
-            <Col col={8} sm={10} md={9} lg={8}>
-              <SingleListLink color={chooseRandomColor(allColors)}>
-                <Link to={'/projects/' + project.node.uid}>
-                  <ProjectImage
-                    src={project.node.data.gallery[0].image.url}
-                    alt={project.node.data.gallery[0].image.alt}
-                  />
-                  <div>
-                    <h2>{project.node.data.title.text}</h2>
-                  </div>
-                </Link>
-              </SingleListLink>
-            </Col>
-          </Row>
+          <SingleListLink color={chooseRandomColor(allColors)}>
+            <Link to={'/projects/' + project.node.uid}>
+              <ProjectImage
+                src={project.node.data.gallery[0].image.url}
+                alt={project.node.data.gallery[0].image.alt}
+              />
+              <div>
+                <h2>{project.node.data.title.text}</h2>
+              </div>
+            </Link>
+          </SingleListLink>
         </Col>
       );
     }

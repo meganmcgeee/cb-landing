@@ -76,6 +76,44 @@ const GalleryTrigger = styled.div`
     box-shadow: 20px 20px 0px 0px ${props => props.color};
   }
 
+
+  .gallery-hover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //${props => props.color}
+    opacity: 0;
+
+    transition: 250ms opacity ease;
+  }
+
+  & h2 {
+    top: 50%;
+    transform: translateY(-50%);
+
+    position: absolute;
+
+    margin: 0;
+    width: 100%;
+    padding: 20px;
+
+    font-family: 'History 01';
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+
+    color: #fff;
+    font-weight: 900;
+    -webkit-font-smoothing: auto !important;
+    // text-shadow: 1px 1px 1px rgba(255,255,255, 0.05);
+  }
+
+  &:hover .gallery-hover {
+    opacity: 1;
+  }
+
   @media (max-width: 767px) {
     &:hover {
       box-shadow: none;
@@ -254,6 +292,10 @@ class Project extends React.Component {
                         .localFile.childImageSharp.fluid
                     }
                   />
+
+                  <div className="gallery-hover">
+                    <h2>Gallery</h2>
+                  </div>
                 </GalleryTrigger>
               </Col>
             </Row>
