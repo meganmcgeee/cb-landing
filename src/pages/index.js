@@ -106,60 +106,84 @@ const ProjectImage = styled.img`
 //   }
 `;
 
-const Projects = ({ data }) => {
-  let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
+let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
+class Projects extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      hoverColor: '#6a8493',
+    };
 
-  const allProjects = data.allPrismicProjects.edges.map((project, index) => {
-    if (
-      project.node.data.gallery[0].image.dimensions.width >
-      project.node.data.gallery[0].image.dimensions.height
-    ) {
-      // landscape image
-      return (
-        <Col col={12} sm={4} key={project.node.prismicId}>
-          <SingleListLink color={chooseRandomColor(allColors)}>
-            <Link to={'/projects/' + project.node.uid}>
-              <ProjectImage
-                src={project.node.data.gallery[0].image.url}
-                alt={project.node.data.gallery[0].image.alt}
-              />
-              <div>
-                <h2>{project.node.data.title.text}</h2>
-              </div>
-            </Link>
-          </SingleListLink>
-        </Col>
-      );
-    } else {
-      // portrait image
-      return (
-        <Col col={12} sm={4} key={project.node.prismicId}>
-          <SingleListLink color={chooseRandomColor(allColors)}>
-            <Link to={'/projects/' + project.node.uid}>
-              <ProjectImage
-                src={project.node.data.gallery[0].image.url}
-                alt={project.node.data.gallery[0].image.alt}
-              />
-              <div>
-                <h2>{project.node.data.title.text}</h2>
-              </div>
-            </Link>
-          </SingleListLink>
-        </Col>
-      );
-    }
-  });
+    this.generateColor = this.generateColor.bind(this);
+  }
 
-  return (
-    <Layout>
-      <Row>
-        <Col col={12}>
-          <CustomRow>{allProjects}</CustomRow>
-        </Col>
-      </Row>
-    </Layout>
-  );
-};
+  generateColor = () => {
+    this.setState({
+      hoverColor: chooseRandomColor(allColors),
+    });
+  };
+
+  render() {
+    const allProjects = this.props.data.allPrismicProjects.edges.map(
+      (project, index) => {
+        if (
+          project.node.data.gallery[0].image.dimensions.width >
+          project.node.data.gallery[0].image.dimensions.height
+        ) {
+          // landscape image
+          return (
+            <Col col={12} sm={4} key={project.node.prismicId}>
+              <SingleListLink
+                onMouseEnter={() => this.generateColor()}
+                color={this.state.hoverColor}
+              >
+                <Link to={'/projects/' + project.node.uid}>
+                  <ProjectImage
+                    src={project.node.data.gallery[0].image.url}
+                    alt={project.node.data.gallery[0].image.alt}
+                  />
+                  <div>
+                    <h2>{project.node.data.title.text}</h2>
+                  </div>
+                </Link>
+              </SingleListLink>
+            </Col>
+          );
+        } else {
+          // portrait image
+          return (
+            <Col col={12} sm={4} key={project.node.prismicId}>
+              <SingleListLink
+                onMouseEnter={() => this.generateColor()}
+                color={this.state.hoverColor}
+              >
+                <Link to={'/projects/' + project.node.uid}>
+                  <ProjectImage
+                    src={project.node.data.gallery[0].image.url}
+                    alt={project.node.data.gallery[0].image.alt}
+                  />
+                  <div>
+                    <h2>{project.node.data.title.text}</h2>
+                  </div>
+                </Link>
+              </SingleListLink>
+            </Col>
+          );
+        }
+      }
+    );
+
+    return (
+      <Layout>
+        <Row>
+          <Col col={12}>
+            <CustomRow>{allProjects}</CustomRow>
+          </Col>
+        </Row>
+      </Layout>
+    );
+  }
+}
 
 export const query = graphql`
   {

@@ -100,7 +100,7 @@ const Navigation = styled.nav`
 const OpenNavigation = styled.button`
   position: absolute;
   top: 19px;
-  right: 14px;
+  right: 25px;
 
   border: 0;
   padding: 10px 0 10px 10px;

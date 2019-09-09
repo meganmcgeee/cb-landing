@@ -20,7 +20,7 @@ const ContainerWrapper = styled.div`
   padding: 0 30px;
 
   @media (max-width: 767px) {
-    padding: 0;
+    padding: 0 10px;
   }
 `;
 
@@ -33,13 +33,13 @@ const gridTheme = {
     xs: 575,
   },
   row: {
-    padding: 15,
+    padding: 25,
   },
   col: {
-    padding: 15,
+    padding: 25,
   },
   container: {
-    padding: 30,
+    padding: 15,
     maxWidth: {
       xl: 1140,
       lg: 960,
