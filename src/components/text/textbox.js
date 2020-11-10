@@ -10,7 +10,6 @@ const Text = styled.div`
   }
 
   & a:hover {
-    // color: ${props => props.color};
     color: #404040;
   }
 
@@ -36,10 +35,9 @@ const Text = styled.div`
 `;
 
 const TextBox = ({ text, padding, margin, mobilePadding, underlineLink }) => {
-  let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+  // let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
   return (
     <Text
-      // color={chooseRandomColor(allColors)}
       underlineLink={underlineLink}
       padding={padding}
       margin={margin}

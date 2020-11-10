@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
-import chooseRandomColor from '../components/utils/chooseRandomColor';
 
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
@@ -18,18 +17,14 @@ const Links = styled.div`
 
 const SingleLink = styled.a`
   &:hover {
-    // color: ${props => props.color};
     color: #404040;
   }
 `;
 
 const Contact = ({ data }) => {
-  let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
-
   const socialLinks = data.prismicHome.data.links.map((link, index) => {
     return (
       <SingleLink
-        // color={chooseRandomColor(allColors)}
         href={link.link.url}
         target="_blank"
         rel="noopener noreferrer"

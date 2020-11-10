@@ -6,8 +6,6 @@ import chooseRandomColor from '../components/utils/chooseRandomColor';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-import TextBox from '../components/text/textbox';
-
 const CustomRow = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -99,12 +97,7 @@ const SingleListLink = styled.div`
   }
 `;
 
-const ProjectImage = styled.img`
-//   &:hover {
-//     cursor: pointer;
-//     box-shadow: 20px 20px 0px 0px ${props => props.color};
-//   }
-`;
+const ProjectImage = styled.img``;
 
 let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 class Projects extends React.Component {

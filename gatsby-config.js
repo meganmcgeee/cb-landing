@@ -27,8 +27,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
@@ -38,7 +36,7 @@ module.exports = {
         schemas: {
           about: require('./src/schemas/about.json'),
           event: require('./src/schemas/event.json'),
-          index: require('./src/schemas/home.json'),
+          home: require('./src/schemas/home.json'),
           projects: require('./src/schemas/projects.json'),
           research: require('./src/schemas/research.json'),
         },

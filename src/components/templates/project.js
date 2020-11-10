@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'styled-bootstrap-grid';
-import Img from 'gatsby-image';
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -142,23 +141,26 @@ const customStyles = {
   },
 };
 
-const styledImage = {
-  maxHeight: 'calc(100vh - 100px)',
-  maxWidth: '100%',
-  margin: '0 auto',
-};
+const StyledImage = styled.div`
+  max-height: calc(100vh - 100px);
+  max-width: 100%;
+  margin: 0 auto;
 
-const styledInnerImage = {
-  maxHeight: 'calc(100vh - 260px)',
-  objectFit: 'contain',
-  objectPosition: 'center',
-  margin: '0 auto',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  maxWidth: 'calc(100% - 208px)',
-  transition: 'none',
-};
+  & img {
+    max-height: calc(100vh - 260px);
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+
+    max-width: calc(100% - 208px);
+    transition: none;
+  }
+`;
 
 const CloseModal = styled.div`
   position: absolute;
@@ -189,6 +191,7 @@ const Iframe = styled.div`
     border: 0;
   }
 `;
+
 let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 
 class Project extends React.Component {
@@ -228,15 +231,13 @@ class Project extends React.Component {
   render(props) {
     const gallery = this.props.data.prismicProjects.data.gallery.map(
       (image, index) => (
-        <div key={index}>
-          <Img
-            fluid={image.image.localFile.childImageSharp.fluid}
-            style={styledImage}
-            imgStyle={styledInnerImage}
-          />
-          <p style={{ padding: '0 20px' }}>
-            <em>{image.image.alt}</em>
-          </p>
+        <div key={`project_gallery_images_${index}`}>
+          <StyledImage>
+            <img src={image.image.url} />
+            <p style={{ padding: '0 20px' }}>
+              <em>{image.image.alt}</em>
+            </p>
+          </StyledImage>
         </div>
       )
     );
@@ -294,10 +295,9 @@ class Project extends React.Component {
                   onMouseEnter={() => this.generateColor()}
                   color={this.state.hoverColor}
                 >
-                  <Img
-                    fluid={
-                      this.props.data.prismicProjects.data.gallery[0].image
-                        .localFile.childImageSharp.fluid
+                  <img
+                    src={
+                      this.props.data.prismicProjects.data.gallery[0].image.url
                     }
                   />
 
@@ -315,13 +315,12 @@ class Project extends React.Component {
           </Col>
 
           <Col col={12} sm={8} lg={8} xl={6}>
-            {/* <em> */}
             <Title
               dangerouslySetInnerHTML={{
                 __html: this.props.data.prismicProjects.data.title.html,
               }}
             />
-            {/* </em> */}
+
             <TextBox
               text={this.props.data.prismicProjects.data.text}
               padding={'0 0 0 20px'}
@@ -383,13 +382,7 @@ export const query = graphql`
         gallery {
           image {
             alt
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1200, quality: 90) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
+            url
           }
         }
       }

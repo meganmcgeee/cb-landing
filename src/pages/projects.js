@@ -6,8 +6,6 @@ import chooseRandomColor from '../components/utils/chooseRandomColor';
 import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
-import TextBox from '../components/text/textbox';
-
 const Links = styled.ul`
   list-style: none;
 

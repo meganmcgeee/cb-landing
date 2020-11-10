@@ -6,12 +6,10 @@ import styled from 'styled-components';
 
 const LandscapeProject = styled.div`
   width: 40%;
-  // margin: 0 8px 8px 0;
 `;
 
 const PortraitProject = styled.div`
   width: 20%;
-  // margin: 0 8px 8px 0;
 `;
 
 const SingleProject = ({ data }) => {
