@@ -50,6 +50,7 @@ const SingleListLink = styled.div`
 
   & a:hover > img {
     cursor: pointer;
+    transition: 0.4s ease;
     box-shadow: 20px 20px 0px 0px ${props => props.color};
   }
 
