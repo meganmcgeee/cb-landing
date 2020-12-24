@@ -49,7 +49,7 @@ const Header = () => {
           font-family: 'History 01';
         }
         header nav {
-          margin-right: 8rem;
+
         }
         header nav a {
           font-family: akzidenz-grotesk-pro, -apple-system, system-ui, sans-serif;
