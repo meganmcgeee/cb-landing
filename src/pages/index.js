@@ -1,13 +1,12 @@
 import React from 'react'
-import {Helmet} from 'react-helmet'
-import Slider from '../components/homepage/slider'
+import Gallery from '../components/homepage/gallery'
+
 export default function Index() {
   return (
     <>
-    <Helmet>
-      
-    </Helmet>
-    <Slider/>
+    <div className="container">
+      <Gallery/>
+    </div>
     <style jsx>{`
     body {
       width: 100vw;
@@ -15,6 +14,10 @@ export default function Index() {
       overflow: hidden;
       display: grid;
       place-items: center;
+    }
+    .container {
+      width: 80vw;
+      height: 800px;
     }
     `}</style>
     </>
