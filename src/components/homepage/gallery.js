@@ -42,12 +42,12 @@ export default class SimpleSlider extends Component {
             box-sizing: border-box;
           }
           .container {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
           }
             .container img {
-                width: 100vw;
-                height: 100vw;
+                width: 100%;
+                height: 100%;
             }
         `}</style>
       </div>

@@ -27,7 +27,7 @@ const Header = () => {
         }
         header {
           width: 100vw;
-          height: 100px;
+          height: 120px;
           background: #6a8493;
           position: absolute;
           top: 0;
@@ -35,7 +35,7 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          padding: 0 3rem 3rem 3rem;
+          padding: 1.5rem 3rem 0 3rem;
           color: #fff;
           z-index: 1;
         }
@@ -67,12 +67,18 @@ export default function Index() {
   return (
     <>
       <Header />
+      <div className="container">
       <Gallery />
+  </div>
       <style jsx>{`
     body {
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+    }
+    .container {
+      width: 100%;
+      height: 100%;
     }
     `}</style>
     </>
