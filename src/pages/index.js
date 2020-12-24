@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 
 const Header = () => {
@@ -37,6 +37,7 @@ const Header = () => {
           align-items: baseline;
           padding: 0 3rem 3rem 3rem;
           color: #fff;
+          z-index: 1;
         }
         header a {
           text-decoration: none;
@@ -65,21 +66,13 @@ const Header = () => {
 export default function Index() {
   return (
     <>
-    <Header/>
-    <div className="container">
-      <Gallery/>
-    </div>
-    <style jsx>{`
+      <Header />
+      <Gallery />
+      <style jsx>{`
     body {
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      display: grid;
-      place-items: center;
-    }
-    .container {
-      width: 80vw;
-      height: 800px;
     }
     `}</style>
     </>
