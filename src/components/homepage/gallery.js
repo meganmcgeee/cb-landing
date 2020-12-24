@@ -20,24 +20,24 @@ export default class SimpleSlider extends Component {
       <div className="container">
         <Slider {...settings}>
           <div>
-            <img src="/images/food.png" alt="Food Slideshow Image 1" />
+            <img src="" alt="Food Slideshow 1" />
           </div>
           <div>
-            <img src="/images/food.png" alt="Food Slideshow Image 2" />
+            <img src="" alt="Food Slideshow 2" />
           </div>
           <div>
-            <img src="/images/food.png" alt="Food Slideshow Image 3" />
+            <img src="" alt="Food Slideshow 3" />
           </div>
           <div>
-            <img src="/images/food.png" alt="Food Slideshow Image 4" />
+            <img src="" alt="Food Slideshow 4" />
           </div>
           <div>
-            <img src="/images/food.png" alt="Food Slideshow Image 5" />
+            <img src="" alt="Food Slideshow 5" />
           </div>
         </Slider>
         <style jsx>{`
             .container img {
-                width: 80vw;
+                width: 100vw;
                 height: 800px;
             }
         `}</style>
