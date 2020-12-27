@@ -1,33 +1,62 @@
 import React, { Component } from "react"
+import {Link, graphql, useStaticQuery} from 'gatsby'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const images = [
-  {
-    src: "1",
-    alt: "Slider Image 1"
-  },
-  {
-    src: "2",
-    alt: "Slider Image 2"
-  },
-  {
-    src: "3",
-    alt: "Slider Image 3"
-  },
-  {
-    src: "4",
-    alt: "Slider Image 4"
-  },
-  {
-    src: "5",
-    alt: "Slider Image 5"
-  },
-]
-
 export default class SimpleSlider extends Component {
   render() {
+    const Slides = () => {
+      const data = useStaticQuery(graphql`
+      query Slider {
+        allPrismicSlider {
+          nodes {
+            data {
+              slider {
+                alternative_text
+                image {
+                  url
+                }
+                link {
+                  slug
+                }
+              }
+            }
+          }
+        }
+      }      
+      `)
+
+      const slides = [
+        {
+          uid: data.allPrismicSlider.nodes[0].data.slider[0].link.slug,
+          url: data.allPrismicSlider.nodes[0].data.slider[0].link.slug,
+          src: data.allPrismicSlider.nodes[0].data.slider[0].image.url,
+          alt: data.allPrismicSlider.nodes[0].data.slider[0].alternative_text,
+        },
+        {
+          uid: data.allPrismicSlider.nodes[0].data.slider[1].link.slug,
+          url: data.allPrismicSlider.nodes[0].data.slider[1].link.slug,
+          src: data.allPrismicSlider.nodes[0].data.slider[1].image.url,
+          alt: data.allPrismicSlider.nodes[0].data.slider[1].alternative_text,
+        },
+        {
+          uid: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
+          url: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
+          src: data.allPrismicSlider.nodes[0].data.slider[2].image.url,
+          alt: data.allPrismicSlider.nodes[0].data.slider[2].alternative_text,
+        },
+        {
+          uid: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
+          url: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
+          src: data.allPrismicSlider.nodes[0].data.slider[3].image.url,
+          alt: data.allPrismicSlider.nodes[0].data.slider[3].alternative_text,
+        }
+      ]
+      return (
+        slides.map(slide => <img src={slide.src} alt={slide.alt}/>)
+      )
+    }
     const settings = {
       arrows: false,
       dots: false,
@@ -42,7 +71,7 @@ export default class SimpleSlider extends Component {
     return (
       <div className="container">
         <Slider {...settings}>
-            {images.map(image => <div><img src={image.src} alt={image.alt}/></div>)}
+        {slides.map(slide => <img src={slide.src} alt={slide.alt}/>)}
         </Slider>
         <style jsx>{`
           * {
@@ -66,3 +95,4 @@ export default class SimpleSlider extends Component {
     )
   }
 }
+

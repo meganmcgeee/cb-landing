@@ -53,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-
+  
   const templateResearch = path.resolve('src/components/templates/research.js');
   pages.data.allPrismicResearch.edges.forEach(edge => {
     createPage({
