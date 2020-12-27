@@ -3,6 +3,29 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const images = [
+  {
+    src: "1",
+    alt: "Slider Image 1"
+  },
+  {
+    src: "2",
+    alt: "Slider Image 2"
+  },
+  {
+    src: "3",
+    alt: "Slider Image 3"
+  },
+  {
+    src: "4",
+    alt: "Slider Image 4"
+  },
+  {
+    src: "5",
+    alt: "Slider Image 5"
+  },
+]
+
 export default class SimpleSlider extends Component {
   render() {
     const settings = {
@@ -19,21 +42,7 @@ export default class SimpleSlider extends Component {
     return (
       <div className="container">
         <Slider {...settings}>
-          <div>
-            <img src="https://images.unsplash.com/photo-1510746001195-0db09655b6db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80" alt="Food Slideshow 1" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1510746001195-0db09655b6db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80" alt="Food Slideshow 2" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1510746001195-0db09655b6db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80" alt="Food Slideshow 3" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1510746001195-0db09655b6db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80" alt="Food Slideshow 4" />
-          </div>
-          <div>
-            <img src="https://images.unsplash.com/photo-1510746001195-0db09655b6db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2978&q=80" alt="Food Slideshow 5" />
-          </div>
+            {images.map(image => <div><img src={image.src} alt={image.alt}/></div>)}
         </Slider>
         <style jsx>{`
           * {
