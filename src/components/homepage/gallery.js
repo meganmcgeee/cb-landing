@@ -7,7 +7,7 @@ export default class SimpleSlider extends Component {
   render() {
     const settings = {
       arrows: false,
-      dots: true,
+      dots: false,
       infinite: true,
       autoplay: true,
       speed: 500,
@@ -44,10 +44,13 @@ export default class SimpleSlider extends Component {
           .container {
             width: 100%;
             height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
           }
             .container img {
-                width: 100%;
-                height: 100%;
+                width: 100vw;
+                height: 100vh;
             }
         `}</style>
       </div>

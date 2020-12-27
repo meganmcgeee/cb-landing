@@ -7,10 +7,12 @@ const Header = () => {
     <header>
       <Link to="/"><h1>Caroline Bosely</h1></Link>
       <nav>
-        <Link to="/projects">projects</Link>
-        <Link to="/about">about</Link>
-        <Link to="/contact">contact</Link>
-        <Link to="/news">news</Link>
+        <ul>
+        <li><Link to="/projects">projects</Link></li>
+        <li><Link to="/about">about</Link></li>
+        <li><Link to="/contact">contact</Link></li>
+        <li><Link to="/news">news</Link></li>
+        </ul>
       </nav>
       <style jsx>{`
         @font-face {
@@ -35,28 +37,35 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          padding: 1.5rem 3rem 0 3rem;
+          padding: 1.5rem 1rem 0 2rem;
           color: #fff;
           z-index: 1;
-        }
-        header a {
-          text-decoration: none;
-          color: inherit;
         }
         header h1 {
           text-transform: uppercase;
           font-size: 64px;
           font-family: 'History 01';
         }
-        header nav {
-
+        header a {
+          text-decoration: none;
+          color: inherit;
+        }
+        header nav ul {
+          width: 350px;
+          display: flex;
+          justify-content: space-evenly;
+          list-style: none;
         }
         header nav a {
           font-family: akzidenz-grotesk-pro, -apple-system, system-ui, sans-serif;
           font-weight: 300;
-          line-height: 27px;
-          padding: 0 20px;
-          border-spacing: 10p;
+          line-height: 1.5;
+          font-size: 18px;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+        }
+        header nav ul li:hover {
+          border-bottom: 1px solid #fff;
         }
       `}</style>
     </header>
@@ -68,8 +77,8 @@ export default function Index() {
     <>
       <Header />
       <div className="container">
-      <Gallery />
-  </div>
+        <Gallery />
+      </div>
       <style jsx>{`
     body {
       width: 100vw;
@@ -79,6 +88,9 @@ export default function Index() {
     .container {
       width: 100%;
       height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
     `}</style>
     </>
