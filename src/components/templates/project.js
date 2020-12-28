@@ -26,27 +26,6 @@ const BodyText = styled.div`
   }
 `;
 
-const Title = styled.div`
-  & h1 {
-    font-family: 'History 01';
-    text-transform: uppercase;
-
-    font-size: 35px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-
-    margin-top: -14px;
-
-    padding: 0 20px 20px;
-
-    @media (max-width: 576px) {
-      font-size: 30px;
-      padding: 15px 0 0 0;
-      margin-top: 0;
-    }
-  }
-`;
-
 const InformationText = styled.div`
   font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
     sans-serif;
@@ -286,45 +265,28 @@ class Project extends React.Component {
           }}
         </Location>
 
-        <Row>
-          <Col col={12} sm={4}>
-            <Row justifyContent="center">
-              <Col col={12} sm={12}>
-                <GalleryTrigger
-                  onClick={this.openModal}
-                  onMouseEnter={() => this.generateColor()}
-                  color={this.state.hoverColor}
-                >
-                  <img
-                    src={
-                      this.props.data.prismicProjects.data.gallery[0].image.url
-                    }
-                  />
-
-                  <div className="gallery-hover">
-                    <h2>Gallery</h2>
-                  </div>
-                </GalleryTrigger>
-              </Col>
-            </Row>
-            <Row>
-              <Col col={12}>
-                <InformationText>{projectInformation}</InformationText>
-              </Col>
-            </Row>
-          </Col>
-
+        <div className="center">
+          <InformationText>{projectInformation}</InformationText>
           <Col col={12} sm={8} lg={8} xl={6}>
-            <Title
-              dangerouslySetInnerHTML={{
-                __html: this.props.data.prismicProjects.data.title.html,
-              }}
-            />
-
+            <Row>
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              showIndicators={false}
+              infiniteLoop={true}
+              css={{ height: '500px', width: '75vw' }}
+              useKeyboardArrows={true}
+              swipeable={true}
+              autoPlay
+            >
+              {gallery}
+            </Carousel>
+            </Row>
             <TextBox
               text={this.props.data.prismicProjects.data.text}
               padding={'0 0 0 20px'}
               underlineLink={true}
+              css={{ textAlign: 'center' }}
             />
 
             {this.props.data.prismicProjects.data.video && (
@@ -335,28 +297,13 @@ class Project extends React.Component {
               />
             )}
           </Col>
-        </Row>
-
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Image Gallery"
-        >
-          <CloseModal onClick={this.closeModal}>×</CloseModal>
-
-          <Carousel
-            showThumbs={false}
-            showStatus={false}
-            showIndicators={false}
-            infiniteLoop={true}
-            css={{ height: '100%' }}
-            useKeyboardArrows={true}
-            swipeable={true}
-          >
-            {gallery}
-          </Carousel>
-        </Modal>
+          <style jsx>{`
+            .center {
+              width: 100vw;
+              text-align: center;
+            }
+          `}</style>
+        </div>
       </Layout>
     );
   }
