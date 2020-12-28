@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,7 @@ export default class SimpleSlider extends Component {
       dots: false,
       infinite: true,
       autoplay: true,
+      autoplaySpeed: 5000,
       speed: 500,
       fade: true,
       loop: true,
@@ -67,22 +68,13 @@ export default class SimpleSlider extends Component {
       ]
       return (
         <Slider {...settings}>
-          <Link to={`projects/${slides[0].url}`}>
-            <div key={slides[0].uid}>
-              <img src={slides[0].src} alt={slides[0].alt} />
-            </div>
-          </Link>
-          <Link to={`projects/${slides[1].url}`}>
-            <div key={slides[1].uid}>
-              <img src={slides[1].src} alt={slides[0].alt} />
-            </div>
-          </Link>
+          {slides.map(slide => <Link key={slide.uid} to={`projects/${slide.url}`}><div><img src={slide.src} alt={slide.alt}/></div></Link>)}
         </Slider>
       )
     }
     return (
       <div className="container">
-        <Slides />
+        <Slides/>
         <style jsx>{`
           * {
             margin: 0;

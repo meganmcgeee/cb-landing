@@ -14,12 +14,27 @@ const CustomRow = styled.div`
   margin-right: -20px;
   margin-left: -20px;
 
+  & > div:nth-child(odd) {
+    margin-left: 10rem;
+  }
+  & > div:nth-child(even) {
+    margin-left: 38rem;
+  }
+
+  & > div:nth-child(1) {
+    margin-left: 3rem;
+  }
+  & > div:nth-child(2) {
+    margin-left: 45rem;
+    margin-top: -50rem;
+  }
+
   & > div:nth-child(1n) {
     padding-top: 25px;
   }
 
   & > div:nth-child(2n) {
-    padding-top: 200px;
+    padding-top: 100px;
   }
 
   & > div:nth-child(3n) {
@@ -98,7 +113,11 @@ const SingleListLink = styled.div`
   }
 `;
 
-const ProjectImage = styled.img``;
+const ProjectImage = styled.img`
+  width: 100%;
+  height: 100%;
+  min-width: 600px;
+`;
 
 let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 class Projects extends React.Component {
