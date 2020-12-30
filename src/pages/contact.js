@@ -48,6 +48,16 @@ const Contact = ({ data }) => {
         </FlexContainer>
       </Row>
       <style jsx>{`
+      body {
+        background: rgb(24, 22, 42);
+        color: #fff;
+      }
+      a {
+        color: #fff;
+      }
+      ul li{
+        color: #fff;
+      }
         .container {
           width: 600px;
           padding-left: 1.5rem;

@@ -16,6 +16,12 @@ const About = ({ data }) => {
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />
         </Col>
       </Row>
+      <style jsx>{`
+        body {
+          background: rgb(125, 70, 50);
+          color: #fff; 
+        }
+      `}</style>
     </Layout>
   );
 };
