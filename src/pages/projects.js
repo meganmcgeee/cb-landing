@@ -15,39 +15,12 @@ const CustomRow = styled.div`
   margin-left: -20px;
 
   & > div:nth-child(odd) {
-    margin-left: 10rem;
+    margin-left: 6rem;
+    padding-top: 2rem;
   }
   & > div:nth-child(even) {
-    margin-left: 38rem;
-  }
-
-  & > div:nth-child(1) {
-    margin-left: 3rem;
-  }
-  & > div:nth-child(2) {
     margin-left: 45rem;
-    margin-top: -50rem;
-  }
-
-  & > div:nth-child(1n) {
-    padding-top: 25px;
-  }
-
-  & > div:nth-child(2n) {
-    padding-top: 100px;
-  }
-
-  & > div:nth-child(3n) {
-    padding-top: 80px;
-  }
-
-  @media (max-width: 575px) {
-    & > div:nth-child(1n),
-    & > div:nth-child(2n),
-    & > div:nth-child(3n) {
-      padding-top: 0;
-      padding-bottom: 15px;
-    }
+    padding-top: 2rem;
   }
 `;
 
@@ -74,7 +47,7 @@ const SingleListLink = styled.div`
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 25%;
     //${props => props.color}
     opacity: 0;
 

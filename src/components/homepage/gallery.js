@@ -83,7 +83,7 @@ export default class SimpleSlider extends Component {
           }
           .container {
             width: 100%;
-            height: 100%;
+            height: calc(100vh-120px);
             position: absolute;
             bottom: 0;
             left: 0;
