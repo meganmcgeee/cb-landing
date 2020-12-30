@@ -3,16 +3,17 @@ import Layout from '../components/global/layout';
 import { graphql, useStaticQuery} from 'gatsby';
 import chooseRandomColor from '../components/utils/chooseRandomColor';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import { Row, Col } from 'styled-bootstrap-grid';
 
 const Title = styled.div`
   & h1 {
     font-family: 'History 01';
     text-transform: uppercase;
-    font-size: 30px;
+    text-align: center;
+    font-size: 36px;
     line-height: 1.5;
     letter-spacing: 1px;
-    margin-top: -14px;
     @media (max-width: 576px) {
       font-size: 25px;
       padding: 15px 0 0 0;
@@ -26,6 +27,10 @@ const Title = styled.div`
 const News = ({data}) => {
   console.log(data);
   return (
+    <>
+    <Helmet>
+    <body class="light-nav"/>
+    </Helmet>
     <Layout>
       <Row>
         <Col col={12} sm={12}>
@@ -44,8 +49,16 @@ const News = ({data}) => {
           background: rgb(172, 171, 176);
           color: rgb(125, 70, 50);
         }
+        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
+          color: rgb(125, 70, 50);
+        }
+        .light-nav footer {
+          position: absolute;
+          bottom: 5px;
+        }
       `}</style>
     </Layout>
+    </>
   );
 };
 

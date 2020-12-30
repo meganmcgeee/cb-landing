@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
     return (
-        <footer>
+        <footer id="footer">
             <a href="https://www.instagram.com/carolineboseley/">Instagram</a>
             <style jsx>{`
                 footer {

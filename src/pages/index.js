@@ -30,7 +30,7 @@ const Header = () => {
         header {
           width: 100vw;
           height: 120px;
-          background: #6a8493;
+          background: #0E0E1C;
           position: absolute;
           top: 0;
           left: 0;

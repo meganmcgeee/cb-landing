@@ -51,7 +51,7 @@ const gridTheme = {
   },
 };
 
-const Layout = ({ children }) => (
+const Layout = ({children, color}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -122,15 +122,16 @@ const Layout = ({ children }) => (
                 <Header
                   menuLinks={data.site.siteMetadata.menuLinks}
                   siteTitle={data.site.siteMetadata.title}
+                  color={color}
                 />
               </Col>
             </Row>
             <Row css={{ paddingBottom: '30px' }}>
               <Col col={12}>{children}</Col>
             </Row>
-          <Footer/>
           </Container>
         </GridThemeProvider>
+        <Footer/>
       </ContainerWrapper>
     )}
   />

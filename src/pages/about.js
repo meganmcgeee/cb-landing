@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import chooseRandomColor from '../components/utils/chooseRandomColor';
 
 import { Row, Col } from 'styled-bootstrap-grid';
@@ -10,6 +11,10 @@ import TextBox from '../components/text/textbox';
 const About = ({ data }) => {
   let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
   return (
+    <>
+    <Helmet>
+    <body class='light-nav' />
+    </Helmet>
     <Layout>
       <Row>
         <Col col={12} sm={10} md={8} lg={6}>
@@ -18,11 +23,19 @@ const About = ({ data }) => {
       </Row>
       <style jsx>{`
         body {
-          background: rgb(125, 70, 50);
+          background: #814834;
           color: #fff; 
+        }
+        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
+          color: #fff;
+        }
+        .light-nav .active-link {
+          color: #fff;
+          border-bottom: 1px solid #fff;
         }
       `}</style>
     </Layout>
+    </>
   );
 };
 

@@ -62,8 +62,7 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
-      // color: ${props => props.color};
-      color: #404040;
+      // color: #404040;
 
 
       & a.active-link {
@@ -135,7 +134,7 @@ class Header extends React.Component {
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
     return (
       <HeaderComponent>
-        <Logo color={chooseRandomColor(colors)}>
+        <Logo color={chooseRandomColor(colors)} id="logo">
           <Link to={'/projects'}>Caroline Boseley</Link>
         </Logo>
         <Navigation

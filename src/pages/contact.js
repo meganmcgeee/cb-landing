@@ -7,6 +7,8 @@ import styled from 'styled-components';
 
 import TextBox from '../components/text/textbox';
 
+import { Helmet } from 'react-helmet';
+
 const FlexContainer = styled.div``;
 
 const Links = styled.div`
@@ -36,6 +38,10 @@ const Contact = ({ data }) => {
   });
 
   return (
+    <>
+    <Helmet>
+      <body class="light-nav" />
+    </Helmet>
     <Layout>
       <Row>
         <FlexContainer>
@@ -52,18 +58,27 @@ const Contact = ({ data }) => {
         background: rgb(24, 22, 42);
         color: #fff;
       }
+      .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
+          color: #fff;
+      }
+      .light-nav header nav ul li a:active {
+        color: #fff;
+        border-bottom: 
+      }
+      .light-nav footer {
+        position: absolute;
+        bottom: 5px;
+      }
+      .container {
+          width: 600px;
+          padding-left: 1.5rem;
+      }
       a {
         color: #fff;
       }
-      ul li{
-        color: #fff;
-      }
-        .container {
-          width: 600px;
-          padding-left: 1.5rem;
-        }
       `}</style>
     </Layout>
+    </>
   );
 };
 
