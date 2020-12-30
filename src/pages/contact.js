@@ -44,7 +44,6 @@ const Contact = ({ data }) => {
               text={data.prismicHome.data.contact_text}
               margin={'1em 0 '}
             />
-            <Links>{socialLinks}</Links>
           </div>
         </FlexContainer>
       </Row>
