@@ -15,6 +15,7 @@ import { Location } from '@reach/router';
 import SentenceCase from 'sentence-case';
 
 import Header from './header';
+import Footer from './footer';
 
 const ContainerWrapper = styled.div`
   padding: 0 30px;
@@ -127,6 +128,7 @@ const Layout = ({ children }) => (
             <Row css={{ paddingBottom: '30px' }}>
               <Col col={12}>{children}</Col>
             </Row>
+            <Footer/>
           </Container>
         </GridThemeProvider>
       </ContainerWrapper>

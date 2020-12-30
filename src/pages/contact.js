@@ -39,15 +39,21 @@ const Contact = ({ data }) => {
     <Layout>
       <Row>
         <FlexContainer>
-          <Col col={12} sm={10} md={8} lg={6}>
+          <div className="container">
             <TextBox
               text={data.prismicHome.data.contact_text}
               margin={'1em 0 '}
             />
             <Links>{socialLinks}</Links>
-          </Col>
+          </div>
         </FlexContainer>
       </Row>
+      <style jsx>{`
+        .container {
+          width: 600px;
+          padding-left: 1.5rem;
+        }
+      `}</style>
     </Layout>
   );
 };
