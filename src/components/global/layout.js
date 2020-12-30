@@ -128,7 +128,7 @@ const Layout = ({ children }) => (
             <Row css={{ paddingBottom: '30px' }}>
               <Col col={12}>{children}</Col>
             </Row>
-            <Footer/>
+          <Footer/>
           </Container>
         </GridThemeProvider>
       </ContainerWrapper>
