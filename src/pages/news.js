@@ -146,7 +146,7 @@ const News = ({data}) => {
             flex-direction: row;
           }
           .article {
-            width: 50%;
+            width: 45%;
           }
         }
         @media(min-width: 1360px) {
