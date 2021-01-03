@@ -130,8 +130,8 @@ const Layout = ({children, color}) => (
               <Col col={12}>{children}</Col>
             </Row>
           </Container>
-        </GridThemeProvider>
         <Footer/>
+        </GridThemeProvider>
       </ContainerWrapper>
     )}
   />

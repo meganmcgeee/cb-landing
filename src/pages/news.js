@@ -1,10 +1,8 @@
 import React from 'react';
 import Layout from '../components/global/layout';
-import { graphql, useStaticQuery} from 'gatsby';
-import chooseRandomColor from '../components/utils/chooseRandomColor';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
-import { Row, Col } from 'styled-bootstrap-grid';
+import { graphql } from 'gatsby';
 
 const Title = styled.div`
   & h1 {
@@ -17,33 +15,55 @@ const Title = styled.div`
     @media (max-width: 576px) {
       font-size: 25px;
       padding: 15px 0 0 0;
-      margin-top: 0;
+      margin: 0 0 4rem 0;
     }
   }
 `;
 
-
-
 const News = ({data}) => {
-  console.log(data);
   return (
     <>
     <Helmet>
     <body class="light-nav"/>
     </Helmet>
     <Layout>
-      <Row>
-        <Col col={12} sm={12}>
+    <div className="wrapper">
+      <div className="container">
           <Title>
             <h1>Current Reads</h1>
           </Title>
-          {data.allPrismicNews.nodes.map(item => <div key={item.uid}><h2>{item.data.title.text}</h2><p>{item.data.body.text}</p></div>)}
+          <div className="newsitems">
+            {data.allPrismicNews.edges.map(article => {
+              return (
+                <div className="article" key={article.node.uid}>
+                  <h2>{article.node.data.title[0].text}</h2>
+                  <p>{article.node.data.body[0].text}</p>
+                </div>
+              )
+            })}
+          </div>
+      </div>
+      <div className="container">
           <Title>
             <h1>Upcoming Projects</h1>
           </Title>
-          <div></div>
-        </Col>
-      </Row>
+          <div className="upcomingitems">
+          {data.allPrismicUpcoming.edges.map(item => {
+              return (
+                <div className="item" key={item.node.uid}>
+                  <div className="info">
+                    <h2>{item.node.data.project_title[0].text}</h2>
+                    <p>{item.node.data.body[0].text}</p>
+                  </div>
+                  <div className="image">
+                    <img src={item.node.data.image.url} alt=""/>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+      </div>
+      </div>
       <style jsx>{`
         body {
           background: rgb(172, 171, 176);
@@ -56,44 +76,97 @@ const News = ({data}) => {
           position: absolute;
           bottom: 5px;
         }
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 2rem;
+        }
+        .newsitems {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        }
+        .article {
+          width: 45%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .article h2 {
+          font-size: 1.4rem;
+          margin-bottom: -1rem;
+        }
+        .upcomingitems {
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+        }
+        .item {
+          width: 90vw;
+          height: 400px;
+          display: flex;
+          justify-content: space-around;
+        }
+        .item .info {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+        }
+        .item .info p {
+          width: 80%;
+        }
+        .item .image {
+          width: 400px;
+          height: 400px;
+        }
       `}</style>
     </Layout>
     </>
   );
 };
 
+export default News;
+
 export const query = graphql`
 {
   allPrismicNews {
-    nodes {
-      uid
-      data {
-        body {
-          text
-        }
-        title {
-          text
+    edges {
+      node {
+        uid
+        data {
+          body {
+            text
+          }
+          title {
+            text
+          }
         }
       }
     }
   }
   allPrismicUpcoming {
-    nodes {
-      uid
-      data {
-        body {
-          text
+    edges {
+      node {
+        data {
+          body {
+            text
+          }
+          image {
+            url
+          }
+          project_title {
+            text
+          }
         }
-        image {
-          url
-        }
-        project_title {
-          text
-        }
+        uid
       }
     }
   }
-}
-`
-
-export default News;
+}`

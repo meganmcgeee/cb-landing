@@ -2,35 +2,28 @@ import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql, Link } from 'gatsby';
 import chooseRandomColor from '../components/utils/chooseRandomColor';
-
-import { Row, Col } from 'styled-bootstrap-grid';
 import styled from 'styled-components';
 
 const CustomRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  margin-right: -20px;
-  margin-left: -20px;
-
-  & > div:nth-child(odd) {
-    margin-left: 6rem;
-    padding-top: 2rem;
+  margin: 0 2rem;
+  & > div:nth-child(3n) {
+    padding: 2rem 0 0 2rem;
   }
-  & > div:nth-child(even) {
-    margin-left: 45rem;
-    padding-top: 2rem;
+  & > div:nth-child(4n) {
+    padding: 16rem 2rem 0 0;
+  }
+  & > div:nth-child(5n) {
+    padding: 8rem 2rem 0 0;
+  }
+  & > div:nth-child(6n) {
+    padding: 12rem 0 0 2rem;
   }
 `;
 
 const SingleListLink = styled.div`
-  & a {
-    width: 100%;
-    // display: flex;
-    border: none;
-  }
-
   & a:hover {
     color: ${props => props.color};
     border: none;
@@ -43,14 +36,9 @@ const SingleListLink = styled.div`
   }
 
   & a > div {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 25%;
     //${props => props.color}
     opacity: 0;
-
+    width: 100%;
     transition: 250ms opacity ease;
   }
 
@@ -71,7 +59,6 @@ const SingleListLink = styled.div`
     position: absolute;
 
     margin: 0;
-    width: 100%;
     padding: 20px;
 
     font-family: 'History 01';
@@ -84,12 +71,6 @@ const SingleListLink = styled.div`
     -webkit-font-smoothing: auto !important;
     // text-shadow: 1px 1px 1px rgba(255,255,255, 0.05);
   }
-`;
-
-const ProjectImage = styled.img`
-  width: 100%;
-  height: 100%;
-  min-width: 600px;
 `;
 
 let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
@@ -118,13 +99,13 @@ class Projects extends React.Component {
         ) {
           // landscape image
           return (
-            <Col col={12} sm={4} key={project.node.prismicId}>
+            <div id="landsacpe" key={project.node.prismicId}>
               <SingleListLink
                 onMouseEnter={() => this.generateColor()}
                 color={this.state.hoverColor}
               >
                 <Link to={'/projects/' + project.node.uid}>
-                  <ProjectImage
+                  <img 
                     src={project.node.data.gallery[0].image.url}
                     alt={project.node.data.gallery[0].image.alt}
                   />
@@ -133,18 +114,28 @@ class Projects extends React.Component {
                   </div>
                 </Link>
               </SingleListLink>
-            </Col>
+              <style jsx>{`
+              #landscape {
+                max-width: 600px;
+                max-height: 400px;
+              }
+              #landsacpe img {
+                max-width: 700px;
+                max-height: 500px;
+              }
+              `}</style>
+            </div>
           );
         } else {
           // portrait image
           return (
-            <Col col={12} sm={4} key={project.node.prismicId}>
+            <div id="portrait" key={project.node.prismicId}>
               <SingleListLink
                 onMouseEnter={() => this.generateColor()}
                 color={this.state.hoverColor}
               >
                 <Link to={'/projects/' + project.node.uid}>
-                  <ProjectImage
+                  <img
                     src={project.node.data.gallery[0].image.url}
                     alt={project.node.data.gallery[0].image.alt}
                   />
@@ -153,7 +144,17 @@ class Projects extends React.Component {
                   </div>
                 </Link>
               </SingleListLink>
-            </Col>
+              <style jsx>{`
+                #portrait {
+                  max-width: 500px;
+                  max-height: 800px;
+                }
+                #portrait img {
+                  max-width: 500px;
+                  max-height: 800px;
+                }
+              `}</style>
+            </div>
           );
         }
       }
@@ -161,12 +162,8 @@ class Projects extends React.Component {
 
     return (
       <Layout>
-        <Row>
-          <Col col={12}>
-            <CustomRow>{allProjects}</CustomRow>
-          </Col>
-        </Row>
-      </Layout>
+          <CustomRow>{allProjects}</CustomRow>
+    </Layout>
     );
   }
 }
