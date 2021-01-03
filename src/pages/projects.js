@@ -22,6 +22,7 @@ const CustomRow = styled.div`
       margin-bottom: 10rem;
     }
   }
+  //
   @media(min-width: 1360px) {
   & > div:nth-child(3n) {
     margin: 2rem 0 0 4rem;
