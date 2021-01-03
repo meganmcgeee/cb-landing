@@ -8,19 +8,34 @@ const CustomRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 2rem;
+  margin: 0 4rem;
+  @media(min-width: 1000px) and (max-width: 1300px) {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    flex-wrap: no-wrap;
+    & > div {
+      margin: 4rem;
+    }
+    & > div:nth-child(1) {
+      margin-bottom: 10rem;
+    }
+  }
+  @media(min-width: 1360px) {
   & > div:nth-child(3n) {
-    padding: 2rem 0 0 2rem;
+    margin: 2rem 0 0 4rem;
   }
   & > div:nth-child(4n) {
-    padding: 16rem 2rem 0 0;
+    margin: 16rem 4rem 0 0;
   }
   & > div:nth-child(5n) {
-    padding: 8rem 2rem 0 0;
+    margin: 8rem 4rem 0 0;
   }
   & > div:nth-child(6n) {
-    padding: 12rem 0 0 2rem;
+    margin: 12rem 0 0 4rem;
   }
+}
 `;
 
 const SingleListLink = styled.div`
@@ -99,7 +114,7 @@ class Projects extends React.Component {
         ) {
           // landscape image
           return (
-            <div id="landsacpe" key={project.node.prismicId}>
+            <div id="landscape" key={project.node.prismicId}>
               <SingleListLink
                 onMouseEnter={() => this.generateColor()}
                 color={this.state.hoverColor}
@@ -115,13 +130,26 @@ class Projects extends React.Component {
                 </Link>
               </SingleListLink>
               <style jsx>{`
+
+              @media(min-width: 760px) {
               #landscape {
                 max-width: 600px;
                 max-height: 400px;
               }
-              #landsacpe img {
+              #landscape img {
                 max-width: 700px;
                 max-height: 500px;
+              }
+            }
+            @media(min-width: 1920px) {
+                #landscape {
+                  max-width: 900px;
+                  max-height: 700px;
+                }
+                #landscape img {
+                  max-width: 900px;
+                  max-height: 700px;
+                }
               }
               `}</style>
             </div>
@@ -145,6 +173,8 @@ class Projects extends React.Component {
                 </Link>
               </SingleListLink>
               <style jsx>{`
+
+              @media(min-width: 760px) {
                 #portrait {
                   max-width: 500px;
                   max-height: 800px;
@@ -153,6 +183,17 @@ class Projects extends React.Component {
                   max-width: 500px;
                   max-height: 800px;
                 }
+              }
+              @media(min-width: 1920px) {
+                #portrait {
+                  max-width: 700px;
+                  max-height: 900px;
+                }
+                #portrait img {
+                  max-width: 700px;
+                  max-height: 900px;
+                }
+              }
               `}</style>
             </div>
           );

@@ -15,7 +15,10 @@ const Title = styled.div`
     @media (max-width: 576px) {
       font-size: 25px;
       padding: 15px 0 0 0;
-      margin: 0 0 4rem 0;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 1360px) {
+      margin-bottom: 3rem;
     }
   }
 `;
@@ -90,11 +93,11 @@ const News = ({data}) => {
         .newsitems {
           display: flex;
           justify-content: space-around;
+          flex-direction: column;
           flex-wrap: wrap;
-          margin-top: 2rem;
         }
         .article {
-          width: 45%;
+          width: 90vw;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -107,24 +110,64 @@ const News = ({data}) => {
           display: flex;
           flex-direction: column;
           margin-top: 2rem;
+          align-items: center;
         }
         .item {
           width: 90vw;
-          height: 400px;
           display: flex;
-          justify-content: space-around;
+          flex-direction: column-reverse;
+          margin-bottom: 2rem;
         }
         .item .info {
           display: flex;
           flex-direction: column;
-          width: 60%;
-        }
-        .item .info p {
-          width: 80%;
         }
         .item .image {
-          width: 400px;
-          height: 400px;
+          width: 90vw;
+          height: 337px;
+          margin-bottom: -5rem;
+        }
+        @media(min-width: 860px) {
+          .item {
+            flex-direction: row;
+          }
+          .item .info {
+            width: 80%;
+            margin-right: 2rem;
+          }
+          .item .image {
+            width: 400px;
+            height: 400px;
+            margin-top: 4.2rem;
+          }
+        }
+        @media(min-width: 1100px) {
+          .newsitems {
+            flex-direction: row;
+          }
+          .article {
+            width: 50%;
+          }
+        }
+        @media(min-width: 1360px) {
+          .item .image {
+            margin-top: 0;
+          }
+        }
+        @media(min-width: 1910px) {
+          .upcomingitems {
+            magrin-top: 6rem;
+          }
+          .item .info {
+            margin-right: 0;
+          }
+          .item .info p {
+            width: 80%;
+          }
+          .item .image {
+            width: 400px;
+            height: 400px;
+          }
         }
       `}</style>
     </Layout>
