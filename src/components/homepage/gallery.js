@@ -95,9 +95,7 @@ export default class SimpleSlider extends Component {
         time(3, 90000)
         time(4, 95000)
       }
-      const [canRender, setCanRender] = useState(false);
-      useEffect(() => setCanRender(true));
-      increment()
+      useEffect(() => increment();
       return (
         <Link id="slideLink" href={`/projects/${slides[0].url}`}>
           <Slider {...settings}>
