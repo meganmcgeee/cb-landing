@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react"
+import React, { Component, useEffect } from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
