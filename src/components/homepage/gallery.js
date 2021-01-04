@@ -9,6 +9,7 @@ export default class SimpleSlider extends Component {
     const settings = {
       arrows: false,
       dots: false,
+      pauseOnHover: false,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 5000,
