@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react"
+import React, { Component, useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
@@ -95,6 +95,7 @@ export default class SimpleSlider extends Component {
         time(3, 90000)
         time(4, 95000)
       }
+      const [canRender, setCanRender] = useState(false);
       useEffect(() => setCanRender(true));
       return (
         <Link id="slideLink" href={`/projects/${slides[0].url}`}>
