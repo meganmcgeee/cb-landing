@@ -42,33 +42,34 @@ export default class SimpleSlider extends Component {
 
       const slides = [
         {
-          uid: data.allPrismicSlider.nodes[0].data.slider[0].link.slug,
           url: data.allPrismicSlider.nodes[0].data.slider[0].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[0].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[0].alternative_text,
         },
         {
-          uid: data.allPrismicSlider.nodes[0].data.slider[1].link.slug,
           url: data.allPrismicSlider.nodes[0].data.slider[1].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[1].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[1].alternative_text,
         },
         {
-          uid: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
           url: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[2].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[2].alternative_text,
         },
         {
-          uid: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
           url: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[3].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[3].alternative_text,
-        }
+        },
+        {
+          url: data.allPrismicSlider.nodes[0].data.slider[4].link.slug,
+          src: data.allPrismicSlider.nodes[0].data.slider[4].image.url,
+          alt: data.allPrismicSlider.nodes[0].data.slider[4].alternative_text,
+        },
       ]
       return (
         <Slider {...settings}>
-          {slides.map(slide => <Link key={slide.uid} to={`projects/${slide.url}`}><div><img src={slide.src} alt={slide.alt}/></div></Link>)}
+          {slides.map(slide => <div key={slide.url}><img src={slide.src} alt={slide.alt}/></div>)}
         </Slider>
       )
     }
