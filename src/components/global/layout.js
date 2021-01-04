@@ -51,7 +51,7 @@ const gridTheme = {
   },
 };
 
-const Layout = ({children, color}) => (
+const Layout = ({ children, color }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -116,7 +116,8 @@ const Layout = ({children, color}) => (
                 );
               }}
             </Location>
-
+<div id="page-container">
+  <div id="content-wrap">
             <Row>
               <Col col={12}>
                 <Header
@@ -129,8 +130,32 @@ const Layout = ({children, color}) => (
             <Row css={{ paddingBottom: '30px' }}>
               <Col col={12}>{children}</Col>
             </Row>
+            </div>
+            <div id="footer">
+            <Footer/>
+            </div>
+      </div>
+
           </Container>
         </GridThemeProvider>
+        <style jsx>{`
+          #page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+        `}</style>
+
       </ContainerWrapper>
     )}
   />
