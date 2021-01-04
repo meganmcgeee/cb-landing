@@ -76,8 +76,8 @@ export default class SimpleSlider extends Component {
 
       function increment() {
         document.getElementById('slideLink').href = `/projects/${slides[0].url}`
-        time(1, 5000)
-        time(2, 19000)
+        time(1, 5900)
+        time(2, 10900)
         time(3, 15900)
         time(4, 20900)
         time(0, 25900)
