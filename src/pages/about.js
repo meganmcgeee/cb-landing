@@ -26,7 +26,7 @@ const About = ({ data }) => {
           background: #814834;
           color: #fff; 
         }
-        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
+        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
           color: #fff;
         }
         .light-nav .active-link {
