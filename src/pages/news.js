@@ -144,6 +144,7 @@ const News = ({data}) => {
         @media(min-width: 1100px) {
           .newsitems {
             flex-direction: row;
+            align-items: start;
           }
           .article {
             width: 45%;
