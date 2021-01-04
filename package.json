@@ -4,9 +4,8 @@
   "description": "Portfolio website for curator Caroline Boseley",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "Keiran Startup & Mac Hooper",
+  "author": "Keiran Startup",
   "kweb": "https://kieranstartup.co.uk",
-  "mweb": "https://machooper.tech",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0",
