@@ -5,7 +5,7 @@ import Gallery from '../components/homepage/gallery'
 const Header = () => {
   return (
     <header>
-      <Link to="/"><h1>Caroline Bosely</h1></Link>
+      <Link to="/"><h1>Caroline Boseley</h1></Link>
       <nav>
         <ul>
         <li><Link to="/projects">projects</Link></li>
