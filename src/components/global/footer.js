@@ -8,10 +8,13 @@ export default function Footer() {
             <style jsx>{`
                 footer {
                     width: 100vw;
-                    display: grid;
-                    place-items: center;
+                    display: flex;
+                    justify-content: center;
                 }
-            `}</style> 
+                footer a {
+                    margin: 0 .5rem;
+                }
+            `}</style>
         </footer>
     )
-            }
+}

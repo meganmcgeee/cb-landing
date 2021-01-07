@@ -10,6 +10,7 @@ import TextBox from '../components/text/textbox';
 
 const About = ({ data }) => {
   let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+  const text1 = data.prismicAbout.data.text.raw;
   return (
     <>
     <Helmet>
@@ -17,8 +18,10 @@ const About = ({ data }) => {
     </Helmet>
     <Layout>
       <Row>
-        <Col col={12} sm={10} md={8} lg={6}>
+        <Col>
+          <div className="flexy">
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />
+          </div>
         </Col>
       </Row>
       <style jsx>{`
@@ -33,11 +36,23 @@ const About = ({ data }) => {
           color: #fff;
           border-bottom: 1px solid #fff;
         }
+        .flexy > div {
+          width: 100vw;
+          height: 70vh;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+        }
+        .flexy > div > p {
+          max-width: 40%;
+          margin-bottom: -.1rem;
+        }
       `}</style>
     </Layout>
     </>
   );
 };
+export default About;
 
 export const query = graphql`
   {
@@ -66,5 +81,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default About;
