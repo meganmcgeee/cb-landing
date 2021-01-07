@@ -31,7 +31,7 @@ const News = ({data}) => {
     </Helmet>
     <Layout>
     <div className="wrapper">
-      <div className="container">
+       <div className="container">
           <Title>
             <h1>Current Reads</h1>
           </Title>
