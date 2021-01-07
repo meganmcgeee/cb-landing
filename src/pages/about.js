@@ -41,11 +41,27 @@ const About = ({ data }) => {
           height: 70vh;
           display: flex;
           flex-direction: column;
-          flex-wrap: wrap;
         }
         .flexy > div > p {
-          max-width: 40%;
+          max-width: 90vw;
           margin-bottom: -.1rem;
+        }
+        @media (min-width: 1400px) {
+          .flexy > div {
+            height: 80vh;
+            flex-wrap: wrap;
+          }
+          .flexy > div p {
+            width: 40%;
+          }
+        }
+        @media (min-width: 1920px) {
+          .flexy > div {
+            height: 60vh;
+          }
+          .flexy > div > p {
+            width: 40%;
+          }
         }
       `}</style>
     </Layout>
