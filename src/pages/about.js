@@ -17,13 +17,9 @@ const About = ({ data }) => {
     <body class='light-nav' />
     </Helmet>
     <Layout>
-      <Row>
-        <Col>
           <div className="flexy">
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />
           </div>
-        </Col>
-      </Row>
       <style jsx>{`
         body {
           background: #814834;
@@ -37,8 +33,6 @@ const About = ({ data }) => {
           border-bottom: 1px solid #fff;
         }
         .flexy > div {
-          width: 100vw;
-          height: 70vh;
           display: flex;
           flex-direction: column;
         }
