@@ -26,11 +26,11 @@ const About = ({ data }) => {
           color: #B1B2B5; 
         }
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
-          color: #fff;
+          color: #B1B2B5;
         }
         .light-nav .active-link {
-          color: #fff;
-          border-bottom: 1px solid #fff;
+          color: #B1B2B5;
+          border-bottom: 1px solid #B1B2B5;
         }
         .flexy > div {
           display: flex;

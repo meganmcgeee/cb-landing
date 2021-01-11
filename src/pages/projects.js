@@ -9,32 +9,20 @@ const CustomRow = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 4rem;
-  @media(min-width: 1000px) and (max-width: 1300px) {
-    width: 100vw;
-    flex-direction: column;
+  @media(min-width: 1000px) {
+    width: 95vw;
     align-items: center;
-    margin: 0;
+    margin: 4rem 0;
     flex-wrap: no-wrap;
     & > div {
       margin: 4rem;
     }
-    & > div:nth-child(1) {
-      margin-bottom: 10rem;
+    & > div:nth-child(3) {
+      margin-top: 4rem;
     }
-  }
-  //
-  @media(min-width: 1360px) {
-  & > div:nth-child(3n) {
-    margin: 2rem 0 0 4rem;
-  }
-  & > div:nth-child(4n) {
-    margin: 16rem 4rem 0 0;
-  }
-  & > div:nth-child(5n) {
-    margin: 8rem 4rem 0 0;
-  }
-  & > div:nth-child(6n) {
-    margin: 12rem 0 0 4rem;
+    & > div:nth-child(4) {
+      margin-top: 4rem;s
+    }
   }
 }
 `;
