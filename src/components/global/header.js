@@ -66,7 +66,6 @@ const Navigation = styled.nav`
 
 
       & a.active-link {
-        color: #404040;
         // color: ${props => props.color};
         border-bottom: 1px solid #404040;
       }
