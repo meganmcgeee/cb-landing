@@ -20,28 +20,6 @@ import TextBox from '../text/textbox';
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#___gatsby');
 
-const InformationText = styled.div`
-  font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
-    sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  letter-spacing: 0.6px;
-
-  margin: 2em 0;
-
-  & h1 {
-    font-size: 15px;
-  }
-
-  & p {
-    margin: 0;
-  }
-
-  @media (max-width: 576px) {
-    margin: 1em 0 0;
-  }
-`;
-
 const StyledImage = styled.div`
   max-width: 100%;
   margin: 0 auto;
@@ -142,6 +120,7 @@ class Project extends React.Component {
             <Row>
             <Carousel
               showThumbs={false}
+              showArrows={true}
               showStatus={false}
               showIndicators={false}
               infiniteLoop={true}
