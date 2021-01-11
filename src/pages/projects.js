@@ -23,6 +23,11 @@ const CustomRow = styled.div`
     & > div:nth-child(4) {
     }
   }
+  @media(min-width: 1900px) {
+    & > div:nth-child(3) {
+      margin-top: -9rem;
+    }
+  }
 }
 `;
 
