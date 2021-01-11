@@ -71,11 +71,10 @@ const SingleListLink = styled.div`
   & h2 {
     top: 50%;
     transform: translateY(-50%);
-
     position: absolute;
-
-    margin: 0;
-    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 
     font-family: 'History 01';
     text-align: center;

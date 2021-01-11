@@ -6,10 +6,14 @@ import styled from 'styled-components';
 
 const LandscapeProject = styled.div`
   width: 40%;
-`;
+  display: flex;
+  justify-content: center;
+  `;
 
 const PortraitProject = styled.div`
   width: 20%;
+  display: flex;
+  justify-content: center;
 `;
 
 const SingleProject = ({ data }) => {

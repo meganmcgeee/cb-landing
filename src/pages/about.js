@@ -23,7 +23,7 @@ const About = ({ data }) => {
       <style jsx>{`
         body {
           background: #814834;
-          color: #fff; 
+          color: #B1B2B5; 
         }
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
           color: #fff;
