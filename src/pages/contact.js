@@ -48,7 +48,7 @@ const Contact = ({ data }) => {
           <div className="container">
             <TextBox
               text={data.prismicHome.data.contact_text}
-              margin={'1em 0 '}
+              margin={'1.625em 0 '}
             />
           </div>
         </FlexContainer>

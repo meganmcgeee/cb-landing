@@ -156,7 +156,7 @@ const News = ({data}) => {
           }
         }
         @media(min-width: 1910px) {
-          .upcomingitems {
+          .upcomingitem, .newsitems {
             magrin-top: 6rem;
           }
           .item .info {
