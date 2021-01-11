@@ -8,20 +8,19 @@ const CustomRow = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   margin: 0 4rem;
   @media(min-width: 1000px) {
     width: 95vw;
-    align-items: center;
-    margin: 4rem 0;
+    margin: 0 0 4rem 0;
     flex-wrap: no-wrap;
     & > div {
       margin: 4rem;
     }
     & > div:nth-child(3) {
-      margin-top: 4rem;
+      margin-top: -6rem;
     }
     & > div:nth-child(4) {
-      margin-top: 4rem;s
     }
   }
 }
