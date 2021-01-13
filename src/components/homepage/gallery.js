@@ -125,6 +125,16 @@ export default class SimpleSlider extends Component {
                 width: 100vw;
                 height: 100vh;
             }
+            @media(max-width: 760px) {
+              .container {
+                background: #0E0E1C;
+              }
+              .container img {
+                width: 100vw;
+                height: 380px;
+                margin: 10rem auto 0 auto;
+              }
+            }
         `}</style>
       </div>
     )

@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
-
 const Header = () => {
   return (
     <header>
       <Link to="/"><h1>Caroline Boseley</h1></Link>
-      <nav>
+      <div id="mobile">Menu</div>
+      <nav id="nav"> 
         <ul>
         <li><Link to="/projects">projects</Link></li>
         <li><Link to="/about">about</Link></li>
@@ -29,7 +29,7 @@ const Header = () => {
         }
         header {
           width: 100vw;
-          height: 120px;
+          height: 70px;
           background: #0E0E1C;
           position: absolute;
           top: 0;
@@ -37,14 +37,18 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: baseline;
-          padding: 1.5rem 1rem 0 2rem;
+          padding: 1.2rem 1rem;
           color: #fff;
           z-index: 1;
         }
         header h1 {
           text-transform: uppercase;
-          font-size: 64px;
+          font-size: 26px;
           font-family: 'History 01';
+        }
+        header #mobile {
+          font-family: akzidenz-grotesk-pro,-apple-system,system-ui,sans-serif;
+          cursor: pointer;
         }
         header a {
           text-decoration: none;
@@ -63,6 +67,9 @@ const Header = () => {
           font-size: 18px;
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;
+        }
+        nav {
+          display: none;
         }
         header nav ul li:hover {
           border-bottom: 1px solid #fff;
