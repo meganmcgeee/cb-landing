@@ -2,9 +2,6 @@ import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 const Header = () => {
-  useEffect(() => {
-    document.getElementById('nav').style.display = 'none';
-  })
   function menuClick() {
       if (document.getElementById('nav').style.display === 'none') {
         document.getElementById('nav').style.display = 'flex';
@@ -99,8 +96,16 @@ const Header = () => {
           border-bottom: 1px solid #fff;
         }
         @media(min-width: 760px) {
-          nav {
-            display: block
+          header {
+            height: 120px;
+            align-items: baseline;
+            padding: 2rem 2rem;
+          }
+          header h1 {
+            font-size: 60px;
+          }
+          #nav {
+            display: block;
           }
           #mobile {
             display: none;
