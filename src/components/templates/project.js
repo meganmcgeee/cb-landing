@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'styled-bootstrap-grid';
 import {
@@ -9,9 +9,9 @@ import {
 import chooseRandomColor from '../utils/chooseRandomColor';
 import Helmet from 'react-helmet';
 import { Location } from '@reach/router';
-
-import '../styles/carousel.css';
-import { Carousel } from 'react-responsive-carousel';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Modal from 'react-modal';
 
 import Layout from '../global/layout';
@@ -19,39 +19,6 @@ import TextBox from '../text/textbox';
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#___gatsby');
-
-const InformationText = styled.div`
-  font-family: 'AktivGrotesk', -apple-system, system-ui, 'Segoe UI', Arial,
-    sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
-  letter-spacing: 0.6px;
-
-  margin: 2em 0;
-
-  & h1 {
-    font-size: 15px;
-  }
-
-  & p {
-    margin: 0;
-  }
-
-  @media (max-width: 576px) {
-    margin: 1em 0 0;
-  }
-`;
-
-const StyledImage = styled.div`
-  max-width: 100%;
-  margin: 0 auto;
-
-  & img {
-    margin: 0 auto;
-  }
-`;
-
-
 let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
 
 class Project extends React.Component {
@@ -89,6 +56,55 @@ class Project extends React.Component {
   }
 
   render(props) {
+    const gallery = this.props.data.prismicProjects.data.gallery.map(
+      (image, index) => (
+        <div className="slide" key={`project_gallery_images_${index}`}>
+            <img src={image.image.url} />
+            <style jsx>{`
+              img {
+                width: 800px;
+                height: 600px;
+              }
+            `}</style>
+        </div>
+      )
+    );
+
+    class SimpleSlider extends Component {
+      render() {
+        const settings = {
+          dots: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        };
+        return (
+        <div className="slider">
+          <Slider {...settings}>
+            {gallery}
+          </Slider>
+          <style jsx>{`
+            .slider {
+              width: 75vw;
+              margin: 0 auto;
+            }
+            .slider img {
+              width: 90vw;
+              height: 300px;
+            }
+            @media(min-width: 760px) {
+              .slider img {
+                height: 400px;
+              }
+            }
+          `}</style>
+        </div>
+        )
+      }
+    }
+
     return (
       <Layout>
         <Location>
@@ -129,20 +145,24 @@ class Project extends React.Component {
           }}
         </Location>
           <Col>
-            <Row>
-
-            </Row>
-            <div className="container">
+              <SimpleSlider/>
+            <div className="textcontainer">
             <TextBox
               text={this.props.data.prismicProjects.data.text}
-              css={{width: '59vw'}}
+              css={{width: '59vw', margin: '0 auto'}}
             />
             </div>
           </Col>
           <style jsx>{`
-            .container {
-              width: 60vw;
+            .textcontainer {
+              width: 90vw;
               margin: 2rem auto;
+            }
+            @media(min-width: 760px) {
+              .textcontainer {
+                width: 75vw;
+
+              }
             }
           `}</style>
       </Layout>

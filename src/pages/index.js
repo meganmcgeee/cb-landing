@@ -77,7 +77,7 @@ export default function Index() {
     <>
       <Header />
       <div className="container">
-        <Gallery />
+        {/* <Gallery /> */}
       </div>
       <style jsx>{`
     body {
