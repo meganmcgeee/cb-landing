@@ -72,12 +72,12 @@ class Project extends React.Component {
 
     const LeftArrow = ({className, style, onClick}) => {
       return (
-        <svg className="sliderArrow leftArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        <svg id="leftArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
       )
     }
     const RightArrow = ({className, style, onClick}) => {
       return (
-        <svg className="sliderArrow rightArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <svg id="rightArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
       )
     }
 
@@ -124,10 +124,10 @@ class Project extends React.Component {
                 top: 50%;
                 z-index: 1;
               }
-              .leftArrow {
+              #leftArrow {
                 left: -25px;
               }
-              .rightArrow {
+              #rightArrow {
                 right: -25px;
               }
             }
@@ -147,34 +147,34 @@ class Project extends React.Component {
                 height: 600px;
                 margin: 0 auto;
               }
-              .leftArrow {
+              #leftArrow {
                 left: 220px;
                 width: 40px;
                 height: 40px;
               }
-              .rightArrow {
+              #rightArrow {
                 right: 220px;
                 width: 40px;
                 height: 40px;
               }
             }
             @media(min-width: 2500px) {
-              .leftArrow {
+              #leftArrow {
                 left: 460px;
                 width: 50px;
                 height: 50px;
               }
-              .rightArrow {
+              #rightArrow {
                 right: 460px;
                 width: 50px;
                 height: 50px;
               }
             }
             @media(min-width: 3840px) {
-              .leftArrow {
+              #leftArrow {
                 left: 950px;
               }
-              .rightArrow {
+              #rightArrow {
                 right: 950px;
               }
             }
