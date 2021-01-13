@@ -70,15 +70,29 @@ class Project extends React.Component {
       )
     );
 
+    const LeftArrow = ({className, style, onClick}) => {
+      return (
+        <svg className="sliderArrow leftArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      )
+    }
+    const RightArrow = ({className, style, onClick}) => {
+      return (
+        <svg className="sliderArrow rightArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      )
+    }
+
     class SimpleSlider extends Component {
       render() {
         const settings = {
-          dots: true,
+          dots: false,
           arrows: true,
           infinite: true,
           speed: 500,
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          nextArrow: <LeftArrow/>,
+          prevArrow: <RightArrow/>,
+          className: 'simpleslider'
         };
         return (
         <div className="slider">
@@ -86,8 +100,14 @@ class Project extends React.Component {
             {gallery}
           </Slider>
           <style jsx>{`
+             .sliderArrow {
+               display: none;
+             }
+             .simpleslider {
+              position: relative;
+             }
             .slider {
-              width: 75vw;
+              width: 80vw;
               margin: 0 auto;
             }
             .slider img {
@@ -97,6 +117,65 @@ class Project extends React.Component {
             @media(min-width: 760px) {
               .slider img {
                 height: 400px;
+              }
+              .sliderArrow {
+                display: block;
+                position: absolute;
+                top: 50%;
+                z-index: 1;
+              }
+              .leftArrow {
+                left: -25px;
+              }
+              .rightArrow {
+                right: -25px;
+              }
+            }
+            @media(min-width: 1024px) {
+              .slider img {
+                height: 500px;
+              }
+            }
+            @media(min-width: 1366px) {
+              .slider img {
+                height: 600px;
+              }
+            }
+            @media(min-width: 1900px) {
+              .slider img {
+                width: 1000px;
+                height: 600px;
+                margin: 0 auto;
+              }
+              .leftArrow {
+                left: 220px;
+                width: 40px;
+                height: 40px;
+              }
+              .rightArrow {
+                right: 220px;
+                width: 40px;
+                height: 40px;
+              }
+            }
+            @media(min-width: 2500px) {
+              .leftArrow {
+                left: 460px;
+                width: 50px;
+                height: 50px;
+              }
+              .rightArrow {
+                right: 460px;
+                width: 50px;
+                height: 50px;
+              }
+            }
+            @media(min-width: 3840px) {
+              .leftArrow {
+                left: 950px;
+              }
+              .rightArrow {
+                right: 950px;
               }
             }
           `}</style>
@@ -155,13 +234,18 @@ class Project extends React.Component {
           </Col>
           <style jsx>{`
             .textcontainer {
-              width: 90vw;
+              width: 80vw;
               margin: 2rem auto;
             }
             @media(min-width: 760px) {
               .textcontainer {
                 width: 75vw;
 
+              }
+            }
+            @media(min-width: 1900px) {
+              .textcontainer {
+                width: 1000px;
               }
             }
           `}</style>
