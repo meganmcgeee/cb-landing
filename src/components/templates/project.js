@@ -100,7 +100,7 @@ class Project extends React.Component {
             {gallery}
           </Slider>
           <style jsx>{`
-             .sliderArrow {
+             .simpleslider .sliderArrow {
                display: none;
              }
              .simpleslider {
@@ -114,20 +114,24 @@ class Project extends React.Component {
               width: 90vw;
               height: 300px;
             }
+            .simpleslider .sliderArrow {
+              display: block;
+              position: absolute;
+              top: 50%;
+              z-index: 1;
+            }
+            .simpleslider #leftArrow, .simpleslider #rightArrow {
+              position: absolute;
+              top: 50%;
+            }
             @media(min-width: 760px) {
               .slider img {
                 height: 400px;
               }
-              .sliderArrow {
-                display: block;
-                position: absolute;
-                top: 50%;
-                z-index: 1;
-              }
-              #leftArrow {
+              .simpleslider #leftArrow {
                 left: -25px;
               }
-              #rightArrow {
+              .simpleslider #rightArrow {
                 right: -25px;
               }
             }
@@ -141,40 +145,59 @@ class Project extends React.Component {
                 height: 600px;
               }
             }
+            @media(min-width: 1400px) {
+              .slider img {
+                width: 900px;
+                height: 600px;
+                margin: 0 auto;
+              }
+            .simpleslider .simpleslider .sliderArrow {
+              display: block;
+              position: absolute;
+              top: 50%;
+              z-index: 1;
+            }
+            .simpleslider #leftArrow {
+                left: -25px;
+              }
+              .simpleslider #rightArrow {
+                right: -25px;
+              }
+            }
             @media(min-width: 1900px) {
               .slider img {
                 width: 1000px;
                 height: 600px;
                 margin: 0 auto;
               }
-              #leftArrow {
+              .simpleslider #leftArrow {
                 left: 220px;
                 width: 40px;
                 height: 40px;
               }
-              #rightArrow {
+              .simpleslider #rightArrow {
                 right: 220px;
                 width: 40px;
                 height: 40px;
               }
             }
             @media(min-width: 2500px) {
-              #leftArrow {
+              .simpleslider #leftArrow {
                 left: 460px;
                 width: 50px;
                 height: 50px;
               }
-              #rightArrow {
+              .simpleslider #rightArrow {
                 right: 460px;
                 width: 50px;
                 height: 50px;
               }
             }
             @media(min-width: 3840px) {
-              #leftArrow {
+              .simpleslider #leftArrow {
                 left: 950px;
               }
-              #rightArrow {
+              .simpleslider #rightArrow {
                 right: 950px;
               }
             }
