@@ -2,10 +2,20 @@ import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 const Header = () => {
+  useEffect(() => {
+    document.getElementById('nav').style.display = 'none';
+  })
+  function menuClick() {
+      if (document.getElementById('nav').style.display === 'none') {
+        document.getElementById('nav').style.display = 'flex';
+      } else {
+        document.getElementById('nav').style.display = 'none';
+      }
+  }
   return (
     <header>
       <Link to="/"><h1>Caroline Boseley</h1></Link>
-      <div id="mobile">Menu</div>
+      <div id="mobile" onClick={menuClick}>Menu</div>
       <nav id="nav"> 
         <ul>
         <li><Link to="/projects">projects</Link></li>
@@ -26,6 +36,20 @@ const Header = () => {
           src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot?#iefix') format('embedded-opentype'),
                url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff2') format('woff2'),
                url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff') format('woff');
+        }
+        @media(max-width: 760px) {
+          #nav{
+            width: 100vw;
+            flex-direction: column;
+            align-items: start;
+            position: absolute;
+            top: 55px;
+          }
+          #nav ul {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+          }
         }
         header {
           width: 100vw;
@@ -73,6 +97,14 @@ const Header = () => {
         }
         header nav ul li:hover {
           border-bottom: 1px solid #fff;
+        }
+        @media(min-width: 760px) {
+          nav {
+            display: block
+          }
+          #mobile {
+            display: none;
+          }
         }
       `}</style>
     </header>
