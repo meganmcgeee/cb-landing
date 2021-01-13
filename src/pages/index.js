@@ -40,7 +40,8 @@ const Header = () => {
             flex-direction: column;
             align-items: start;
             position: absolute;
-            top: 55px;
+            top: 70px;
+            left: 18px;
           }
           #nav ul {
             display: flex;

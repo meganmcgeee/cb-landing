@@ -131,8 +131,8 @@ export default class SimpleSlider extends Component {
               }
               .container img {
                 width: 100vw;
-                height: 380px;
-                margin: 10rem auto 0 auto;
+                height: 300px;
+                margin: 13.5rem auto 0 auto;
               }
             }
         `}</style>
