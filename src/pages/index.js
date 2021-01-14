@@ -21,7 +21,7 @@ const Header = () => {
           <li><Link to="/news">news</Link></li>
         </ul>
       </nav>
-      <style jsx>{`
+      <style jsx global>{`
         @font-face {
           font-family: "History 01";
           src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
