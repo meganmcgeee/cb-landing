@@ -111,7 +111,7 @@ class Project extends React.Component {
               margin: 0 auto;
             }
             .slider img {
-              width: 90vw;
+              max-width: 90vw;
               height: 300px;
             }
             .simpleslider .sliderArrow {
@@ -147,7 +147,7 @@ class Project extends React.Component {
             }
             @media(min-width: 1400px) {
               .slider img {
-                width: 900px;
+                max-width: 900px;
                 height: 600px;
                 margin: 0 auto;
               }
@@ -166,7 +166,7 @@ class Project extends React.Component {
             }
             @media(min-width: 1900px) {
               .slider img {
-                width: 1000px;
+                max-width: 1000px;
                 height: 600px;
                 margin: 0 auto;
               }

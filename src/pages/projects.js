@@ -80,7 +80,7 @@ const SingleListLink = styled.div`
   }
 `;
 
-let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#6a8493'];
+let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#0E0E1C'];
 class Projects extends React.Component {
   constructor() {
     super();
