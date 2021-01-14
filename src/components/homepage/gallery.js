@@ -68,11 +68,6 @@ export default class SimpleSlider extends Component {
         //   alt: data.allPrismicSlider.nodes[0].data.slider[4].alternative_text,
         // },
       ]
-      function time(a, b) {
-        setTimeout(() => {
-          document.getElementById('slideLink').href = `/projects/${slides[a].url}`
-        }, b)
-      }
 
       return (
         <Link id="slideLink" href="/projects">
