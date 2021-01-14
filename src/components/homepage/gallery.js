@@ -75,7 +75,7 @@ export default class SimpleSlider extends Component {
       }
 
       return (
-        <Link id="slideLink" href={`/projects/${slides[0].url}`}>
+        <Link id="slideLink" href="/projects">
           <Slider {...settings}>
             {slides.map(slide => <div key={slide.url}><img src={slide.src} alt={slide.alt} /></div>)}
           </Slider>
