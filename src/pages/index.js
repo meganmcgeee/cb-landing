@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
-if (typeof window !== 'undefined') {
-  React.render(<MainWrapper />, document.getElementById("root"));
-}
-function slowLoad() {
-    document.body.style.visibility = 'hidden';
-    setTimeout(() => {
-      document.body.style.visibility = 'visible';
-    }, 300)
-  }
 const Header = () => {
     slowLoad()
     function menuClick() {
@@ -130,6 +121,12 @@ const Header = () => {
 }
 
 export default function Index() {
+  function slowLoad() {
+    document.body.style.visibility = 'hidden';
+    setTimeout(() => {
+      document.body.style.visibility = 'visible';
+    }, 300)
+  }
   return (
     <>
       <Header />
