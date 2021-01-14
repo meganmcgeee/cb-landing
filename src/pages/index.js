@@ -34,6 +34,11 @@ const Header = () => {
                url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff2') format('woff2'),
                url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff') format('woff');
         }
+        #logo {
+                        text-transform: uppercase;
+                        font-size: 26px;
+                        font-family: 'History 01';
+                      }
         @media(max-width: 760px) {
           #nav{
             width: 100vw;
@@ -63,11 +68,6 @@ const Header = () => {
           color: #fff;
           z-index: 1;
         }
-        #logo {
-                        text-transform: uppercase;
-                        font-size: 26px;
-                        font-family: 'History 01';
-                      }
         header #mobile {
           font-family: akzidenz-grotesk-pro,-apple-system,system-ui,sans-serif;
           cursor: pointer;
