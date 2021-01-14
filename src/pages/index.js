@@ -22,23 +22,25 @@ const Header = () => {
         </ul>
       </nav>
       <style jsx global>{`
-        @font-face {
-          font-family: "History 01";
-          src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
-          src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
-        }
-        @font-face {
-          font-family: 'AktivGrotesk';
-          src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot');
-          src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot?#iefix') format('embedded-opentype'),
-               url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff2') format('woff2'),
-               url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff') format('woff');
-        }
-        #logo {
-                        text-transform: uppercase;
-                        font-size: 26px;
-                        font-family: 'History 01';
-                      }
+                @font-face {
+                  font-family: "History 01";
+                  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
+                  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
+                }
+                @font-face {
+                  font-family: 'AktivGrotesk';
+                  src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot');
+                  src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot?#iefix') format('embedded-opentype'),
+                       url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff2') format('woff2'),
+                       url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff') format('woff');
+                }
+                #logo {
+                                text-transform: uppercase;
+                                font-size: 26px;
+                                font-family: 'History 01';
+                              }
+      `}</style>
+      <style jsx>{`
         @media(max-width: 760px) {
           #nav{
             width: 100vw;
