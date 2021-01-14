@@ -56,17 +56,17 @@ export default class SimpleSlider extends Component {
           url: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[2].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[2].alternative_text,
-        },
-        {
-          url: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
-          src: data.allPrismicSlider.nodes[0].data.slider[3].image.url,
-          alt: data.allPrismicSlider.nodes[0].data.slider[3].alternative_text,
-        },
-        {
-          url: data.allPrismicSlider.nodes[0].data.slider[4].link.slug,
-          src: data.allPrismicSlider.nodes[0].data.slider[4].image.url,
-          alt: data.allPrismicSlider.nodes[0].data.slider[4].alternative_text,
-        },
+        }
+        // {
+        //   url: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
+        //   src: data.allPrismicSlider.nodes[0].data.slider[3].image.url,
+        //   alt: data.allPrismicSlider.nodes[0].data.slider[3].alternative_text,
+        // },
+        // {
+        //   url: data.allPrismicSlider.nodes[0].data.slider[4].link.slug,
+        //   src: data.allPrismicSlider.nodes[0].data.slider[4].image.url,
+        //   alt: data.allPrismicSlider.nodes[0].data.slider[4].alternative_text,
+        // },
       ]
       function time(a, b) {
         setTimeout(() => {
@@ -74,29 +74,6 @@ export default class SimpleSlider extends Component {
         }, b)
       }
 
-      function increment() {
-        document.getElementById('slideLink').href = `/projects/${slides[0].url}`
-        time(1, 5900)
-        time(2, 10900)
-        time(3, 15900)
-        time(4, 20900)
-        time(0, 25900)
-        time(1, 30900)
-        time(2, 35900)
-        time(3, 40900)
-        time(4, 45900)
-        time(0, 50900)
-        time(1, 55900)
-        time(2, 60900)
-        time(3, 65900)
-        time(4, 70900)
-        time(0, 75900)
-        time(1, 80900)
-        time(2, 85900)
-        time(3, 90900)
-        time(4, 95900)
-      }
-      useEffect(() => increment());
       return (
         <Link id="slideLink" href={`/projects/${slides[0].url}`}>
           <Slider {...settings}>

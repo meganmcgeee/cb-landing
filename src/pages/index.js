@@ -3,22 +3,22 @@ import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 const Header = () => {
   function menuClick() {
-      if (document.getElementById('nav').style.display === 'none') {
-        document.getElementById('nav').style.display = 'flex';
-      } else {
-        document.getElementById('nav').style.display = 'none';
-      }
+    if (document.getElementById('nav').style.display === 'none') {
+      document.getElementById('nav').style.display = 'flex';
+    } else {
+      document.getElementById('nav').style.display = 'none';
+    }
   }
   return (
     <header>
-      <Link to="/"><h1>Caroline Boseley</h1></Link>
+      <Link to="/"><h1 id="logo">Caroline Boseley</h1></Link>
       <div id="mobile" onClick={menuClick}>Menu</div>
-      <nav id="nav"> 
+      <nav id="nav">
         <ul>
-        <li><Link to="/projects">projects</Link></li>
-        <li><Link to="/about">about</Link></li>
-        <li><Link to="/contact">contact</Link></li>
-        <li><Link to="/news">news</Link></li>
+          <li><Link to="/projects">projects</Link></li>
+          <li><Link to="/about">about</Link></li>
+          <li><Link to="/contact">contact</Link></li>
+          <li><Link to="/news">news</Link></li>
         </ul>
       </nav>
       <style jsx>{`
@@ -63,11 +63,11 @@ const Header = () => {
           color: #fff;
           z-index: 1;
         }
-        header h1 {
-          text-transform: uppercase;
-          font-size: 26px;
-          font-family: 'History 01';
-        }
+        #logo {
+  text-transform: uppercase;
+  font-size: 26px;
+  font-family: 'History 01';
+}
         header #mobile {
           font-family: akzidenz-grotesk-pro,-apple-system,system-ui,sans-serif;
           cursor: pointer;
