@@ -64,10 +64,10 @@ const Header = () => {
           z-index: 1;
         }
         #logo {
-  text-transform: uppercase;
-  font-size: 26px;
-  font-family: 'History 01';
-}
+                        text-transform: uppercase;
+                        font-size: 26px;
+                        font-family: 'History 01';
+                      }
         header #mobile {
           font-family: akzidenz-grotesk-pro,-apple-system,system-ui,sans-serif;
           cursor: pointer;
