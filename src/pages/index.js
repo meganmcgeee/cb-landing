@@ -1,6 +1,17 @@
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
+document.body.style.visibility = 'hidden';
+let domReady = (cb) => {
+  document.readyState === 'interactive' || document.readyState === 'complete'
+    ? cb()
+    : document.addEventListener('DOMContentLoaded', cb);
+};
+
+domReady(() => {
+  // Display body when DOM is loaded
+  document.body.style.visibility = 'visible';
+});
 const Header = () => {
   function menuClick() {
     if (document.getElementById('nav').style.display === 'none') {
@@ -22,11 +33,11 @@ const Header = () => {
         </ul>
       </nav>
       <style jsx global>{`
-                @font-face {
-                  font-family: "History 01";
-                  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
-                  src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
-                }
+@font-face {
+	font-family: "History 01";
+	src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
+	src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
+}
                 @font-face {
                   font-family: 'AktivGrotesk';
                   src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot');
