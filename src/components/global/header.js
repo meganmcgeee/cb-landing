@@ -15,7 +15,6 @@ const HeaderComponent = styled.header`
   @media (max-width: 767px) {
     padding-top: 20px;
     margin-bottom: 20px;
-
     flex-direction: column;
   }
 `;
@@ -23,7 +22,7 @@ const HeaderComponent = styled.header`
 const Logo = styled.h1`
   font-size: 40px;
   text-transform: uppercase;
-
+  display: block;
   font-family: 'History 01';
 
   & a {
