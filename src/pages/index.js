@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
+if (typeof window !== 'undefined') {
+  React.render(<MainWrapper />, document.getElementById("root"));
+}
 function slowLoad() {
     document.body.style.visibility = 'hidden';
     setTimeout(() => {
