@@ -2,16 +2,9 @@ import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 document.body.style.visibility = 'hidden';
-let domReady = (cb) => {
-  document.readyState === 'interactive' || document.readyState === 'complete'
-    ? cb()
-    : document.addEventListener('DOMContentLoaded', cb);
-};
-
-domReady(() => {
-  // Display body when DOM is loaded
+setTimeout(() => {
   document.body.style.visibility = 'visible';
-});
+}, 300)
 const Header = () => {
   function menuClick() {
     if (document.getElementById('nav').style.display === 'none') {
