@@ -112,6 +112,7 @@ const Layout = ({ children, color }) => (
                       content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta name="twitter:card" content="summary_large_image" />
+                    <style>#logo {text-transform: uppercase;font-size: 26px;font-family: 'History 01';}</style>
                   </Helmet>
                 );
               }}
