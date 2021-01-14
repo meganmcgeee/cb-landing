@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
-document.body.style.visibility = 'hidden';
-setTimeout(() => {
-  document.body.style.visibility = 'visible';
-}, 300)
-const Header = () => {
-  function menuClick() {
-    if (document.getElementById('nav').style.display === 'none') {
-      document.getElementById('nav').style.display = 'flex';
-    } else {
-      document.getElementById('nav').style.display = 'none';
-    }
+function slowLoad() {
+    document.body.style.visibility = 'hidden';
+    setTimeout(() => {
+      document.body.style.visibility = 'visible';
+    }, 300)
   }
+const Header = () => {
+    slowLoad()
+    function menuClick() {
+      if (document.getElementById('nav').style.display === 'none') {
+        document.getElementById('nav').style.display = 'flex';
+      } else {
+        document.getElementById('nav').style.display = 'none';
+      }
+    }
   return (
     <header>
       <Link to="/"><h1 id="logo">Caroline Boseley</h1></Link>
