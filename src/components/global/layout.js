@@ -112,6 +112,8 @@ const Layout = ({ children, color }) => (
                       content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta name="twitter:card" content="summary_large_image" />
+                    <link rel="preload" href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot" as="font" type="font/eot"/>
+                    <link rel="preload" href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix" as="font" type="font/eot"/>
                   </Helmet>
                 );
               }}
