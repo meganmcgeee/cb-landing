@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 const Header = () => {
@@ -120,10 +120,10 @@ const Header = () => {
 }
 
 export default function Index() {
+  const [bodyvis, setBodyVis] = useState(false);
   function slowLoad() {
-    document.body.style.visibility = 'hidden';
     setTimeout(() => {
-      document.body.style.visibility = 'visible';
+      setBodyVis(true);
     }, 300)
   }
   slowLoad()
@@ -138,6 +138,7 @@ export default function Index() {
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+      visibility: ${bodyvis ? 'visible' : 'hidden'}
     }
     .container {
       width: 100%;
