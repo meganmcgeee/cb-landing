@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import Gallery from '../components/homepage/gallery'
 const Header = () => {
-    slowLoad()
     function menuClick() {
       if (document.getElementById('nav').style.display === 'none') {
         document.getElementById('nav').style.display = 'flex';
@@ -127,6 +126,7 @@ export default function Index() {
       document.body.style.visibility = 'visible';
     }, 300)
   }
+  slowLoad()
   return (
     <>
       <Header />
