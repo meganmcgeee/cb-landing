@@ -36,7 +36,7 @@ const Header = () => {
                 }
                 #logo {
                                 text-transform: uppercase;
-                                font-size: 26px;
+                                font-size: 23px;
                                 font-family: 'History 01';
                               }
       `}</style>
@@ -101,17 +101,17 @@ const Header = () => {
         @media(min-width: 760px) {
           header {
             height: 120px;
-            align-items: baseline;
+            align-items: flex-end;
             padding: 2rem 2rem;
-          }
-          header h1 {
-            font-size: 60px;
           }
           #nav {
             display: block;
           }
           #mobile {
             display: none;
+          }
+          #logo {
+            font-size: 40px;
           }
         }
       `}</style>

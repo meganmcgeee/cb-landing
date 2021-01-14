@@ -20,7 +20,7 @@ const HeaderComponent = styled.header`
 `;
 
 const Logo = styled.h1`
-  font-size: 40px;
+  font-size: 26px;
   text-transform: uppercase;
   display: block;
   font-family: 'History 01';
@@ -133,7 +133,7 @@ class Header extends React.Component {
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(colors)} id="logo">
-          <Link to={'/projects'}>Caroline Boseley</Link>
+          <Link to={'/projects'}><h1 id="logo">Caroline Boseley</h1></Link>
         </Logo>
         <Navigation
           open={this.state.showMenu}
@@ -156,6 +156,16 @@ class Header extends React.Component {
           </ul>
         </Navigation>
         <OpenNavigation onClick={() => this.toggleMenu()}>Menu</OpenNavigation>
+        <style jsx>{`
+          #logo {
+            font-size: 23px;
+          }
+          @media(min-width: 760px) {
+            #logo {
+            font-size: 40px;
+            }
+          }
+        `}</style>
       </HeaderComponent>
     );
   }
