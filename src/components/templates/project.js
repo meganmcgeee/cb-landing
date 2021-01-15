@@ -150,8 +150,8 @@ class Project extends React.Component {
                 display: block;
                 position: absolute;
                 top: 20%;
-              z-index: 1;
-            }
+                z-index: 1;
+              }
             }
             @media(min-width: 1400px) {
               .slider img {
@@ -159,7 +159,7 @@ class Project extends React.Component {
                 min-width: 400px;
                 max-width: 900px;
                 min-height: 600px;
-                max-height: 800px;
+                max-height: 600px;
                 height: auto;
                 margin: 0 auto;
               }
