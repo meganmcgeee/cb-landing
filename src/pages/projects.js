@@ -5,12 +5,16 @@ import chooseRandomColor from '../components/utils/chooseRandomColor';
 import styled from 'styled-components';
 
 const CustomRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
   margin: 0 4rem;
   @media(min-width: 1000px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 95vw;
     margin: 0 0 4rem 0;
     flex-wrap: no-wrap;
