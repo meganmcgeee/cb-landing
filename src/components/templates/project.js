@@ -111,11 +111,11 @@ class Project extends React.Component {
               margin: 0 auto;
             }
             .slider img {
-              max-width: 90vw;
+              max-width: 80vw;
               height: 300px;
             }
             .simpleslider .sliderArrow {
-              display: block;
+              display: none;
               position: absolute;
               top: 40%;
               z-index: 1;
@@ -125,6 +125,9 @@ class Project extends React.Component {
               top: 40%;
             }
             @media(min-width: 760px) {
+              .simpleslider .sliderArrow {
+              display: block;
+              }
               .slider img {
                 height: 400px;
               }
