@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'styled-bootstrap-grid';
 import {
@@ -59,8 +59,8 @@ class Project extends React.Component {
     const gallery = this.props.data.prismicProjects.data.gallery.map(
       (image, index) => (
         <div className="slide" key={`project_gallery_images_${index}`}>
-            <img src={image.image.url} />
-            <style jsx>{`
+          <img src={image.image.url} />
+          <style jsx>{`
               img {
                 width: 800px;
                 height: 600px;
@@ -70,12 +70,12 @@ class Project extends React.Component {
       )
     );
 
-    const LeftArrow = ({className, style, onClick}) => {
+    const LeftArrow = ({ className, style, onClick }) => {
       return (
         <svg id="leftArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
       )
     }
-    const RightArrow = ({className, style, onClick}) => {
+    const RightArrow = ({ className, style, onClick }) => {
       return (
         <svg id="rightArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
       )
@@ -90,16 +90,16 @@ class Project extends React.Component {
           speed: 500,
           slidesToShow: 1,
           slidesToScroll: 1,
-          nextArrow: <LeftArrow/>,
-          prevArrow: <RightArrow/>,
+          nextArrow: <LeftArrow />,
+          prevArrow: <RightArrow />,
           className: 'simpleslider'
         };
         return (
-        <div className="slider">
-          <Slider {...settings}>
-            {gallery}
-          </Slider>
-          <style jsx>{`
+          <div className="slider">
+            <Slider {...settings}>
+              {gallery}
+            </Slider>
+            <style jsx>{`
              .simpleslider .sliderArrow {
                display: none;
              }
@@ -117,12 +117,12 @@ class Project extends React.Component {
             .simpleslider .sliderArrow {
               display: block;
               position: absolute;
-              top: 50%;
+              top: 40%;
               z-index: 1;
             }
             .simpleslider #leftArrow, .simpleslider #rightArrow {
               position: absolute;
-              top: 50%;
+              top: 40%;
             }
             @media(min-width: 760px) {
               .slider img {
@@ -140,14 +140,18 @@ class Project extends React.Component {
                 height: 500px;
               }
             }
-            @media(min-width:
-            width: auto; 1366px) {
+            @media(min-width: 1366px) {
               .slider img {
                 min-width: 400px;
-                max-height: 800px;
-                min-height: 600px;
+                max-height: 600px;
                 height: auto;
               }
+              .simpleslider .sliderArrow {
+                display: block;
+                position: absolute;
+                top: 20%;
+              z-index: 1;
+            }
             }
             @media(min-width: 1400px) {
               .slider img {
@@ -159,10 +163,10 @@ class Project extends React.Component {
                 height: auto;
                 margin: 0 auto;
               }
-            .simpleslider .simpleslider .sliderArrow {
+            .simpleslider .sliderArrow {
               display: block;
               position: absolute;
-              top: 50%;
+              top: 30%;
               z-index: 1;
             }
             .simpleslider #leftArrow {
@@ -210,7 +214,7 @@ class Project extends React.Component {
               }
             }
           `}</style>
-        </div>
+          </div>
         )
       }
     }
@@ -254,23 +258,23 @@ class Project extends React.Component {
             );
           }}
         </Location>
-          <Col>
-              <SimpleSlider/>
-            <div className="textcontainer">
+        <Col>
+          <SimpleSlider />
+          <div className="textcontainer">
             <TextBox
               text={this.props.data.prismicProjects.data.text}
-              css={{width: '59vw', margin: '0 auto'}}
+              css={{ width: '59vw', margin: '0 auto' }}
             />
-            </div>
-          </Col>
-          <style jsx>{`
+          </div>
+        </Col>
+        <style jsx>{`
             .textcontainer {
               width: 80vw;
               margin: 2rem auto;
             }
             @media(min-width: 760px) {
               .textcontainer {
-                width: 75vw;
+                width: 65vw;
 
               }
             }
