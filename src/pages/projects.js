@@ -14,13 +14,23 @@ const CustomRow = styled.div`
     width: 95vw;
     margin: 0 0 4rem 0;
     flex-wrap: no-wrap;
+    & > div:nth-child(1) {
+      margin: 4rem;
+    }
+    & > div:nth-child(2) {
+      margin: 4rem;
+    }
     & > div {
       margin: 4rem;
     }
-    & > div:nth-child(3) {
+    & > div:nth-child(odd) {
       margin-top: -6rem;
     }
-    & > div:nth-child(4) {
+    & > div:nth-child(1) {
+      margin: 4rem;
+    }
+    & > div:nth-child(2) {
+      margin: 4rem;
     }
   }
   @media(min-width: 1900px) {
