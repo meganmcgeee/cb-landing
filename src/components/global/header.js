@@ -61,18 +61,18 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
-      // color: #404040;
+      // color: #B1B2B5;
 
 
       & a.active-link {
         // color: ${props => props.color};
-        border-bottom: 1px solid #404040;
+        border-bottom: 1px solid #B1B2B5;
       }
 
       & a:hover {
-        color: #404040;
+        color: #B1B2B5;
         // color: ${props => props.color};
-        border-bottom: 1px solid #404040;
+        border-bottom: 1px solid #B1B2B5;
       }
     }
 

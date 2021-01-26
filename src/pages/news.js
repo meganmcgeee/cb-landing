@@ -75,6 +75,12 @@ const News = ({data}) => {
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
           color: rgb(125, 70, 50);
         }
+        .light-nav header nav ul li a:hover, .light-nav .active-link {
+          color: #0E0E1C;
+        } 
+        .light-nav .active-link {
+          border-bottom: 1px solid #0E0E1C;
+        }
         .light-nav footer {
           position: absolute;
           bottom: 5px;
@@ -91,8 +97,9 @@ const News = ({data}) => {
           margin-bottom: 2rem;
         }
         .newsitems {
+          width: 100vw;
           display: flex;
-          justify-content: space-around;
+          justify-content: flex-start;
           flex-direction: column;
           flex-wrap: wrap;
         }
@@ -101,6 +108,7 @@ const News = ({data}) => {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          margin-right: 3rem;
         }
         .article h2 {
           font-size: 1.4rem;

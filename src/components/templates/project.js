@@ -105,6 +105,12 @@ class Project extends React.Component {
              }
              .simpleslider {
               position: relative;
+              -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
              }
             .slider {
               width: 80vw;
@@ -113,6 +119,12 @@ class Project extends React.Component {
             .slider img {
               max-width: 80vw;
               height: 300px;
+              -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
             }
             .simpleslider .sliderArrow {
               display: none;
@@ -274,6 +286,12 @@ class Project extends React.Component {
             .textcontainer {
               width: 80vw;
               margin: 2rem auto;
+              -webkit-touch-callout: none; /* iOS Safari */
+              -webkit-user-select: none; /* Safari */
+              -khtml-user-select: none; /* Konqueror HTML */
+              -moz-user-select: none; /* Old versions of Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; 
             }
             @media(min-width: 760px) {
               .textcontainer {
