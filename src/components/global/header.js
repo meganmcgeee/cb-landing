@@ -133,7 +133,7 @@ class Header extends React.Component {
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(colors)} id="logo">
-          <Link to={'/projects'}><h1 id="logo">Caroline Boseley</h1></Link>
+          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600}}>Caroline Boseley</h1></Link>
         </Logo>
         <Navigation
           open={this.state.showMenu}

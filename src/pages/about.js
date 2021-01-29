@@ -37,12 +37,12 @@ const About = ({ data }) => {
           flex-direction: column;
         }
         .flexy > div > p {
-          max-width: 90vw;
           margin-bottom: -.1rem;
+          font-size: 20px;
         }
         @media (min-width: 1400px) {
           .flexy > div {
-            height: 80vh;
+            height: 100vh;
             flex-wrap: wrap;
           }
           .flexy > div p {

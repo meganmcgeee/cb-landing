@@ -9,39 +9,10 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-evenly;
-  margin: 0 4rem;
-  @media(min-width: 1000px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 95vw;
-    margin: 0 0 4rem 0;
-    flex-wrap: no-wrap;
-    & > div:nth-child(1) {
-      margin: 4rem;
-    }
-    & > div:nth-child(2) {
-      margin: 4rem;
-    }
-    & > div {
-      margin: 4rem;
-    }
-    & > div:nth-child(odd) {
-      margin-top: -6rem;
-    }
-    & > div:nth-child(1) {
-      margin: 4rem;
-    }
-    & > div:nth-child(2) {
-      margin: 4rem;
-    }
-  }
-  @media(min-width: 1900px) {
-    & > div:nth-child(3) {
-      margin-top: -9rem;
-    }
-  }
+@media(min-width: 760px) {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 }
 `;
 
@@ -136,27 +107,17 @@ class Projects extends React.Component {
                 </Link>
               </SingleListLink>
               <style jsx>{`
-
-              @media(min-width: 760px) {
-              #landscape {
-                max-width: 600px;
-                max-height: 400px;
-              }
-              #landscape img {
-                max-width: 700px;
-                max-height: 500px;
-              }
-            }
-            @media(min-width: 1920px) {
-                #landscape {
-                  max-width: 900px;
-                  max-height: 700px;
+                img {
+                  width: 325px;
+                  height: 325px;
                 }
-                #landscape img {
-                  max-width: 900px;
-                  max-height: 700px;
+                @media(min-width: 1020px) {
+                  img {
+                    width: 500px;
+                    height: 500px;
+                    margin: 2rem 0;
+                  }
                 }
-              }
               `}</style>
             </div>
           );
@@ -179,27 +140,10 @@ class Projects extends React.Component {
                 </Link>
               </SingleListLink>
               <style jsx>{`
-
-              @media(min-width: 760px) {
-                #portrait {
-                  max-width: 500px;
-                  max-height: 800px;
+                img {
+                  width: 400px;
+                  height: 400px;
                 }
-                #portrait img {
-                  max-width: 500px;
-                  max-height: 800px;
-                }
-              }
-              @media(min-width: 1920px) {
-                #portrait {
-                  max-width: 700px;
-                  max-height: 900px;
-                }
-                #portrait img {
-                  max-width: 700px;
-                  max-height: 900px;
-                }
-              }
               `}</style>
             </div>
           );
