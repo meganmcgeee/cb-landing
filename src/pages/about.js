@@ -42,16 +42,21 @@ const About = ({ data }) => {
         }
         @media (min-width: 1400px) {
           .flexy > div {
-            height: 90vh;
             flex-wrap: wrap;
+            height: 100vh;
           }
           .flexy > div p {
             width: 40%;
           }
         }
+        @media(min-width: 1400px) and (max-height: 760px) {
+          .flexy > div > p {
+            font-size: 15.8px;
+          }
+        }
         @media (min-width: 1920px) {
           .flexy > div {
-            height: 60vh;
+            height: 90vh;
           }
           .flexy > div > p {
             width: 40%;
