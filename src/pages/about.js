@@ -38,11 +38,11 @@ const About = ({ data }) => {
         }
         .flexy > div > p {
           margin-bottom: -.1rem;
-          font-size: 20px;
+          font-size: 19px;
         }
         @media (min-width: 1400px) {
           .flexy > div {
-            height: 100vh;
+            height: 90vh;
             flex-wrap: wrap;
           }
           .flexy > div p {

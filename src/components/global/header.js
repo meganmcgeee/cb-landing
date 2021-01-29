@@ -61,17 +61,14 @@ const Navigation = styled.nav`
 
       padding: 0 40px 0 0;
       margin: 0;
-      // color: #B1B2B5;
 
 
       & a.active-link {
-        // color: ${props => props.color};
         border-bottom: 1px solid #B1B2B5;
       }
 
       & a:hover {
-        color: #B1B2B5;
-        // color: ${props => props.color};
+        color: ${props => props.color};
         border-bottom: 1px solid #B1B2B5;
       }
     }
@@ -130,10 +127,11 @@ class Header extends React.Component {
   render() {
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+    let hover = chooseRandomColor(colors);
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(colors)} id="logo">
-          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600}}>Caroline Boseley</h1></Link>
+          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600, fontSmooth: 'antialiased', MozOsxFontSmoothing: 'grayscale', WebkitFontSmoothing: 'antialiased'}}>Caroline Boseley</h1></Link>
         </Logo>
         <Navigation
           open={this.state.showMenu}
@@ -159,6 +157,9 @@ class Header extends React.Component {
         <style jsx>{`
           #logo {
             font-size: 23px;
+          }
+          ul li a:hover {
+            color: ${hover};
           }
           @media(min-width: 760px) {
             #logo {
