@@ -30,7 +30,6 @@ const Logo = styled.h1`
   }
 
   &:hover > a {
-    color: ${props => props.color};
     border-bottom: none;
   }
 
@@ -131,7 +130,7 @@ class Header extends React.Component {
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(colors)} id="logo">
-          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600, fontSmooth: 'antialiased', MozOsxFontSmoothing: 'grayscale', WebkitFontSmoothing: 'antialiased'}}>Caroline Boseley</h1></Link>
+          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600, fontSmooth: 'antialiased', MozOsxFontSmoothing: 'antialiased', WebkitFontSmoothing: 'antialiased'}}>Caroline Boseley</h1></Link>
         </Logo>
         <Navigation
           open={this.state.showMenu}
@@ -157,8 +156,11 @@ class Header extends React.Component {
         <style jsx>{`
           #logo {
             font-size: 23px;
+            font-smooth: antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: antialiased;
           }
-          ul li a:hover {
+          ul li a:hover, #logo:hover {
             color: ${hover};
           }
           @media(min-width: 760px) {
