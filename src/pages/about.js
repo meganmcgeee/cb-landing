@@ -40,6 +40,9 @@ const About = ({ data }) => {
           margin-bottom: -.1rem;
           font-size: 19px;
         }
+        .flexy > div > p > a {
+          border-bottom: 1px solid #B1B2B5;
+        }
         @media (min-width: 1400px) {
           .flexy > div {
             flex-wrap: wrap;

@@ -136,6 +136,7 @@ class Project extends React.Component {
               position: absolute;
               top: 40%;
             }
+    
             @media(min-width: 760px) {
               .simpleslider .sliderArrow {
               display: block;
@@ -293,6 +294,8 @@ class Project extends React.Component {
               -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; 
             }
+            .textcontainer a {text-decoration: underline;}
+            .textcontainer a:hover{border: none;}
             @media(min-width: 760px) {
               .textcontainer {
                 width: 65vw;
