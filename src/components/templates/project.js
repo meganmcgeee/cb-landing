@@ -143,6 +143,7 @@ class Project extends React.Component {
               }
               .slider img {
                 height: 400px;
+                margin: 0 auto;
               }
               .simpleslider #leftArrow {
                 left: -25px;
@@ -294,8 +295,8 @@ class Project extends React.Component {
               -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; 
             }
-            .textcontainer a {text-decoration: underline;}
-            .textcontainer a:hover{border: none;}
+            .textcontainer a {border-bottom: 1px solid #B1B2B5}
+            .textcontainer a:hover {color: #B1B2B5;}
             @media(min-width: 760px) {
               .textcontainer {
                 width: 65vw;
