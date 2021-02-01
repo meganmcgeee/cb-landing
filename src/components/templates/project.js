@@ -113,11 +113,11 @@ class Project extends React.Component {
             user-select: none; 
              }
             .slider {
-              width: 80vw;
+              width: 90vw;
               margin: 0 auto;
             }
             .slider img {
-              max-width: 80vw;
+              max-width: 90vw;
               height: 300px;
               -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -133,15 +133,16 @@ class Project extends React.Component {
               z-index: 1;
             }
             .simpleslider #leftArrow, .simpleslider #rightArrow {
+              display: none;
               position: absolute;
               top: 40%;
             }
-    
             @media(min-width: 760px) {
               .simpleslider .sliderArrow {
               display: block;
               }
               .slider img {
+                width: auto;
                 height: 400px;
                 margin: 0 auto;
               }
@@ -275,7 +276,7 @@ class Project extends React.Component {
             );
           }}
         </Location>
-        <Col>
+        <div className="container">
           <SimpleSlider />
           <div className="textcontainer">
             <TextBox
@@ -283,9 +284,16 @@ class Project extends React.Component {
               css={{ width: '59vw', margin: '0 auto' }}
             />
           </div>
-        </Col>
+          </div>
         <style jsx>{`
             .textcontainer {
+              .container {
+                width: 90vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0; padding: 0;
+              }
               width: 80vw;
               margin: 2rem auto;
               -webkit-touch-callout: none; /* iOS Safari */
