@@ -63,7 +63,7 @@ const Navigation = styled.nav`
 
 
       & a.active-link {
-        border-bottom: 1px solid #B1B2B5;
+
       }
 
       & a:hover {

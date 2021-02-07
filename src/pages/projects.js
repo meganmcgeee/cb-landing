@@ -163,7 +163,7 @@ class Projects extends React.Component {
             .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
               color: #814834;
             }
-            .light-nav .active-link {
+            ul li a.active-link {
               color: #814834;
               border-bottom: 1px solid #814834;
             }

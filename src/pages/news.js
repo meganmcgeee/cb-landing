@@ -75,12 +75,14 @@ const News = ({data}) => {
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
           color: rgb(125, 70, 50);
         }
-        .light-nav header nav ul li a:hover, .light-nav .active-link {
-          color: #0E0E1C;
-        } 
-        .light-nav .active-link {
-          border-bottom: 1px solid #0E0E1C;
-        }
+        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
+              color: #814834;
+            }
+            ul li a.active-link {
+              color: #814834;
+              border-bottom: 1px solid #814834;
+            }
+ 
         .light-nav footer {
           position: absolute;
           bottom: 5px;
