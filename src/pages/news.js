@@ -118,7 +118,7 @@ const News = ({data}) => {
           display: flex;
           flex-direction: column;
           margin-top: 2rem;
-          align-items: center;
+          align-items: space-between;
         }
         .item {
           width: 90vw;

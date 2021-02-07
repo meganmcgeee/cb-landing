@@ -3,6 +3,7 @@ import Layout from '../components/global/layout';
 import { graphql, Link } from 'gatsby';
 import chooseRandomColor from '../components/utils/chooseRandomColor';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 const CustomRow = styled.div`
 display: flex;
@@ -65,7 +66,7 @@ const SingleListLink = styled.div`
   }
 `;
 
-let allColors = ['#6a8493', '#8a432e', '#B1B2B5', '#0E0E1C'];
+let allColors = ['#6a8493', '#8a432e', , '#0E0E1C'];
 class Projects extends React.Component {
   constructor() {
     super();
@@ -153,8 +154,21 @@ class Projects extends React.Component {
 
     return (
       <Layout>
+          <Helmet><body class='light-nav' /></Helmet>
           <CustomRow>{allProjects}</CustomRow>
-    </Layout>
+          <style jsx>{`
+            .light-nav {
+              background: rgb(172, 171, 176);
+            }
+            .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
+              color: #814834;
+            }
+            .light-nav .active-link {
+              color: #814834;
+              border-bottom: 1px solid #814834;
+            }
+          `}</style>
+     </Layout>
     );
   }
 }
