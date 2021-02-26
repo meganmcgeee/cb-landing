@@ -5,7 +5,7 @@ export default function Index() {
     <>
       <div className="container">
         <svg id="line" width="100vh" height="100vh">
-          <path id="linepath" d="M 0 60 C 80 30, 75 15, 80 360 S 260 -120, 750 300" stroke="white" fill="transparent"/>
+          <path id="linepath" d="M 0 60 C 80 30, 75 15, 80 300 S 260 -120, 750 300" stroke="white" fill="transparent"/>
         </svg>
         <div className="content">
           <p><strong>Caroline Boseley</strong> is an independent curator whose practice explores the role of <i>contemporary art</i> in the <i>public realm</i>. She explores how art outside of the gallery creates <i>space of encounter</i> and <i>community engagement</i>.</p>
