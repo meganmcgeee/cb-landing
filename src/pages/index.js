@@ -1,153 +1,59 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'gatsby'
-import Gallery from '../components/homepage/gallery'
-const Header = () => {
-    function menuClick() {
-      if (document.getElementById('nav').style.display === 'none') {
-        document.getElementById('nav').style.display = 'flex';
-      } else {
-        document.getElementById('nav').style.display = 'none';
-      }
-    }
-  return (
-    <header>
-      <Link to="/"><h1 id="logo">Caroline Boseley</h1></Link>
-      <div id="mobile" onClick={menuClick}>Menu</div>
-      <nav id="nav">
-        <ul>
-          <li><Link to="/projects">projects</Link></li>
-          <li><Link to="/about">about</Link></li>
-          <li><Link to="/contact">contact</Link></li>
-          <li><Link to="/news">news</Link></li>
-        </ul>
-      </nav>
-      <style jsx global>{`
-@font-face {
-	font-family: "History 01";
-	src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
-	src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
-}
-                @font-face {
-                  font-family: 'AktivGrotesk';
-                  src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot');
-                  src: url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.eot?#iefix') format('embedded-opentype'),
-                       url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff2') format('woff2'),
-                       url('/Fonts/AktivGrotesk/AktivGrotesk_W_Lt.woff') format('woff');
-                }
-                #logo {
-                                text-transform: uppercase;
-                                font-size: 23px;
-                                font-family: 'History 01';
-                              }
-      `}</style>
-      <style jsx>{`
-        @media(max-width: 760px) {
-          #nav{
-            width: 100vw;
-            flex-direction: column;
-            align-items: start;
-            position: absolute;
-            top: 70px;
-            left: 18px;
-          }
-          #nav ul {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-          }
-        }
-        header {
-          width: 100vw;
-          height: 70px;
-          background: #0E0E1C;
-          position: absolute;
-          top: 0;
-          left: 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: baseline;
-          padding: 1.2rem 1rem;
-          color: #fff;
-          z-index: 1;
-        }
-        header #mobile {
-          font-family: akzidenz-grotesk-pro,-apple-system,system-ui,sans-serif;
-          cursor: pointer;
-        }
-        header a {
-          text-decoration: none;
-          color: inherit;
-        }
-        header nav ul {
-          width: 350px;
-          display: flex;
-          justify-content: space-evenly;
-          list-style: none;
-        }
-        header nav a {
-          font-family: akzidenz-grotesk-pro, -apple-system, system-ui, sans-serif;
-          font-weight: 300;
-          line-height: 1.5;
-          font-size: 18px;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-        }
-        nav {
-          display: none;
-        }
-        header nav ul li:hover {
-          border-bottom: 1px solid #fff;
-        }
-        @media(min-width: 760px) {
-          header {
-            height: 120px;
-            align-items: flex-end;
-            padding: 2rem 2rem;
-          }
-          #nav {
-            display: block;
-          }
-          #mobile {
-            display: none;
-          }
-          #logo {
-            font-size: 40px;
-          }
-        }
-      `}</style>
-    </header>
-  )
-}
+import React from 'react';
 
 export default function Index() {
-  const [bodyvis, setBodyVis] = useState(false);
-  function slowLoad() {
-    setTimeout(() => {
-      setBodyVis(true);
-    }, 300)
-  }
-  slowLoad()
   return (
     <>
-      <Header />
       <div className="container">
-        <Gallery />
+        <svg id="line" width="100vh" height="100vh">
+          <path id="linepath" d="M 0 60 C 80 30, 75 15, 80 360 S 260 -120, 750 300" stroke="white" fill="transparent"/>
+        </svg>
+        <div className="content">
+          <p><strong>Caroline Boseley</strong> is an independent curator whose practice explores the role of <i>contemporary art</i> in the <i>public realm</i>. She explores how art outside of the gallery creates <i>space of encounter</i> and <i>community engagement</i>.</p>
+        </div>
       </div>
       <style jsx>{`
-    body {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      visibility: ${bodyvis ? 'visible' : 'hidden'}
-    }
-    .container {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-    `}</style>
+      @font-face {
+	      font-family: "History 01";
+	      src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot");
+	      src: url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix") format("embedded-opentype"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff2") format("woff2"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.woff") format("woff"), url("https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.svg#typotheque_webfonts_service") format("svg");
+      }
+      html, body {
+        background: rgb(24, 22, 42);
+        color: #B1B2B5;
+        font-size: 28px;
+        font-weight: thin;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .container #line {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .container .content {
+        max-width: 810px;
+        padding-left: .8rem;
+      }
+      .content strong {
+            font-family: 'History 01';
+            font-size: 30px;
+            font-weight: 600;
+            font-smooth: antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: antialiased;
+      }
+        @media(min-width: 760px) {
+          .content strong {
+            font-size: 60px;
+          }
+        }
+      `}</style>
     </>
-  );
+  )
 }
