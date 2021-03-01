@@ -1,16 +1,20 @@
 import React from 'react';
+import { Link } from "gatsby";
+
 
 export default function Index() {
   return (
     <>
+    <Link to="/projects">
       <div className="container">
         <svg id="line" width="100vh" height="100vh">
-          <path id="linepath" d="M 0 60 C 80 30, 75 15, 80 300 S 260 -120, 750 300" stroke="white" fill="transparent"/>
+          <path id="linepath" d="M 0 60 C 180 30, 75 15, 190 305 S 500 -150, 950 300" stroke="white" fill="transparent"/>
         </svg>
         <div className="content">
-          <p><strong>Caroline Boseley</strong> is an independent curator whose practice explores the role of <i>contemporary art</i> in the <i>public realm</i>. She explores how art outside of the gallery creates <i>space of encounter</i> and <i>community engagement</i>.</p>
+          <p><strong>Caroline Boseley</strong> is an independent</p> <p>curator whose practice explores the role of <i>contemporary art</i> in the <i>public realm</i>. She explores how art outside of the gallery creates <i>space of encounter</i> and <i>community engagement</i>.</p>
         </div>
       </div>
+    </Link>
       <style jsx>{`
       @font-face {
 	      font-family: "History 01";
@@ -20,16 +24,14 @@ export default function Index() {
       html, body {
         background: rgb(24, 22, 42);
         color: #B1B2B5;
-        font-size: 28px;
+        font-size: 45px;
         font-weight: thin;
       }
       .container {
         width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        height: 75vw;
+        display: grid;
+        place-items: center;
       }
       .container #line {
         position: absolute;
@@ -37,8 +39,17 @@ export default function Index() {
         left: 0;
       }
       .container .content {
-        max-width: 810px;
-        padding-left: .8rem;
+        margin-bottom: 3rem;
+      }
+      .content p {
+        margin: 0;
+      }
+     a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .content p:nth-child(2) {
+        max-width: 1000px;
       }
       .content strong {
             font-family: 'History 01';
