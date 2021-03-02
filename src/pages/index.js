@@ -8,7 +8,7 @@ export default function Index() {
     <Link to="/projects">
       <div className="container">
         <svg id="line" width="10000px" height="10000px">
-          <path id="linepath" d="M 0 200 C 100 130, 105 100, 270 615 S 690 -250, 1400 250" stroke="white" fill="transparent"/>
+          <path id="linepath" d="M 0 200 C 100 130, 105 100, 270 585 S 690 -250, 1400 250" stroke="white" fill="transparent"/>
         </svg>
         <div className="content">
           <p><strong>Caroline Boseley</strong> is an independent</p> <p>curator whose practice explores the role of <br className="desktop-break"/> contemporary art in the public realm. She explores <br className="desktop-break"/>how art outside of the gallery creates space of <br className="desktop-break"/> encounter and community engagement.</p>
@@ -69,13 +69,6 @@ export default function Index() {
           .container {
             justify-content: flex-end;
           }
-          .content {
-            margin: 0 auto;
-            font-size: 60px;
-          }
-          .content strong {
-            font-size: 90px;
-          }
           .content p, .content p:nth-child(2) {
             width: 80vw;
             max-width: 2800px;
@@ -83,8 +76,25 @@ export default function Index() {
           svg {
             display: block;
           }
+          .content {
+            margin: 0 auto;
+            font-size: 50px;
+          }
+          .content strong {
+            font-size: 70px;
+          }
+        }
+        @media(min-width: 1360px) {
           .desktop-break {
             display: block;
+          }
+        }
+        @media(min-width: 1700px) {
+          .content {
+            font-size: 70px;
+          }
+          .content strong {
+            font-size: 90px;
           }
         }
       `}</style>
