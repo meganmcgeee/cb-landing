@@ -10,7 +10,9 @@ export default function Index() {
       <div className="content">
 
             <p>  
-              <strong>Caroline Boseley</strong> is an independent curator whose practice explores the role <br className="dtop"/> of contemporary art in the public realm. <br className="dtop"/> She explores how art outside of the gallery creates space of encounter and <br className="dtop"/> community engagement.
+              <strong>Caroline Boseley</strong> works to spark organic dialogue between artists and 
+              audiences to animate public space through thought-provoking art—often outside the 
+              gallery. She supports emerging practices and initiatives, building connections to devise projects that delight and engage.
             </p>
           </div>
       </div>  
@@ -86,8 +88,10 @@ export default function Index() {
             margin-bottom: 3rem;
           }
           img {
-            width: 68vw;
-            height: 80vh;
+            position: absolute;
+            left: -40px;
+            width: 80vw;
+            height: 71vh;
           }
           .content {
             margin-bottom: 0px;
