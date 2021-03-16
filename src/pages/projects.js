@@ -144,6 +144,7 @@ class Projects extends React.Component {
                 img {
                   width: 400px;
                   height: 400px;
+                  position: absolute;
                 }
               `}</style>
             </div>

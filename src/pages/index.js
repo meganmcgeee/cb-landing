@@ -30,7 +30,7 @@ export default function Index() {
               }
               img {
                 width: 63vw;
-                height: 90vh;
+                height: 92vh;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -110,8 +110,8 @@ export default function Index() {
             margin-bottom: 0px;
           }
           img {
-            width: 73vw;
-            height: 75vh;
+            width: 85vw;
+            height: 68vh;
           }
           .content {
             margin-left: 3rem;
