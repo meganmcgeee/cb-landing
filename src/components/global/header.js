@@ -126,11 +126,13 @@ class Header extends React.Component {
   render() {
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+    let logoColors = ['blue', 'grey', 'lblue', 'orange'];
+    let logoColor = chooseRandomColor(logoColors);
     let hover = chooseRandomColor(colors);
     return (
       <HeaderComponent>
-        <Logo color={chooseRandomColor(colors)} id="logo">
-          <Link to={'/projects'}><h1 id="logo" style={{fontWeight: 600, fontSmooth: 'antialiased', MozOsxFontSmoothing: 'antialiased', WebkitFontSmoothing: 'antialiased'}}>Caroline Boseley</h1></Link>
+        <Logo color={chooseRandomColor(logoColors)} id="logo">
+          <img src={`${logoColor}.png`} alt="Caroline Boseley Logo"/>
         </Logo>
         <Navigation
           open={this.state.showMenu}
@@ -159,6 +161,10 @@ class Header extends React.Component {
             font-smooth: antialiased;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: antialiased;
+          }
+          #logo img {
+            width: 240px;
+            height: 45px;
           }
           ul li a:hover, #logo:hover {
             color: ${hover};
