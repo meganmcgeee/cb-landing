@@ -137,6 +137,9 @@ const News = ({data}) => {
           height: 337px;
           margin-bottom: -5rem;
         }
+        .light-nav header nav ul li a:hover {
+              border-bottom: 1px solid #814834;
+        }
         @media(min-width: 860px) {
           .item {
             flex-direction: row;
