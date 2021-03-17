@@ -177,6 +177,9 @@ class Header extends React.Component {
             width: 380px;
             height: 45px;
           }
+          img:hover {
+            content: url(`/images/{hover}`);
+          }
           ul li a:hover, #logo:hover {
             color: ${hover};
           }
