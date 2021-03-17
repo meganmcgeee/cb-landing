@@ -116,6 +116,9 @@ class Projects extends React.Component {
                   width: 325px;
                   height: 325px;
                 }
+                .light-nav > header h1 a img {
+                  content: url(${`'/images/orange.png'`});
+                }
                 @media(min-width: 1020px) {
                   img {
                     width: 500px;
