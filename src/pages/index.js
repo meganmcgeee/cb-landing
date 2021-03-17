@@ -90,8 +90,8 @@ export default function Index() {
           img {
             position: absolute;
             left: -40px;
-            width: 80vw;
-            height: 71vh;
+            width: 85vw;
+            height: 67vh;
           }
           .content {
             margin-bottom: 0px;
@@ -101,7 +101,7 @@ export default function Index() {
           }
           .content p {
             font-size: 3rem;
-            line-height: 1.3;
+            line-height: 1.4;
           }
         }
         @media(min-width: 1919px) {
@@ -110,8 +110,8 @@ export default function Index() {
             margin-bottom: 0px;
           }
           img {
-            width: 85vw;
-            height: 68vh;
+            width: 87vw;
+            height: 64vh;
           }
           .content {
             margin-left: 3rem;
@@ -121,7 +121,7 @@ export default function Index() {
           }
           .content p {
             font-size: 4rem;
-            line-height: 1.3;
+            line-height: 1.4;
         }
         }
       `}</style>
