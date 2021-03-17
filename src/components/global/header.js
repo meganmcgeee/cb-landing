@@ -126,6 +126,14 @@ class Header extends React.Component {
   render() {
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+    let bodyid = null;
+    if(bodyid == 'projects' || bodyid == 'news') {
+      let logoColors = ['blue', 'lblue', 'orange'];
+    } else if (bodyid == 'about') {
+      let logoColors = ['blue', 'grey', 'lblue'];
+    } else {
+      let logoColors = ['grey', 'lblue', 'orange'];
+    }
     let logoColors = ['blue', 'grey', 'lblue', 'orange'];
     let logoColor = chooseRandomColor(logoColors);
     let hover = chooseRandomColor(colors);
