@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import {Link} from 'gatsby';
 import chooseRandomColor from '../utils/chooseRandomColor';
 
 const HeaderComponent = styled.header`
@@ -132,7 +132,9 @@ class Header extends React.Component {
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(logoColors)} id="logo">
-          <img src={`${logoColor}.png`} alt="Caroline Boseley Logo"/>
+          <Link to="/projects">
+            <img src={`/images/${logoColor}.png`} alt="Caroline Boseley Logo"/>
+          </Link>
         </Logo>
         <Navigation
           open={this.state.showMenu}
@@ -162,8 +164,9 @@ class Header extends React.Component {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: antialiased;
           }
-          #logo img {
-            width: 240px;
+          #logo 
+          img {
+            width: 380px;
             height: 45px;
           }
           ul li a:hover, #logo:hover {
