@@ -7,7 +7,7 @@ const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
   padding-top: 40px;
   margin-bottom: 40px;
@@ -126,8 +126,8 @@ class Header extends React.Component {
   render() {
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
-    let bodyid = null;
-    if(bodyid == 'projects' || bodyid == 'news') {
+    let bodyid = document.getElementsByTagName("body")[0].id;
+    if(bodyid === 'projects' || bodyid === 'news') {
       let logoColors = ['blue', 'lblue', 'orange'];
     } else if (bodyid == 'about') {
       let logoColors = ['blue', 'grey', 'lblue'];
@@ -176,9 +176,6 @@ class Header extends React.Component {
           img {
             width: 380px;
             height: 45px;
-          }
-          img:hover {
-            content: url(`/images/{hover}`);
           }
           ul li a:hover, #logo:hover {
             color: ${hover};

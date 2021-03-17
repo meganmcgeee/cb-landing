@@ -93,6 +93,10 @@ class Projects extends React.Component {
           // landscape image
           return (
             <div id="landscape" key={project.node.prismicId}>
+                  <Helmet
+        bodyAttributes={{
+          id: 'projects'
+      }}/>
               <SingleListLink
                 onMouseEnter={() => this.generateColor()}
                 color={this.state.hoverColor}
@@ -163,6 +167,9 @@ class Projects extends React.Component {
             }
             .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
               color: #814834;
+            }
+            .light-nav header nav ul li a:hover {
+              border-bottom: 1px solid #814834;
             }
             ul li a.active-link {
               color: #814834;

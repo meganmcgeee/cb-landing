@@ -1,9 +1,13 @@
 import React from 'react'
 import {Link} from "gatsby"
+import { Helmet } from 'react-helmet'
 
 export default function Index() {
   return (
     <>
+    <Helmet>
+      <body id="index"/>
+    </Helmet>
     <Link to="/projects">
       <div className="container">
       <img src="/images/line.svg" alt="Line"/>

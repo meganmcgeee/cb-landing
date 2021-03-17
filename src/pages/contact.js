@@ -40,7 +40,7 @@ const Contact = ({ data }) => {
   return (
     <>
     <Helmet>
-      <body class="light-nav" />
+      <body id="contact" class="light-nav" />
     </Helmet>
     <Layout>
       <Row>

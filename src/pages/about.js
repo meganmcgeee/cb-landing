@@ -14,7 +14,7 @@ const About = ({ data }) => {
   return (
     <>
     <Helmet>
-    <body class='light-nav' />
+    <body id="about" class='light-nav' />
     </Helmet>
     <Layout>
           <div className="flexy">

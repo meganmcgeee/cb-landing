@@ -27,7 +27,7 @@ const News = ({data}) => {
   return (
     <>
     <Helmet>
-    <body class="light-nav"/>
+    <body class="light-nav" id="news"/>
     </Helmet>
     <Layout>
     <div className="wrapper">
