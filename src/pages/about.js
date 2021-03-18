@@ -25,6 +25,12 @@ const About = ({ data }) => {
           background: #814834;
           color: #B1B2B5; 
         }
+        #logo img {
+          content: url(${`'/images/grey.png'`});
+        }
+        #logo img:hover {
+            content: url('/images/lblue.png');
+        }
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
           color: #B1B2B5;
         }

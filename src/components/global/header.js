@@ -122,7 +122,7 @@ class Header extends React.Component {
   };
 
   render() {
-    let bodyid = null;
+    let bodyid;
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
     console.log(bodyid);
@@ -144,14 +144,12 @@ class Header extends React.Component {
       logoStart = 'grey';
       logoColors = ['grey', 'lblue', 'orange'];
     }
-    let logoColor = chooseRandomColor(logoColors);
     let logoHover = chooseRandomColor(logoColors);
-    let hover = chooseRandomColor(colors);
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(logoColors)} id="logo">
           <Link to="/projects">
-            <img src={`/images/${logoStart}.png`} alt="Caroline Boseley Logo"/>
+            <img src="/images/orange.png" alt="Caroline Boseley Logo"/>
           </Link>
         </Logo>
         <Navigation
@@ -187,7 +185,7 @@ class Header extends React.Component {
             height: 45px;
           }
           img:hover {
-            content: url(${`'/images/lblue.png'`});
+            content: url('/images/lblue.png');
           }
           @media (min-width: 760px) {
             #logo {

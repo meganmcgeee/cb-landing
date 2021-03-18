@@ -54,6 +54,12 @@ const Contact = ({ data }) => {
         </FlexContainer>
       </Row>
       <style jsx>{`
+        #logo img {
+          content: url(${`'/images/grey.png'`});
+        }
+        #logo img:hover {
+            content: url('/images/lblue.png');
+        }
       body {
         background: rgb(24, 22, 42);
         color: #B1B2B5;
