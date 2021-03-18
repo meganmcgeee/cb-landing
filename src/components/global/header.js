@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {Link} from 'gatsby';
 import chooseRandomColor from '../utils/chooseRandomColor';
@@ -126,9 +126,11 @@ class Header extends React.Component {
   render() {
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
+    UseEffect(() => {
     let bodyid = document.getElementsByTagName("body")[0].id;
-    console.log(bodyid);
-    let logoColors = [];
+    }
+console.log(bodyid);
+    Qlet logoColors = [];
     let logoStart;
     if(bodyid == 'projects') {
       logoStart = "orange"
