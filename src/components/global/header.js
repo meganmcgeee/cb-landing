@@ -191,7 +191,7 @@ class Header extends React.Component {
             height: 45px;
           }
           img:hover {
-            content: url(${`'/images/${logoHover}.png'`});
+            content: url(${`'/images/lblue.png'`});
           }
           @media (min-width: 760px) {
             #logo {
