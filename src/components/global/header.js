@@ -1,6 +1,6 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import chooseRandomColor from '../utils/chooseRandomColor';
 
 const HeaderComponent = styled.header`
@@ -61,14 +61,12 @@ const Navigation = styled.nav`
       padding: 0 40px 0 0;
       margin: 0;
 
-
       & a.active-link {
-
       }
 
       & a:hover {
         color: ${props => props.color};
-        border-bottom: 1px solid #B1B2B5;
+        border-bottom: 1px solid #b1b2b5;
       }
     }
 
@@ -115,7 +113,7 @@ class Header extends React.Component {
   constructor() {
     super();
     this.state = { showMenu: false };
-
+    this.myRef= React.createRef();
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
@@ -124,39 +122,35 @@ class Header extends React.Component {
   };
 
   render() {
+    let bodyid;
+    function bodyID() {
+      bodyid = document.getElementsByTagName("body")[0].id;
+    }
+    setInterval(bodyID(), 1000);
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
-    
-
-      useEffect(() => {
-    // Update the document title using the browser API
-    document.title = `You clicked ${count} times`;
-
-     let bodyid = document.getElementsByTagName("body")[0].id;
-
-  });
-console.log(bodyid);
+    console.log(bodyid);
     let logoColors = [];
     let logoStart;
-    if(bodyid == 'projects') {
-      logoStart = "orange"
+    if (bodyid == 'projects') {
+      logoStart = 'orange';
       logoColors = ['blue', 'lblue', 'orange'];
     }
-    if(bodyid === 'news') {
-      logoStart = 'orange'
+    if (bodyid === 'news') {
+      logoStart = 'orange';
       logoColors = ['blue', 'lblue', 'orange'];
     }
-     if (bodyid == 'about') {
+    if (bodyid == 'about') {
       logoStart = 'grey';
       logoColors = ['blue', 'grey', 'lblue'];
-    } if (bodyid == 'contact') {
+    }
+    if (bodyid == 'contact') {
       logoStart = 'grey';
       logoColors = ['grey', 'lblue', 'orange'];
     }
     let logoColor = chooseRandomColor(logoColors);
     let logoHover = chooseRandomColor(logoColors);
     let hover = chooseRandomColor(colors);
-    console.log(logoStart);
     return (
       <HeaderComponent>
         <Logo color={chooseRandomColor(logoColors)} id="logo">
@@ -192,17 +186,16 @@ console.log(bodyid);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: antialiased;
           }
-          #logo 
-          img {
+          #logo img {
             width: 380px;
             height: 45px;
           }
           img:hover {
             content: url(${`'/images/${logoHover}.png'`});
           }
-          @media(min-width: 760px) {
+          @media (min-width: 760px) {
             #logo {
-            font-size: 40px;
+              font-size: 40px;
             }
           }
         `}</style>
