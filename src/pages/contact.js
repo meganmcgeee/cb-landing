@@ -56,13 +56,13 @@ const Contact = ({ data }) => {
       <style jsx>{`
       body {
         background: rgb(24, 22, 42);
-        color: #fff;
+        color: #B1B2B5;
       }
       .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
-          color: #fff;
+          color: #B1B2B5;
       }
       .light-nav header nav ul li a:active {
-        color: #fff;
+        color: #B1B2B5;
         border-bottom: 
       }
       .light-nav footer {
@@ -74,7 +74,7 @@ const Contact = ({ data }) => {
           padding-left: 1.5rem;
       }
       a {
-        color: #fff;
+        color: #B1B2B5;
       }
       `}</style>
     </Layout>
