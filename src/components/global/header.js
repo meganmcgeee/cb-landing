@@ -137,7 +137,7 @@ let bodyid = document.getElementsByTagNameu("body")[0].id;
 
   });
 console.log(bodyid);
-    Qlet logoColors = [];
+    let logoColors = [];
     let logoStart;
     if(bodyid == 'projects') {
       logoStart = "orange"
