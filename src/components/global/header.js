@@ -6,8 +6,7 @@ import chooseRandomColor from '../utils/chooseRandomColor';
 const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center; 
+
   
 
   padding-top: 40px;
@@ -17,6 +16,10 @@ const HeaderComponent = styled.header`
     padding-top: 20px;
     margin-bottom: 20px;
     flex-direction: column;
+  }
+  @media(min-width: 760px) {
+    justify-content: space-around;
+    align-items: center;
   }
 `;
 
