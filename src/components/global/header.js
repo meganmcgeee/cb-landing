@@ -65,7 +65,6 @@ const Navigation = styled.nav`
       }
 
       & a:hover {
-        color: ${props => props.color};
         border-bottom: 1px solid #b1b2b5;
       }
     }

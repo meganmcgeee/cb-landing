@@ -61,7 +61,7 @@ const Contact = ({ data }) => {
             content: url('/images/lblue.png');
         }
       body {
-        background: rgb(24, 22, 42);
+        background: #0E0E1C;
         color: #B1B2B5;
       }
       .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
