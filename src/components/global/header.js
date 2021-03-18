@@ -6,8 +6,7 @@ import chooseRandomColor from '../utils/chooseRandomColor';
 const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  
 
   padding-top: 40px;
   margin-bottom: 40px;
@@ -93,7 +92,7 @@ const OpenNavigation = styled.button`
   right: 25px;
 
   border: 0;
-  padding: 10px 0 10px 10px;
+  padding: 7px 0px;
   margin: 0;
   background-color: transparent;
 
@@ -179,9 +178,13 @@ class Header extends React.Component {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: antialiased;
           }
+          #logo a {
+            display: flex;
+            align-items: flex-end;
+          }
           #logo img {
-            width: 380px;
-            height: 45px;
+            width: 250px;
+            height: 30px;
           }
           #logo img:hover {
             content: url('/images/lblue.png');
@@ -189,6 +192,10 @@ class Header extends React.Component {
           @media (min-width: 760px) {
             #logo {
               font-size: 40px;
+            }
+            #logo img {
+              width: 380px;
+              height: 45px;
             }
           }
         `}</style>

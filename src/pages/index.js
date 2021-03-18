@@ -38,6 +38,7 @@ export default function Index() {
                 position: absolute;
                 top: 0;
                 left: 0;
+                display: none;
               }
               .container {
                 width: 100vw;
@@ -59,11 +60,11 @@ export default function Index() {
                 text-decoration: none;
               }
               .content strong {
-                font-size: 4rem;
+                font-size: 2.3rem;
                 font-family: 'History 01';
         }
         .content p {
-          font-size: 2rem;
+          font-size: 1.7rem;
           text-transform: uppercase;
           font-family: "History 2";
           font-weight: 600;
@@ -86,6 +87,10 @@ export default function Index() {
           .content p {
             font-size: 2.6rem;
         }
+        img {
+          display: block;
+        }
+      }        
         @media(min-width: 1439px) {
           .content {
             max-width: 90vw;
