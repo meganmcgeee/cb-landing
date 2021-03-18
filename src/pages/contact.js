@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
 
@@ -64,7 +64,7 @@ const Contact = ({ data }) => {
         background: #0E0E1C;
         color: #B1B2B5;
       }
-      .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
+      .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav header button {
           color: #B1B2B5;
       }
       .light-nav header nav ul li a:active {

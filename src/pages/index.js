@@ -14,7 +14,7 @@ export default function Index() {
       <div className="content">
 
             <p>  
-              <strong>Caroline Boseley</strong> works to spark organic dialogue between artists and 
+              <strong>Caroline Boseley</strong> <br className="mob"/>works to spark organic dialogue between artists and 
               audiences to animate public space through thought-provoking art—often outside the 
               gallery. She supports emerging practices and initiatives, building connections to devise projects that delight and engage.
             </p>
@@ -64,7 +64,7 @@ export default function Index() {
                 font-family: 'History 01';
         }
         .content p {
-          font-size: 1.7rem;
+          font-size: 1.4rem;
           text-transform: uppercase;
           font-family: "History 2";
           font-weight: 600;
@@ -88,6 +88,9 @@ export default function Index() {
             font-size: 2.6rem;
         }
         img {
+          display: block;
+        }
+        .mob {
           display: block;
         }
       }        

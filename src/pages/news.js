@@ -75,7 +75,7 @@ const News = ({data}) => {
         .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a {
           color: rgb(125, 70, 50);
         }
-        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a {
+        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a, .light-nav header button {
               color: #814834;
             }
             ul li a.active-link {

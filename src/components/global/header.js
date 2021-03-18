@@ -6,6 +6,8 @@ import chooseRandomColor from '../utils/chooseRandomColor';
 const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
   
 
   padding-top: 40px;
