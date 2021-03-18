@@ -122,11 +122,7 @@ class Header extends React.Component {
   };
 
   render() {
-    let bodyid;
-    function bodyID() {
-      bodyid = document.getElementsByTagName("body")[0].id;
-    }
-    setInterval(bodyID(), 1000);
+    let bodyid = null;
     let colors = ['#8a432e', '#B1B2B5'];
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
     console.log(bodyid);
