@@ -128,7 +128,7 @@ class Header extends React.Component {
     let allColors = ['#6a8493', '#8a432e', '#B1B2B5'];
     UseEffect(() => {
     let bodyid = document.getElementsByTagName("body")[0].id;
-    }
+    }); 
 console.log(bodyid);
     Qlet logoColors = [];
     let logoStart;
