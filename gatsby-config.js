@@ -32,7 +32,7 @@ module.exports = {
       options: {
         repositoryName: `carolineboseley`,
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        linkResolver: ({ node, key, value }) => (post) => `/${post.uid}`,
         schemas: {
           about: require('./src/schemas/about.json'),
           event: require('./src/schemas/event.json'),

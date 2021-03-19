@@ -1,8 +1,8 @@
-import React, { Component, useEffect, useState } from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { Component, useEffect, useState } from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default class SimpleSlider extends Component {
   render() {
@@ -18,28 +18,28 @@ export default class SimpleSlider extends Component {
       loop: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-    }
+    };
 
     const Slides = () => {
       const data = useStaticQuery(graphql`
-      query Slider {
-        allPrismicSlider {
-          nodes {
-            data {
-              slider {
-                alternative_text
-                image {
-                  url
-                }
-                link {
-                  slug
+        query Slider {
+          allPrismicSlider {
+            nodes {
+              data {
+                slider {
+                  alternative_text
+                  image {
+                    url
+                  }
+                  link {
+                    slug
+                  }
                 }
               }
             }
           }
         }
-      }      
-      `)
+      `);
 
       const slides = [
         {
@@ -56,7 +56,7 @@ export default class SimpleSlider extends Component {
           url: data.allPrismicSlider.nodes[0].data.slider[2].link.slug,
           src: data.allPrismicSlider.nodes[0].data.slider[2].image.url,
           alt: data.allPrismicSlider.nodes[0].data.slider[2].alternative_text,
-        }
+        },
         // {
         //   url: data.allPrismicSlider.nodes[0].data.slider[3].link.slug,
         //   src: data.allPrismicSlider.nodes[0].data.slider[3].image.url,
@@ -67,16 +67,20 @@ export default class SimpleSlider extends Component {
         //   src: data.allPrismicSlider.nodes[0].data.slider[4].image.url,
         //   alt: data.allPrismicSlider.nodes[0].data.slider[4].alternative_text,
         // },
-      ]
+      ];
 
       return (
         <Link id="slideLink" href="/projects">
           <Slider {...settings}>
-            {slides.map(slide => <div key={slide.url}><img src={slide.src} alt={slide.alt} /></div>)}
+            {slides.map((slide) => (
+              <div key={slide.url}>
+                <img src={slide.src} alt={slide.alt} />
+              </div>
+            ))}
           </Slider>
         </Link>
-      )
-    }
+      );
+    };
     return (
       <div className="container">
         <Slides />
@@ -93,23 +97,22 @@ export default class SimpleSlider extends Component {
             bottom: 0;
             left: 0;
           }
+          .container img {
+            width: 100vw;
+            height: 100vh;
+          }
+          @media (max-width: 760px) {
+            .container {
+              background: #0e0e1c;
+            }
             .container img {
-                width: 100vw;
-                height: 100vh;
+              width: 100vw;
+              height: 300px;
+              margin: 13.5rem auto 0 auto;
             }
-            @media(max-width: 760px) {
-              .container {
-                background: #0E0E1C;
-              }
-              .container img {
-                width: 100vw;
-                height: 300px;
-                margin: 13.5rem auto 0 auto;
-              }
-            }
+          }
         `}</style>
       </div>
-    )
+    );
   }
 }
-

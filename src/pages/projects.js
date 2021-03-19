@@ -19,18 +19,18 @@ justify-content: space-evenly;
 
 const SingleListLink = styled.div`
   & a:hover {
-    color: ${props => props.color};
+    color: ${(props) => props.color};
     border: none;
   }
 
   & a:hover > img {
     cursor: pointer;
     transition: 0.4s ease;
-    box-shadow: 20px 20px 0px 0px ${props => props.color};
+    box-shadow: 20px 20px 0px 0px ${(props) => props.color};
   }
 
   & a > div {
-    //${props => props.color}
+    //${(props) => props.color}
     opacity: 0;
     width: 100%;
     transition: 250ms opacity ease;
@@ -93,16 +93,17 @@ class Projects extends React.Component {
           // landscape image
           return (
             <div id="landscape" key={project.node.prismicId}>
-                  <Helmet
-        bodyAttributes={{
-          id: 'projects'
-      }}/>
+              <Helmet
+                bodyAttributes={{
+                  id: 'projects',
+                }}
+              />
               <SingleListLink
                 onMouseEnter={() => this.generateColor()}
                 color={this.state.hoverColor}
               >
                 <Link to={'/projects/' + project.node.uid}>
-                  <img 
+                  <img
                     src={project.node.data.gallery[0].image.url}
                     alt={project.node.data.gallery[0].image.alt}
                   />
@@ -119,7 +120,7 @@ class Projects extends React.Component {
                 .light-nav > header h1 a img {
                   content: url(${`'/images/orange.png'`});
                 }
-                @media(min-width: 1020px) {
+                @media (min-width: 1020px) {
                   img {
                     width: 500px;
                     height: 500px;
@@ -162,24 +163,30 @@ class Projects extends React.Component {
 
     return (
       <Layout>
-          <Helmet><body class='light-nav' /></Helmet>
-          <CustomRow>{allProjects}</CustomRow>
-          <style jsx>{`
-            .light-nav {
-              background: rgb(172, 171, 176);
-            }
-            .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a, .light-nav header button {
-              color: #814834;
-            }
-            .light-nav header nav ul li a:hover {
-              border-bottom: 1px solid #814834;
-            }
-            ul li a.active-link {
-              color: #814834;
-              border-bottom: 1px solid #814834;
-            }
-          `}</style>
-     </Layout>
+        <Helmet>
+          <body class="light-nav" />
+        </Helmet>
+        <CustomRow>{allProjects}</CustomRow>
+        <style jsx>{`
+          .light-nav {
+            background: rgb(172, 171, 176);
+          }
+          .light-nav header nav ul li a,
+          .light-nav header h1 a,
+          .light-nav footer a,
+          .light-nav a,
+          .light-nav header button {
+            color: #814834;
+          }
+          .light-nav header nav ul li a:hover {
+            border-bottom: 1px solid #814834;
+          }
+          ul li a.active-link {
+            color: #814834;
+            border-bottom: 1px solid #814834;
+          }
+        `}</style>
+      </Layout>
     );
   }
 }

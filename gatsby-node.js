@@ -33,7 +33,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   const templateProject = path.resolve('src/components/templates/project.js');
-  pages.data.allPrismicProjects.edges.forEach(edge => {
+  pages.data.allPrismicProjects.edges.forEach((edge) => {
     createPage({
       path: `/projects/${edge.node.uid}`,
       component: templateProject,
@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   const templateEvents = path.resolve('src/components/templates/events.js');
-  pages.data.allPrismicEvent.edges.forEach(edge => {
+  pages.data.allPrismicEvent.edges.forEach((edge) => {
     createPage({
       path: `/event/${edge.node.uid}`,
       component: templateEvents,
@@ -53,9 +53,9 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-  
+
   const templateResearch = path.resolve('src/components/templates/research.js');
-  pages.data.allPrismicResearch.edges.forEach(edge => {
+  pages.data.allPrismicResearch.edges.forEach((edge) => {
     createPage({
       path: `/research/${edge.node.uid}`,
       component: templateResearch,

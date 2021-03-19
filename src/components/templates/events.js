@@ -72,7 +72,7 @@ const InformationText = styled.div`
 const GalleryTrigger = styled.div`
   &:hover {
     cursor: pointer;
-    box-shadow: 20px 20px 0px 0px ${props => props.color};
+    box-shadow: 20px 20px 0px 0px ${(props) => props.color};
   }
 
   @media (max-width: 767px) {

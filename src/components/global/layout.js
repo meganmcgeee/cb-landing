@@ -66,7 +66,7 @@ const Layout = ({ children, color }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <ContainerWrapper>
         <link rel="stylesheet" href="https://use.typekit.net/epj1ibd.css" />
         <BaseCSS />
@@ -112,52 +112,60 @@ const Layout = ({ children, color }) => (
                       content="Curator - Working with art in its broadest sense to reshape the social, cultural, ecological and political foundations of our urban environment"
                     />
                     <meta name="twitter:card" content="summary_large_image" />
-                    <link rel="preload" href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot" as="font" type="font/eot"/>
-                    <link rel="preload" href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix" as="font" type="font/eot"/>
+                    <link
+                      rel="preload"
+                      href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot"
+                      as="font"
+                      type="font/eot"
+                    />
+                    <link
+                      rel="preload"
+                      href="https://s3-eu-west-1.amazonaws.com/fonts-ireland.typotheque.com/WF-033325-010774-000275-e85a17905b3816b4f58536ce5a1555f8.eot?#iefix"
+                      as="font"
+                      type="font/eot"
+                    />
                   </Helmet>
                 );
               }}
             </Location>
-<div id="page-container">
-  <div id="content-wrap">
-            <Row>
-              <Col col={12}>
-                <Header
-                  menuLinks={data.site.siteMetadata.menuLinks}
-                  siteTitle={data.site.siteMetadata.title}
-                  color={color}
-                />
-              </Col>
-            </Row>
-            <Row css={{ paddingBottom: '30px' }}>
-              <Col col={12}>{children}</Col>
-            </Row>
+            <div id="page-container">
+              <div id="content-wrap">
+                <Row>
+                  <Col col={12}>
+                    <Header
+                      menuLinks={data.site.siteMetadata.menuLinks}
+                      siteTitle={data.site.siteMetadata.title}
+                      color={color}
+                    />
+                  </Col>
+                </Row>
+                <Row css={{ paddingBottom: '30px' }}>
+                  <Col col={12}>{children}</Col>
+                </Row>
+              </div>
+              <div id="footer">
+                <Footer />
+              </div>
             </div>
-            <div id="footer">
-            <Footer/>
-            </div>
-      </div>
-
           </Container>
         </GridThemeProvider>
         <style jsx>{`
           #page-container {
-  position: relative;
-  min-height: 100vh;
-}
+            position: relative;
+            min-height: 100vh;
+          }
 
-#content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
-}
+          #content-wrap {
+            padding-bottom: 2.5rem; /* Footer height */
+          }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;            /* Footer height */
-}
+          #footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2.5rem; /* Footer height */
+          }
         `}</style>
-
       </ContainerWrapper>
     )}
   />

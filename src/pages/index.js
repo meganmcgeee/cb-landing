@@ -91,7 +91,7 @@ export default function Index() {
           display: block;
         }
         .mob {
-          display: block;
+          display: none;
         }
       }        
         @media(min-width: 1439px) {
@@ -102,18 +102,20 @@ export default function Index() {
           img {
             position: absolute;
             left: -40px;
-            width: 85vw;
-            height: 67vh;
+            width: 90vw;
+            height: 55vh;
           }
           .content {
             margin-bottom: 0px;
+            margin-left: 2.8rem;
           }
           .content strong {
             font-size: 4.6rem;
           }
           .content p {
-            font-size: 3rem;
+            font-size: 2.72rem;
             line-height: 1.4;
+            font-weight: 100;
           }
         }
         @media(min-width: 1919px) {
@@ -123,7 +125,7 @@ export default function Index() {
           }
           img {
             width: 87vw;
-            height: 64vh;
+            height: 53vh;
           }
           .content {
             margin-left: 3rem;
@@ -132,7 +134,7 @@ export default function Index() {
             font-size: 6.2rem;
           }
           .content p {
-            font-size: 4rem;
+            font-size: 3.72rem;
             line-height: 1.4;
         }
         }

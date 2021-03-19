@@ -7,8 +7,6 @@ const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
 
-  
-
   padding-top: 40px;
   margin-bottom: 40px;
 
@@ -17,7 +15,7 @@ const HeaderComponent = styled.header`
     margin-bottom: 20px;
     flex-direction: column;
   }
-  @media(min-width: 760px) {
+  @media (min-width: 760px) {
     justify-content: space-around;
     align-items: center;
   }
@@ -79,7 +77,7 @@ const Navigation = styled.nav`
   }
 
   @media (max-width: 767px) {
-    display: ${props => (props.open ? 'block' : 'none')};
+    display: ${(props) => (props.open ? 'block' : 'none')};
 
     width: 100%;
     padding: 20px 0 0;
@@ -116,12 +114,12 @@ class Header extends React.Component {
   constructor() {
     super();
     this.state = { showMenu: false };
-    this.myRef= React.createRef();
+    this.myRef = React.createRef();
     this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu = () => {
-    this.setState(prevState => ({ showMenu: !prevState.showMenu }));
+    this.setState((prevState) => ({ showMenu: !prevState.showMenu }));
   };
 
   render() {
@@ -152,7 +150,7 @@ class Header extends React.Component {
       <HeaderComponent>
         <Logo color={chooseRandomColor(logoColors)} id="logo">
           <Link to="/projects">
-            <img src="/images/orange.png" alt="Caroline Boseley Logo"/>
+            <img src="/images/orange.png" alt="Caroline Boseley Logo" />
           </Link>
         </Logo>
         <Navigation
@@ -160,7 +158,7 @@ class Header extends React.Component {
           color={chooseRandomColor(allColors)}
         >
           <ul>
-            {this.props.menuLinks.map(link => {
+            {this.props.menuLinks.map((link) => {
               return (
                 <li key={link.name}>
                   <Link

@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import Layout from '../components/global/layout';
 import { graphql } from 'gatsby';
 
@@ -39,51 +39,54 @@ const Contact = ({ data }) => {
 
   return (
     <>
-    <Helmet>
-      <body id="contact" class="light-nav" />
-    </Helmet>
-    <Layout>
-      <Row>
-        <FlexContainer>
-          <div className="container">
-            <TextBox
-              text={data.prismicHome.data.contact_text}
-              margin={'1.625em 0 '}
-            />
-          </div>
-        </FlexContainer>
-      </Row>
-      <style jsx>{`
-        #logo img {
-          content: url(${`'/images/grey.png'`});
-        }
-        #logo img:hover {
+      <Helmet>
+        <body id="contact" class="light-nav" />
+      </Helmet>
+      <Layout>
+        <Row>
+          <FlexContainer>
+            <div className="container">
+              <TextBox
+                text={data.prismicHome.data.contact_text}
+                margin={'1.625em 0 '}
+              />
+            </div>
+          </FlexContainer>
+        </Row>
+        <style jsx>{`
+          #logo img {
+            content: url(${`'/images/grey.png'`});
+          }
+          #logo img:hover {
             content: url('/images/lblue.png');
-        }
-      body {
-        background: #0E0E1C;
-        color: #B1B2B5;
-      }
-      .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav header button {
-          color: #B1B2B5;
-      }
-      .light-nav header nav ul li a:active {
-        color: #B1B2B5;
-        border-bottom: 
-      }
-      .light-nav footer {
-        position: absolute;
-        bottom: 5px;
-      }
-      .container {
-          width: 600px;
-          padding-left: 1.5rem;
-      }
-      a {
-        color: #B1B2B5;
-      }
-      `}</style>
-    </Layout>
+          }
+          body {
+            background: #0e0e1c;
+            color: #b1b2b5;
+          }
+          .light-nav header nav ul li a,
+          .light-nav header h1 a,
+          .light-nav footer a,
+          .light-nav header button {
+            color: #b1b2b5;
+          }
+          .light-nav header nav ul li a:active {
+            color: #b1b2b5;
+            border-bottom: ;
+          }
+          .light-nav footer {
+            position: absolute;
+            bottom: 5px;
+          }
+          .container {
+            width: 600px;
+            padding-left: 1.5rem;
+          }
+          a {
+            color: #b1b2b5;
+          }
+        `}</style>
+      </Layout>
     </>
   );
 };

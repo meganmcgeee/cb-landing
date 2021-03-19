@@ -10,8 +10,8 @@ import chooseRandomColor from '../utils/chooseRandomColor';
 import Helmet from 'react-helmet';
 import { Location } from '@reach/router';
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Modal from 'react-modal';
 
 import Layout from '../global/layout';
@@ -61,25 +61,57 @@ class Project extends React.Component {
         <div className="slide" key={`project_gallery_images_${index}`}>
           <img src={image.image.url} />
           <style jsx>{`
-              img {
-                width: 800px;
-                height: 600px;
-              }
-            `}</style>
+            img {
+              width: 800px;
+              height: 600px;
+            }
+          `}</style>
         </div>
       )
     );
 
     const LeftArrow = ({ className, style, onClick }) => {
       return (
-        <svg id="leftArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
-      )
-    }
+        <svg
+          id="leftArrow"
+          className="sliderArrow"
+          onClick={onClick}
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-left"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      );
+    };
     const RightArrow = ({ className, style, onClick }) => {
       return (
-        <svg id="rightArrow" className="sliderArrow" onClick={onClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      )
-    }
+        <svg
+          id="rightArrow"
+          className="sliderArrow"
+          onClick={onClick}
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-chevron-right"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      );
+    };
 
     class SimpleSlider extends Component {
       render() {
@@ -92,148 +124,147 @@ class Project extends React.Component {
           slidesToScroll: 1,
           nextArrow: <LeftArrow />,
           prevArrow: <RightArrow />,
-          className: 'simpleslider'
+          className: 'simpleslider',
         };
         return (
           <div className="slider">
-            <Slider {...settings}>
-              {gallery}
-            </Slider>
+            <Slider {...settings}>{gallery}</Slider>
             <style jsx>{`
-             .simpleslider .sliderArrow {
-               display: none;
-             }
-             .simpleslider {
-              position: relative;
-              -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
-             }
-            .slider {
-              width: 90vw;
-              margin: 0 auto;
-            }
-            .slider img {
-              max-width: 90vw;
-              height: 300px;
-              -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; 
-            }
-            .simpleslider .sliderArrow {
-              display: none;
-              position: absolute;
-              top: 40%;
-              z-index: 1;
-            }
-            .simpleslider #leftArrow, .simpleslider #rightArrow {
-              display: none;
-              position: absolute;
-              top: 40%;
-            }
-            @media(min-width: 760px) {
               .simpleslider .sliderArrow {
-              display: block;
+                display: none;
               }
-              .slider img {
-                width: auto;
-                height: 400px;
+              .simpleslider {
+                position: relative;
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none;
+              }
+              .slider {
+                width: 90vw;
                 margin: 0 auto;
               }
-              .simpleslider #leftArrow {
-                left: -25px;
-              }
-              .simpleslider #rightArrow {
-                right: -25px;
-              }
-            }
-            @media(min-width: 1024px) {
               .slider img {
-                height: 500px;
-              }
-            }
-            @media(min-width: 1366px) {
-              .slider img {
-                min-width: 400px;
-                max-height: 600px;
-                height: auto;
+                max-width: 90vw;
+                height: 300px;
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none;
               }
               .simpleslider .sliderArrow {
-                display: block;
+                display: none;
                 position: absolute;
-                top: 20%;
+                top: 40%;
                 z-index: 1;
               }
-            }
-            @media(min-width: 1400px) {
-              .slider img {
-                width: auto;
-                min-width: 400px;
-                max-width: 900px;
-                min-height: 600px;
-                max-height: 600px;
-                height: auto;
-                margin: 0 auto;
-              }
-            .simpleslider .sliderArrow {
-              display: block;
-              position: absolute;
-              top: 30%;
-              z-index: 1;
-            }
-            .simpleslider #leftArrow {
-                left: -25px;
-              }
+              .simpleslider #leftArrow,
               .simpleslider #rightArrow {
-                right: -25px;
+                display: none;
+                position: absolute;
+                top: 40%;
               }
-            }
-            @media(min-width: 1900px) {
-              .slider img {
-                max-width: 1000px;
-                height: 600px;
-                margin: 0 auto;
+              @media (min-width: 760px) {
+                .simpleslider .sliderArrow {
+                  display: block;
+                }
+                .slider img {
+                  width: auto;
+                  height: 400px;
+                  margin: 0 auto;
+                }
+                .simpleslider #leftArrow {
+                  left: -25px;
+                }
+                .simpleslider #rightArrow {
+                  right: -25px;
+                }
               }
-              .simpleslider #leftArrow {
-                left: 220px;
-                width: 40px;
-                height: 40px;
+              @media (min-width: 1024px) {
+                .slider img {
+                  height: 500px;
+                }
               }
-              .simpleslider #rightArrow {
-                right: 220px;
-                width: 40px;
-                height: 40px;
+              @media (min-width: 1366px) {
+                .slider img {
+                  min-width: 400px;
+                  max-height: 600px;
+                  height: auto;
+                }
+                .simpleslider .sliderArrow {
+                  display: block;
+                  position: absolute;
+                  top: 20%;
+                  z-index: 1;
+                }
               }
-            }
-            @media(min-width: 2500px) {
-              .simpleslider #leftArrow {
-                left: 460px;
-                width: 50px;
-                height: 50px;
+              @media (min-width: 1400px) {
+                .slider img {
+                  width: auto;
+                  min-width: 400px;
+                  max-width: 900px;
+                  min-height: 600px;
+                  max-height: 600px;
+                  height: auto;
+                  margin: 0 auto;
+                }
+                .simpleslider .sliderArrow {
+                  display: block;
+                  position: absolute;
+                  top: 30%;
+                  z-index: 1;
+                }
+                .simpleslider #leftArrow {
+                  left: -25px;
+                }
+                .simpleslider #rightArrow {
+                  right: -25px;
+                }
               }
-              .simpleslider #rightArrow {
-                right: 460px;
-                width: 50px;
-                height: 50px;
+              @media (min-width: 1900px) {
+                .slider img {
+                  max-width: 1000px;
+                  height: 600px;
+                  margin: 0 auto;
+                }
+                .simpleslider #leftArrow {
+                  left: 220px;
+                  width: 40px;
+                  height: 40px;
+                }
+                .simpleslider #rightArrow {
+                  right: 220px;
+                  width: 40px;
+                  height: 40px;
+                }
               }
-            }
-            @media(min-width: 3840px) {
-              .simpleslider #leftArrow {
-                left: 950px;
+              @media (min-width: 2500px) {
+                .simpleslider #leftArrow {
+                  left: 460px;
+                  width: 50px;
+                  height: 50px;
+                }
+                .simpleslider #rightArrow {
+                  right: 460px;
+                  width: 50px;
+                  height: 50px;
+                }
               }
-              .simpleslider #rightArrow {
-                right: 950px;
+              @media (min-width: 3840px) {
+                .simpleslider #leftArrow {
+                  left: 950px;
+                }
+                .simpleslider #rightArrow {
+                  right: 950px;
+                }
               }
-            }
-          `}</style>
+            `}</style>
           </div>
-        )
+        );
       }
     }
 
@@ -284,39 +315,43 @@ class Project extends React.Component {
               css={{ width: '59vw', margin: '0 auto' }}
             />
           </div>
-          </div>
+        </div>
         <style jsx>{`
+          .textcontainer {
+            .container {
+              width: 90vw;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin: 0;
+              padding: 0;
+            }
+            width: 80vw;
+            margin: 2rem auto;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+          }
+          .textcontainer a {
+            border-bottom: 1px solid #b1b2b5;
+          }
+          .textcontainer a:hover {
+            color: #b1b2b5;
+          }
+          @media (min-width: 760px) {
             .textcontainer {
-              .container {
-                width: 90vw;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin: 0; padding: 0;
-              }
-              width: 80vw;
-              margin: 2rem auto;
-              -webkit-touch-callout: none; /* iOS Safari */
-              -webkit-user-select: none; /* Safari */
-              -khtml-user-select: none; /* Konqueror HTML */
-              -moz-user-select: none; /* Old versions of Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; 
+              width: 65vw;
             }
-            .textcontainer a {border-bottom: 1px solid #B1B2B5}
-            .textcontainer a:hover {color: #B1B2B5;}
-            @media(min-width: 760px) {
-              .textcontainer {
-                width: 65vw;
-
-              }
+          }
+          @media (min-width: 1900px) {
+            .textcontainer {
+              width: 1000px;
             }
-            @media(min-width: 1900px) {
-              .textcontainer {
-                width: 1000px;
-              }
-            }
-          `}</style>
+          }
+        `}</style>
       </Layout>
     );
   }

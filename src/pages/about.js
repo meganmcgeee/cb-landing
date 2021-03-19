@@ -13,66 +13,70 @@ const About = ({ data }) => {
   const text1 = data.prismicAbout.data.text.raw;
   return (
     <>
-    <Helmet>
-    <body id="about" class='light-nav' />
-    </Helmet>
-    <Layout>
-          <div className="flexy">
+      <Helmet>
+        <body id="about" class="light-nav" />
+      </Helmet>
+      <Layout>
+        <div className="flexy">
           <TextBox text={data.prismicAbout.data.text} margin={'1em 0 '} />
-          </div>
-      <style jsx>{`
-        body {
-          background: #814834;
-          color: #B1B2B5; 
-        }
-        #logo img {
-          content: url(${`'/images/grey.png'`});
-        }
-        #logo img:hover {
+        </div>
+        <style jsx>{`
+          body {
+            background: #814834;
+            color: #b1b2b5;
+          }
+          #logo img {
+            content: url(${`'/images/grey.png'`});
+          }
+          #logo img:hover {
             content: url('/images/lblue.png');
-        }
-        .light-nav header nav ul li a, .light-nav header h1 a, .light-nav footer a, .light-nav a, .light-nav header button {
-          color: #B1B2B5;
-        }
-        .light-nav .active-link {
-          color: #B1B2B5;
-          border-bottom: 1px solid #B1B2B5;
-        }
-        .flexy > div {
-          display: flex;
-          flex-direction: column;
-        }
-        .flexy > div > p {
-          margin-bottom: -.1rem;
-          font-size: 19px;
-        }
-        .flexy > div > p > a {
-          border-bottom: 1px solid #B1B2B5;
-        }
-        @media (min-width: 1400px) {
+          }
+          .light-nav header nav ul li a,
+          .light-nav header h1 a,
+          .light-nav footer a,
+          .light-nav a,
+          .light-nav header button {
+            color: #b1b2b5;
+          }
+          .light-nav .active-link {
+            color: #b1b2b5;
+            border-bottom: 1px solid #b1b2b5;
+          }
           .flexy > div {
-            flex-wrap: wrap;
-            height: 100vh;
-          }
-          .flexy > div p {
-            width: 40%;
-          }
-        }
-        @media(min-width: 1400px) and (max-height: 760px) {
-          .flexy > div > p {
-            font-size: 15.8px;
-          }
-        }
-        @media (min-width: 1920px) {
-          .flexy > div {
-            height: 90vh;
+            display: flex;
+            flex-direction: column;
           }
           .flexy > div > p {
-            width: 40%;
+            margin-bottom: -0.1rem;
+            font-size: 19px;
           }
-        }
-      `}</style>
-    </Layout>
+          .flexy > div > p > a {
+            border-bottom: 1px solid #b1b2b5;
+          }
+          @media (min-width: 1400px) {
+            .flexy > div {
+              flex-wrap: wrap;
+              height: 100vh;
+            }
+            .flexy > div p {
+              width: 40%;
+            }
+          }
+          @media (min-width: 1400px) and (max-height: 760px) {
+            .flexy > div > p {
+              font-size: 15.8px;
+            }
+          }
+          @media (min-width: 1920px) {
+            .flexy > div {
+              height: 90vh;
+            }
+            .flexy > div > p {
+              width: 40%;
+            }
+          }
+        `}</style>
+      </Layout>
     </>
   );
 };
