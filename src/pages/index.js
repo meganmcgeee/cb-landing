@@ -16,10 +16,12 @@ export default function Index() {
             <p>  
               <strong>Caroline Boseley</strong> <br className="mob"/>works to spark organic dialogue between artists and 
               audiences to animate public space through thought-provoking art—often outside the 
-              gallery. She supports emerging practices and initiatives, building connections to devise projects that delight and engage.
+              gallery. She supports emerging practices and initiatives, building connections to devise <span className="next-btn">projects</span> that delight and engage.
             </p>
+            <div className="next-btn-below">See works</div></div>
           </div>
-      </div>  
+      
+      
       </Link>
 
               <style jsx>{`
@@ -31,6 +33,23 @@ export default function Index() {
               @font-face {
                 font-family: "History 2";
                 src: url("/fonts/history2.otf");
+              }
+              .next-btn{
+              
+                font-family: "History 2";
+                text-decoration:underline;
+                // text-align:center;
+                
+              }
+              .next-btn-below{
+                color: rgb(180,181,183);
+                border: 1px solid rgb(180,181,183);
+                width: 100px;
+                padding: 1em;
+                font-family: "History 2";
+                // text-decoration:underline;
+                text-align:center;
+                
               }
               img {
                 width: 63vw;
@@ -51,9 +70,11 @@ export default function Index() {
                 top: 0;
                 left: 0;
                 color: rgb(180,181,183);
+                
               }
               .content {
                 max-width: 90vw;
+                margin-bottom:2em;
               }
               a {
                 color: inherit;
@@ -85,7 +106,7 @@ export default function Index() {
             font-size: 4rem;
           }
           .content p {
-            font-size: 2.6rem;
+            font-size: 2.3rem;
         }
         img {
           display: block;

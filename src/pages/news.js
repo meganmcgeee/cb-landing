@@ -8,8 +8,7 @@ const Title = styled.div`
   & h1 {
     font-family: 'History 01';
     text-transform: uppercase;
-    text-align: center;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.5;
     letter-spacing: 1px;
     @media (max-width: 576px) {
@@ -69,9 +68,13 @@ const News = ({ data }) => {
         </div>
         <style jsx>{`
           body {
-            background: rgb(172, 171, 176);
+            background: #ffffff;
             color: rgb(125, 70, 50);
           }
+          header{
+            background: #ffffff;
+          }
+         
           .light-nav header nav ul li a,
           .light-nav header h1 a,
           .light-nav footer a {
@@ -97,12 +100,15 @@ const News = ({ data }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            margin-top:2em;
+            margin-left: .1em;
           }
           .container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin-bottom: 2rem;
+            margin-top: 50px;
           }
           .newsitems {
             width: 100vw;

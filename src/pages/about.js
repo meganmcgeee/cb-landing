@@ -25,6 +25,9 @@ const About = ({ data }) => {
             background: #814834;
             color: #b1b2b5;
           }
+          header{
+            background: #814834;
+          }
           #logo img {
             content: url(${`'/images/grey.png'`});
           }
@@ -45,6 +48,7 @@ const About = ({ data }) => {
           .flexy > div {
             display: flex;
             flex-direction: column;
+            margin-top: 50px;
           }
           .flexy > div > p {
             margin-bottom: -0.1rem;

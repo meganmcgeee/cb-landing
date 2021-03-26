@@ -64,6 +64,10 @@ const Contact = ({ data }) => {
             background: #0e0e1c;
             color: #b1b2b5;
           }
+          ul{
+            background: #0e0e1c !important;
+            color: #b1b2b5;
+          }
           .light-nav header nav ul li a,
           .light-nav header h1 a,
           .light-nav footer a,
@@ -81,6 +85,7 @@ const Contact = ({ data }) => {
           .container {
             width: 600px;
             padding-left: 1.5rem;
+            margin-top: 100px;
           }
           a {
             color: #b1b2b5;

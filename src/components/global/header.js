@@ -2,13 +2,17 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import chooseRandomColor from '../utils/chooseRandomColor';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 const HeaderComponent = styled.header`
   display: flex;
   flex-direction: row;
-
-  padding-top: 40px;
+position: fixed;
+  
   margin-bottom: 40px;
+  background:;
+  z-index: 1000;
+  width: 100%;
 
   @media (max-width: 767px) {
     padding-top: 20px;
@@ -16,7 +20,6 @@ const HeaderComponent = styled.header`
     flex-direction: column;
   }
   @media (min-width: 760px) {
-    justify-content: space-around;
     align-items: center;
   }
 `;
@@ -54,8 +57,8 @@ const Navigation = styled.nav`
     flex-direction: row;
     justify-content: space-between;
 
-    padding: 0;
-    margin: 0;
+ 
+
 
     & li {
       list-style: none;
@@ -85,17 +88,22 @@ const Navigation = styled.nav`
 
     & ul {
       flex-direction: column;
+      position: fixed;
+
+    background: white;
+    right: 0;
+
+    background: white;
     }
   }
 `;
 
 const OpenNavigation = styled.button`
-  position: absolute;
-  top: 19px;
-  right: 25px;
+  position: fixed;
+  right: 20px;
 
   border: 0;
-  padding: 7px 0px;
+
   margin: 0;
   background-color: transparent;
 
@@ -173,9 +181,10 @@ class Header extends React.Component {
             })}
           </ul>
         </Navigation>
-        <OpenNavigation onClick={() => this.toggleMenu()}>Menu</OpenNavigation>
+        <OpenNavigation onClick={() => this.toggleMenu()}><FontAwesomeIcon icon={faBars}  /></OpenNavigation>
         <style jsx>{`
           #logo {
+     
             font-size: 23px;
             font-smooth: antialiased;
             -webkit-font-smoothing: antialiased;
@@ -195,12 +204,20 @@ class Header extends React.Component {
           @media (min-width: 760px) {
             #logo {
               font-size: 40px;
+              // -1em
+              // margin-left:112px;
             }
             #logo img {
               width: 380px;
               height: 45px;
+        
+                margin-left: 42px;
             }
           }
+          @media (max-width: 760px) {
+            #logo {
+              // margin-left: -1em;
+            }}
         `}</style>
       </HeaderComponent>
     );

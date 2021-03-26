@@ -13,6 +13,7 @@ justify-content: space-evenly;
 @media(min-width: 760px) {
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 50px;
 }
 }
 `;
@@ -43,6 +44,7 @@ const SingleListLink = styled.div`
   @media (max-width: 575px) {
     &:hover img {
       box-shadow: none;
+      
     }
   }
 
@@ -117,6 +119,15 @@ class Projects extends React.Component {
                   width: 325px;
                   height: 325px;
                 }
+                img {
+                  opacity: 1.0;
+                   filter:alpha(opacity=100);
+                  
+               }
+               img:hover {
+                   opacity: 0.5;
+                   filter:alpha(opacity=40);
+               }
                 .light-nav > header h1 a img {
                   content: url(${`'/images/orange.png'`});
                 }
@@ -169,7 +180,7 @@ class Projects extends React.Component {
         <CustomRow>{allProjects}</CustomRow>
         <style jsx>{`
           .light-nav {
-            background: rgb(172, 171, 176);
+            background: #ffffff;
           }
           .light-nav header nav ul li a,
           .light-nav header h1 a,
@@ -184,6 +195,11 @@ class Projects extends React.Component {
           ul li a.active-link {
             color: #814834;
             border-bottom: 1px solid #814834;
+          }
+          header{
+            height: 60px;
+            background: #fff;
+            margin-left: 11px;
           }
         `}</style>
       </Layout>
